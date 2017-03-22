@@ -96,8 +96,9 @@ public class Size {
 		return "Size [w=" + w + ", h=" + h + "]";
 	}
 
-	public static Size from(wlc_size point) {
-		return Size.of(point.w, point.h);
+	public static Size from(wlc_size size) {
+		if (size == null) return null;
+		return Size.of(size.w, size.h);
 	}
 
 	public wlc_size to() {

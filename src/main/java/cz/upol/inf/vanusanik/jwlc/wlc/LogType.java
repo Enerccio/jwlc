@@ -16,4 +16,11 @@ public enum LogType {
 		return ni;
 	}
 
+	public static LogType from(int type) {
+		for (LogType t : values())
+			if (t.ni == type)
+				return t;
+		return null;
+	}
+
 }

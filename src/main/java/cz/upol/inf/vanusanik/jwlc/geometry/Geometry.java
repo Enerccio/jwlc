@@ -28,12 +28,25 @@ public class Geometry {
 	}
 
 	public static Geometry from(wlc_geometry geo) {
+		if (geo == null) return null;
 		return new Geometry(geo.origin.x, geo.origin.y, geo.size.w, geo.size.h);
+	}
+	
+	public void reset(wlc_geometry geo) {
+		origin.setX(geo.origin.x);
+		origin.setY(geo.origin.y);
+		size.setH(geo.size.h);
+		size.setW(geo.size.w);
 	}
 
 	public wlc_geometry to() {
 		wlc_geometry geo = new wlc_geometry();
-
+		geo.origin = new wlc_point();
+		geo.size = new wlc_size();
+		geo.origin.x = origin.getX();
+		geo.origin.y = origin.getY();
+		geo.size.w = size.getW();
+		geo.size.h = size.getH();
 		return geo;
 	}
 
