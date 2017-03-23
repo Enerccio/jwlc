@@ -98,7 +98,6 @@ public class Example {
 		new Example().run();
 	}
 
-	private JWLC wlc;
 	private Compositor c = new Compositor();
 
 	private void relayout(Output output) {
@@ -199,9 +198,8 @@ public class Example {
 	}
 
 	private void run() throws Exception {
-		wlc = JWLC.getJWLCHandler();
 
-		wlc.setLoggerCallback(new LoggerCallback() {
+		JWLC.setLoggerCallback(new LoggerCallback() {
 
 			public void onLog(LogType type, String message) {
 				System.out.println(message);
@@ -292,7 +290,7 @@ public class Example {
 					}
 					
 					if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_Escape) {
-						wlc.terminate();
+						JWLC.terminate();
 						return true;
 					} else if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_Return) {
 						String terminal = System.getenv("TERMINAL") != null ? System.getenv("TERMINAL") : "weston-terminal";
@@ -389,8 +387,8 @@ public class Example {
 			}
 		});
 
-		wlc.init();
-		wlc.run();
+		JWLC.init();
+		JWLC.run();
 	}
 
 }

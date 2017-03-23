@@ -31,10 +31,8 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputCreatedCallback;
 
 public class ExampleSimpleCallback {
 
-	public static void main(String[] args) throws Exception {
-		final JWLC wlc = JWLC.getJWLCHandler();
-		
-		wlc.setLoggerCallback(new LoggerCallback() {
+	public static void main(String[] args) throws Exception {		
+		JWLC.setLoggerCallback(new LoggerCallback() {
 			
 			public void onLog(LogType type, String message) {
 				System.out.println(type + ": " + message);
@@ -50,8 +48,8 @@ public class ExampleSimpleCallback {
 			}
 		});
 		
-		wlc.init();
-		wlc.run();
+		JWLC.init();
+		JWLC.run();
 	}
 
 }

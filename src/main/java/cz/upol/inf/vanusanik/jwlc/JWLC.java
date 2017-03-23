@@ -34,7 +34,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
  * @author pvan
  *
  */
-public class JWLC implements Runnable {
+public class JWLC {
 
 	/**
 	 * Singleton native handler instance
@@ -55,18 +55,10 @@ public class JWLC implements Runnable {
 	}
 
 	/**
-	 * Returns instace of JWLC. 
-	 * @return JWLC instance
-	 */
-	public static JWLC getJWLCHandler() {
-		return new JWLC();
-	}
-
-	/**
 	 * Initialize wlc. 
 	 * @throws RuntimeException when wlc fails to init
 	 */
-	public void init() {
+	public static void init() {
 		if (!nativeHandler().wlc_init()) {
 			throw new RuntimeException("failed to init wlc");
 		}
@@ -75,7 +67,7 @@ public class JWLC implements Runnable {
 	/**
 	 * Terminates wlc.
 	 */
-	public void terminate() {
+	public static void terminate() {
 		if (instance != null) {
 			synchronized (JWLC.class) {
 				if (instance != null) {
@@ -90,7 +82,7 @@ public class JWLC implements Runnable {
 	 * Runs wlc event loop.
 	 * This method block.
 	 */
-	public void run() {
+	public static void run() {
 		nativeHandler().wlc_run();
 	}
 
@@ -98,7 +90,7 @@ public class JWLC implements Runnable {
 	 * Sets the logger callback. 
 	 * @param cb to be called when logger event happens.
 	 */
-	public void setLoggerCallback(final LoggerCallback cb) {
+	public static void setLoggerCallback(final LoggerCallback cb) {
 		Assert.assertNotNull(cb);
 
 		nativeHandler().wlc_log_set_handler(new logger_callback() {
