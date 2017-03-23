@@ -78,6 +78,9 @@ public class Example {
 	private Compositor c = new Compositor();
 
 	private void relayout(Output output) {
+		if (output == null)
+			return;
+		
 		Size r = output.getVirtualResolution();
 		if (r == null)
 			return;
@@ -95,8 +98,8 @@ public class Example {
 		int n = (1 + positioned) / 2 > 1 ? (1 + positioned) / 2 : 1;
 		int w = r.getW() / 2;
 		int h = r.getH() / n;
-		int ew = r.getW() - w * 2;
-		int eh = r.getH() - h * 2;
+		int ew = Math.max(r.getW() - w * 2, 0);
+		int eh = Math.max(r.getH() - h * 2, 0);
 		int j = 0;
 		for (View v : views) {
 			Geometry anchorRect = v.positioner.getAnchorRect();
@@ -165,6 +168,8 @@ public class Example {
 	}
 
 	protected View getTopmost(Output output, int i) {
+		if (output == null)
+			return null;
 		List<View> views = output.getViews();
 		return i < views.size() ? views.get(i) : null;
 	}
