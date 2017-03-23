@@ -30,6 +30,7 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.focus_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.geometry_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_mask_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_move_view_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
@@ -46,6 +47,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewFocusCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewMoveToOutputCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewPostRenderCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewPreRenderCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewPropertiesUpdatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestGeometryCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestMoveCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestResizeCallback;
@@ -181,6 +183,18 @@ public class View extends WLCHandle {
 			public void callback(Pointer handle) {
 				cb.onPostRender(View.from(handle));
 			}
+		});
+	}
+	
+	public static void setPropertiesUpdatedCallback(final ViewPropertiesUpdatedCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_view_properties_updated_cb(new handle_mask_callback() {
+
+			public void callback(Pointer view, int uintmask) {
+				cb.onPropertiesUpdated(View.from(view), Utils.getUnsignedInt(uintmask));
+			}
+			
 		});
 	}
 	

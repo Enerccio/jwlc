@@ -21,33 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package cz.upol.inf.vanusanik.jwlc;
+package cz.upol.inf.vanusanik.jwlc.wlc.callbacks;
 
-public class Utils {
+import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
-	/**
-	 * Converts from int to unsigned int stored in long
-	 * @param x
-	 * @return
-	 */
-	public static long getUnsignedInt(int x) {
-	    return Integer.toUnsignedLong(x);
-	}
+public interface ViewPropertiesUpdatedCallback {
+
+	public void onPropertiesUpdated(View view, long mask);
 	
-	/**
-	 * Converts from unsigned int stored in long to usigned int stored in int
-	 * @param x
-	 * @return
-	 */
-	public static int getAsUnsignedInt(long x) {
-		return (int)(x & 0xffffffffL);
-	}
-
-	public static short getUnsignedByte(byte x) {
-		 return (short)Byte.toUnsignedInt(x);
-	}
-	
-	public static byte getAsUnsignedByte(short x) {
-		return (byte)(short) (x & 0xff);
-	}
 }

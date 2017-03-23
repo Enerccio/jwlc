@@ -315,9 +315,9 @@ public class Example {
 			}
 		});
 		
-		Mouse.setPointerButtonCallback(new PointerButtonCallback() {
+		Mouse.setButtonCallback(new PointerButtonCallback() {
 			
-			public boolean onPointerButton(View view, long time, Modifiers mods, long button, ButtonState state, Point position) {
+			public boolean onButton(View view, long time, Modifiers mods, long button, ButtonState state, Point position) {
 				if (state == ButtonState.STATE_PRESSED) {
 					if (view == null)
 						View.unfocus();
@@ -340,9 +340,9 @@ public class Example {
 			}
 		});
 		
-		Mouse.setPointerMotionCallback(new PointerMotionCallback() {
+		Mouse.setMotionCallback(new PointerMotionCallback() {
 			
-			public boolean onPointerMotion(View view, long time, Point position) {
+			public boolean onMotion(View view, long time, Point position) {
 				if (c.getAction().getView() != null) {
 					int dx = position.getX() - c.getAction().getGrab().getX();
 					int dy = position.getY() - c.getAction().getGrab().getY();

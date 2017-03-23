@@ -28,6 +28,6 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 public interface PointerMotionCallback {
 	
-	public boolean onPointerMotion(View view, long time, Point position);
+	public boolean onMotion(View view, long time, Point position);
 
 }

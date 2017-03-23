@@ -92,18 +92,18 @@ public interface WLC extends Library {
 	/** View post render hook. */
 	void wlc_set_view_render_post_cb(handle_callback_void cb);
 
-//	/** View properties (title, class, app_id) was updated */
-//	void wlc_set_view_properties_updated_cb(void (*cb)(wlc_handle view, uint32_t mask));
-//
+	/** View properties (title, class, app_id) was updated */
+	void wlc_set_view_properties_updated_cb(handle_mask_callback cb);
+
 	/** Key event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
 	void wlc_set_keyboard_key_cb(keyboard_callback cb);
 
 	/** Button event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
 	void wlc_set_pointer_button_cb(pointer_button_callback cb);
 
-//	/** Scroll event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
-//	void wlc_set_pointer_scroll_cb(bool (*cb)(wlc_handle view, uint32_t time, const struct wlc_modifiers*, uint8_t axis_bits, double amount[2]));
-//
+	/** Scroll event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
+	void wlc_set_pointer_scroll_cb(pointer_scroll_callback cb);
+
 	/** Motion event was triggered, view handle will be zero if there was no focus. Apply with wlc_pointer_set_position to agree. Return true to prevent sending the event to clients. */
 	void wlc_set_pointer_motion_cb(pointer_movement_callback cb);
 

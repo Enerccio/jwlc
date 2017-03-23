@@ -90,4 +90,12 @@ public class Callbacks {
 	public interface pointer_movement_callback extends Callback {
 		boolean callback(Pointer handle, int time, wlc_point point);
 	}
+	
+	public interface handle_mask_callback extends Callback {
+		void callback(Pointer view, int uintmask);
+	}
+	
+	public interface pointer_scroll_callback extends Callback {
+		boolean callback(Pointer view, int time, wlc_modifiers mods, byte axisBits, double[] amount);
+	}
 }
