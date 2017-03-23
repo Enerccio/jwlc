@@ -23,6 +23,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.KeyboardCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputResolutionCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerButtonCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerMotionCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewFocusCallback;
@@ -313,6 +314,55 @@ public class Example {
 				}
 				
 				return false;
+			}
+		});
+		
+		Mouse.setPointerMotionCallback(new PointerMotionCallback() {
+			
+			public boolean onPointerMotion(View view, long time, Point position) {
+				if (c.getAction().getView() != null) {
+					int dx = position.getX() - c.getAction().getGrab().getX();
+					int dy = position.getY() - c.getAction().getGrab().getY();
+					Geometry g = c.getAction().getView().getGeometry();
+					if (c.getAction().getEdges() > 0) {
+						Size min = new Size(80, 40);
+						Geometry n = new Geometry(g.getOrigin(), g.getSize());
+						if ((c.getAction().getEdges() & ResizeEdge.LEFT) > 0) {
+							n.getSize().setW(n.getSize().getW() - dx);
+							n.getOrigin().setX(n.getOrigin().getX() + dx);
+						} else if ((c.getAction().getEdges() & ResizeEdge.RIGHT) > 0) {
+							n.getSize().setW(n.getSize().getW() + dx);
+						}
+						
+						if ((c.getAction().getEdges() & ResizeEdge.TOP) > 0) {
+							n.getSize().setH(n.getSize().getH() - dy);
+							n.getOrigin().setY(n.getOrigin().getY() + dy);
+						} else if ((c.getAction().getEdges() & ResizeEdge.BOTTOM) > 0) {
+							n.getSize().setH(n.getSize().getH() + dy);
+						}
+						
+						if (n.getSize().getW() >= min.getW()) {
+							g.getOrigin().setX(n.getOrigin().getX());
+							g.getSize().setW(n.getSize().getW());
+						}
+						
+						if (n.getSize().getH() >= min.getH()) {
+							g.getOrigin().setY(n.getOrigin().getY());
+							g.getSize().setH(n.getSize().getH());
+						}
+						
+						c.getAction().getView().setGeometry(0, g);
+					} else {
+						g.getOrigin().setX(g.getOrigin().getX() + dx);
+						g.getOrigin().setY(g.getOrigin().getY() + dy);
+						c.getAction().getView().setGeometry(0, g);
+					}
+					
+					c.getAction().setGrab(position);
+				}
+				
+				Mouse.setPointerPosition(position);
+				return c.getAction().getView() != null;
 			}
 		});
 

@@ -12,9 +12,11 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.logger_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.output_resolution_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_button_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_movement_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
+import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
 
@@ -89,9 +91,9 @@ public interface WLC extends Library {
 //	/** Scroll event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
 //	void wlc_set_pointer_scroll_cb(bool (*cb)(wlc_handle view, uint32_t time, const struct wlc_modifiers*, uint8_t axis_bits, double amount[2]));
 //
-//	/** Motion event was triggered, view handle will be zero if there was no focus. Apply with wlc_pointer_set_position to agree. Return true to prevent sending the event to clients. */
-//	void wlc_set_pointer_motion_cb(bool (*cb)(wlc_handle view, uint32_t time, const struct wlc_point*));
-//
+	/** Motion event was triggered, view handle will be zero if there was no focus. Apply with wlc_pointer_set_position to agree. Return true to prevent sending the event to clients. */
+	void wlc_set_pointer_motion_cb(pointer_movement_callback cb);
+
 //	/** Touch event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
 //	void wlc_set_touch_cb(bool (*cb)(wlc_handle view, uint32_t time, const struct wlc_modifiers*, enum wlc_touch_type, int32_t slot, const struct wlc_point*));
 //
@@ -360,6 +362,6 @@ public interface WLC extends Library {
 //	/** Get current pointer position. */
 //	void wlc_pointer_get_position(struct wlc_point *out_position);
 //
-//	/** Set current pointer position. */
-//	void wlc_pointer_set_position(const struct wlc_point *position);
+	/** Set current pointer position. */
+	void wlc_pointer_set_position(wlc_point position);
 }

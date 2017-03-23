@@ -49,4 +49,8 @@ public class Callbacks {
 	public interface pointer_button_callback extends Callback {
 		boolean callback(Pointer handle, int time, wlc_modifiers mods, int button, int buttonState, wlc_point point);
 	}
+	
+	public interface pointer_movement_callback extends Callback {
+		boolean callback(Pointer handle, int time, wlc_point point);
+	}
 }
