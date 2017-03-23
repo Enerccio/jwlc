@@ -65,7 +65,8 @@ public class Modifiers {
 	}
 
 	public static Modifiers from(wlc_modifiers mods) {
-		if (mods == null) return null;
+		if (mods == null)
+			return null;
 		return new Modifiers(mods.leds, mods.mods);
 	}
 

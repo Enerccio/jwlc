@@ -28,5 +28,5 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 public interface ViewPropertiesUpdatedCallback {
 
 	public void onPropertiesUpdated(View view, long mask);
-	
+
 }

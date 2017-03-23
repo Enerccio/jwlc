@@ -26,19 +26,19 @@ package cz.upol.inf.vanusanik.jwlc.wlc;
 import com.sun.jna.Pointer;
 
 public class WLCHandle {
-	
+
 	private final Pointer handle;
-	
+
 	protected WLCHandle(Pointer handle) {
 		this.handle = handle;
 	}
-	
+
 	public static WLCHandle from(Pointer handle) {
 		if (handle == null)
 			return null;
 		return new WLCHandle(handle);
 	}
-	
+
 	public Pointer to() {
 		return handle;
 	}
@@ -46,7 +46,7 @@ public class WLCHandle {
 	public Pointer getHandle() {
 		return handle;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -76,5 +76,5 @@ public class WLCHandle {
 	public String toString() {
 		return "WLCHandle [handle=" + handle + "]";
 	}
-	
+
 }

@@ -27,7 +27,7 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Point;
 import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 public interface PointerMotionCallback {
-	
+
 	public boolean onMotion(View view, long time, Point position);
 
 }

@@ -120,7 +120,8 @@ public class Size {
 	}
 
 	public static Size from(wlc_size size) {
-		if (size == null) return null;
+		if (size == null)
+			return null;
 		return Size.of(size.w, size.h);
 	}
 

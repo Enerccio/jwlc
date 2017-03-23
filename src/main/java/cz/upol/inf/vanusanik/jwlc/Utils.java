@@ -27,27 +27,29 @@ public class Utils {
 
 	/**
 	 * Converts from int to unsigned int stored in long
+	 * 
 	 * @param x
 	 * @return
 	 */
 	public static long getUnsignedInt(int x) {
-	    return Integer.toUnsignedLong(x);
+		return Integer.toUnsignedLong(x);
 	}
-	
+
 	/**
 	 * Converts from unsigned int stored in long to unsigned int stored in int
+	 * 
 	 * @param x
 	 * @return
 	 */
 	public static int getAsUnsignedInt(long x) {
-		return (int)(x & 0xffffffffL);
+		return (int) (x & 0xffffffffL);
 	}
 
 	public static short getUnsignedByte(byte x) {
-		 return (short)Byte.toUnsignedInt(x);
+		return (short) Byte.toUnsignedInt(x);
 	}
-	
+
 	public static byte getAsUnsignedByte(short x) {
-		return (byte)(x & 0xff);
+		return (byte) (x & 0xff);
 	}
 }

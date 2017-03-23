@@ -29,5 +29,5 @@ import cz.upol.inf.vanusanik.jwlc.wlc.Output;
 public interface OutputResolutionCallback {
 
 	public void onResolution(Output handle, Size fromSize, Size toSize);
-	
+
 }

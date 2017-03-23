@@ -28,5 +28,5 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 public interface ViewPostRenderCallback {
 
 	public void onPostRender(View view);
-	
+
 }

@@ -32,21 +32,24 @@ public class LinuxInput {
 	public static final long INPUT_PROP_POINTER = 0x00 /* needs a pointer */;
 	public static final long INPUT_PROP_DIRECT = 0x01 /* direct input devices */;
 	public static final long INPUT_PROP_BUTTONPAD = 0x02 /*
-														 * has button(s) under
-														 * pad
+															 * has button(s)
+															 * under pad
+															 */;
+	public static final long INPUT_PROP_SEMI_MT = 0x03 /*
+														 * touch rectangle only
 														 */;
-	public static final long INPUT_PROP_SEMI_MT = 0x03 /* touch rectangle only */;
 	public static final long INPUT_PROP_TOPBUTTONPAD = 0x04 /*
-															 * softbuttons at top
-															 * of pad
+															 * softbuttons at
+															 * top of pad
 															 */;
 	public static final long INPUT_PROP_POINTING_STICK = 0x05 /*
 																 * is a pointing
 																 * stick
 																 */;
 	public static final long INPUT_PROP_ACCELEROMETER = 0x06 /*
-															 * has accelerometer
-															 */;
+																 * has
+																 * accelerometer
+																 */;
 
 	public static final long INPUT_PROP_MAX = 0x1f;
 	public static final long INPUT_PROP_CNT = (INPUT_PROP_MAX + 1);
@@ -247,8 +250,8 @@ public class LinuxInput {
 	public static final long KEY_COFFEE = 152 /* AL Terminal Lock/Screensaver */;
 	public static final long KEY_SCREENLOCK = KEY_COFFEE;
 	public static final long KEY_ROTATE_DISPLAY = 153 /*
-														 * Display orientation for
-														 * e.g. tablets
+														 * Display orientation
+														 * for e.g. tablets
 														 */;
 	public static final long KEY_DIRECTION = KEY_ROTATE_DISPLAY;
 	public static final long KEY_CYCLEWINDOWS = 154;
@@ -352,7 +355,8 @@ public class LinuxInput {
 
 	public static final long KEY_VIDEO_NEXT = 241 /* drive next video source */;
 	public static final long KEY_VIDEO_PREV = 242 /*
-													 * drive previous video source
+													 * drive previous video
+													 * source
 													 */;
 	public static final long KEY_BRIGHTNESS_CYCLE = 243 /*
 														 * brightness up, after
@@ -366,7 +370,8 @@ public class LinuxInput {
 														 */
 	public static final long KEY_BRIGHTNESS_ZERO = KEY_BRIGHTNESS_AUTO;
 	public static final long KEY_DISPLAY_OFF = 245 /*
-													 * display device to off state
+													 * display device to off
+													 * state
 													 */;
 
 	public static final long KEY_WWAN = 246 /*
@@ -376,7 +381,9 @@ public class LinuxInput {
 	public static final long KEY_WIMAX = KEY_WWAN;
 	public static final long KEY_RFKILL = 247 /* Key that controls all radios */;
 
-	public static final long KEY_MICMUTE = 248 /* Mute / unmute the microphone */;
+	public static final long KEY_MICMUTE = 248 /*
+												 * Mute / unmute the microphone
+												 */;
 
 	/* Code 255 is reserved for special needs of AT keyboard driver */
 
@@ -457,7 +464,8 @@ public class LinuxInput {
 	public static final long BTN_TOOL_DOUBLETAP = 0x14d;
 	public static final long BTN_TOOL_TRIPLETAP = 0x14e;
 	public static final long BTN_TOOL_QUADTAP = 0x14f /*
-														 * Four fingers on trackpad
+														 * Four fingers on
+														 * trackpad
 														 */;
 
 	public static final long BTN_WHEEL = 0x150;
@@ -470,11 +478,15 @@ public class LinuxInput {
 	public static final long KEY_CLEAR = 0x163;
 	public static final long KEY_POWER2 = 0x164;
 	public static final long KEY_OPTION = 0x165;
-	public static final long KEY_INFO = 0x166 /* AL OEM Features/Tips/Tutorial */;
+	public static final long KEY_INFO = 0x166 /*
+												 * AL OEM Features/Tips/Tutorial
+												 */;
 	public static final long KEY_TIME = 0x167;
 	public static final long KEY_VENDOR = 0x168;
 	public static final long KEY_ARCHIVE = 0x169;
-	public static final long KEY_PROGRAM = 0x16a /* Media Select Program Guide */;
+	public static final long KEY_PROGRAM = 0x16a /*
+													 * Media Select Program Guide
+													 */;
 	public static final long KEY_CHANNEL = 0x16b;
 	public static final long KEY_FAVORITES = 0x16c;
 	public static final long KEY_EPG = 0x16d;
@@ -544,8 +556,9 @@ public class LinuxInput {
 	public static final long KEY_NEWS = 0x1ab /* AL Newsreader */;
 	public static final long KEY_VOICEMAIL = 0x1ac /* AL Voicemail */;
 	public static final long KEY_ADDRESSBOOK = 0x1ad /*
-													 * AL Contacts/Address Book
-													 */;
+														 * AL Contacts/Address
+														 * Book
+														 */;
 	public static final long KEY_MESSENGER = 0x1ae /* AL Instant Messaging */;
 	public static final long KEY_DISPLAYTOGGLE = 0x1af /*
 														 * Turn display (LCD) on
@@ -564,8 +577,8 @@ public class LinuxInput {
 													 */;
 	public static final long KEY_FRAMEFORWARD = 0x1b5;
 	public static final long KEY_CONTEXT_MENU = 0x1b6 /*
-														 * GenDesc - system context
-														 * menu
+														 * GenDesc - system
+														 * context menu
 														 */;
 	public static final long KEY_MEDIA_REPEAT = 0x1b7 /*
 														 * Consumer - transport
@@ -573,7 +586,8 @@ public class LinuxInput {
 														 */;
 	public static final long KEY_10CHANNELSUP = 0x1b8 /* 10 channels up (10+) */;
 	public static final long KEY_10CHANNELSDOWN = 0x1b9 /*
-														 * 10 channels down (10-)
+														 * 10 channels down
+														 * (10-)
 														 */;
 	public static final long KEY_IMAGES = 0x1ba /* AL Image Browser */;
 
@@ -631,8 +645,8 @@ public class LinuxInput {
 	public static final long KEY_NUMERIC_STAR = 0x20a;
 	public static final long KEY_NUMERIC_POUND = 0x20b;
 	public static final long KEY_NUMERIC_A = 0x20c /*
-													 * Phone key A - HUT Telephony
-													 * = 0xb9
+													 * Phone key A - HUT
+													 * Telephony = 0xb9
 													 */;
 	public static final long KEY_NUMERIC_B = 0x20d;
 	public static final long KEY_NUMERIC_C = 0x20e;
@@ -644,9 +658,10 @@ public class LinuxInput {
 													 */;
 
 	public static final long KEY_TOUCHPAD_TOGGLE = 0x212 /*
-														 * Request switch
-														 * touchpad on or off
-														 */;
+															 * Request switch
+															 * touchpad on or
+															 * off
+															 */;
 	public static final long KEY_TOUCHPAD_ON = 0x213;
 	public static final long KEY_TOUCHPAD_OFF = 0x214;
 
@@ -660,11 +675,12 @@ public class LinuxInput {
 	public static final long KEY_ATTENDANT_ON = 0x21b;
 	public static final long KEY_ATTENDANT_OFF = 0x21c;
 	public static final long KEY_ATTENDANT_TOGGLE = 0x21d /*
-															 * Attendant call on or
-															 * off
+															 * Attendant call on
+															 * or off
 															 */;
 	public static final long KEY_LIGHTS_TOGGLE = 0x21e /*
-														 * Reading light on or off
+														 * Reading light on or
+														 * off
 														 */;
 
 	public static final long BTN_DPAD_UP = 0x220;
@@ -675,19 +691,23 @@ public class LinuxInput {
 	public static final long KEY_ALS_TOGGLE = 0x230 /* Ambient light sensor */;
 
 	public static final long KEY_BUTTONCONFIG = 0x240 /*
-														 * AL Button Configuration
+														 * AL Button
+														 * Configuration
 														 */;
 	public static final long KEY_TASKMANAGER = 0x241 /*
-													 * AL Task/Project Manager
-													 */;
+														 * AL Task/Project
+														 * Manager
+														 */;
 	public static final long KEY_JOURNAL = 0x242 /* AL Log/Journal/Timecard */;
 	public static final long KEY_CONTROLPANEL = 0x243 /* AL Control Panel */;
 	public static final long KEY_APPSELECT = 0x244 /*
-													 * AL Select Task/Application
+													 * AL Select
+													 * Task/Application
 													 */;
 	public static final long KEY_SCREENSAVER = 0x245 /* AL Screen Saver */;
 	public static final long KEY_VOICECOMMAND = 0x246 /*
-														 * Listening Voice Command
+														 * Listening Voice
+														 * Command
 														 */;
 
 	public static final long KEY_BRIGHTNESS_MIN = 0x250 /*
@@ -836,8 +856,8 @@ public class LinuxInput {
 
 	public static final long ABS_MT_SLOT = 0x2f /* MT slot being modified */;
 	public static final long ABS_MT_TOUCH_MAJOR = 0x30 /*
-														 * Major axis of touching
-														 * ellipse
+														 * Major axis of
+														 * touching ellipse
 														 */;
 	public static final long ABS_MT_TOUCH_MINOR = 0x31 /*
 														 * Minor axis (omit if
@@ -853,21 +873,24 @@ public class LinuxInput {
 														 */;
 	public static final long ABS_MT_ORIENTATION = 0x34 /* Ellipse orientation */;
 	public static final long ABS_MT_POSITION_X = 0x35 /*
-														 * Center X touch position
+														 * Center X touch
+														 * position
 														 */;
 	public static final long ABS_MT_POSITION_Y = 0x36 /*
-														 * Center Y touch position
+														 * Center Y touch
+														 * position
 														 */;
 	public static final long ABS_MT_TOOL_TYPE = 0x37 /*
-													 * Type of touching device
-													 */;
+														 * Type of touching
+														 * device
+														 */;
 	public static final long ABS_MT_BLOB_ID = 0x38 /*
-													 * Group a set of packets as a
-													 * blob
+													 * Group a set of packets as
+													 * a blob
 													 */;
 	public static final long ABS_MT_TRACKING_ID = 0x39 /*
-														 * Unique ID of initiated
-														 * contact
+														 * Unique ID of
+														 * initiated contact
 														 */;
 	public static final long ABS_MT_PRESSURE = 0x3a /*
 													 * Pressure on contact area
@@ -900,7 +923,9 @@ public class LinuxInput {
 															 * switch set
 															 */;
 	public static final long SW_VIDEOOUT_INSERT = 0x08 /* set = inserted */;
-	public static final long SW_CAMERA_LENS_COVER = 0x09 /* set = lens covered */;
+	public static final long SW_CAMERA_LENS_COVER = 0x09 /*
+															 * set = lens covered
+															 */;
 	public static final long SW_KEYPAD_SLIDE = 0x0a /* set = keypad slide out */;
 	public static final long SW_FRONT_PROXIMITY = 0x0b /*
 														 * set = front proximity

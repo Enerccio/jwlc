@@ -33,6 +33,7 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
 
 /**
  * Wraps wlc_geometry in java wrapper.
+ * 
  * @author pvan
  *
  */
@@ -44,7 +45,7 @@ public class Geometry {
 	public Geometry() {
 
 	}
-	
+
 	public Geometry(Geometry other) {
 		this.origin = Point.of(other.origin.getX(), other.origin.getY());
 		this.size = Size.of(other.size.getW(), other.size.getH());
@@ -61,12 +62,15 @@ public class Geometry {
 	}
 
 	public static Geometry from(wlc_geometry geo) {
-		if (geo == null) return null;
+		if (geo == null)
+			return null;
 		return new Geometry(geo.origin.x, geo.origin.y, geo.size.w, geo.size.h);
 	}
-	
+
 	/**
-	 * Applies the values from wlc_geometry to this object, used when original has byref call
+	 * Applies the values from wlc_geometry to this object, used when original
+	 * has byref call
+	 * 
 	 * @param geo
 	 */
 	public void reset(wlc_geometry geo) {
@@ -78,6 +82,7 @@ public class Geometry {
 
 	/**
 	 * Converts to jna structure.
+	 * 
 	 * @return
 	 */
 	public wlc_geometry to() {

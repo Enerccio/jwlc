@@ -29,8 +29,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.TouchType;
 import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 public interface PointerTouchCallback {
-	
-	public boolean onTouch(View view, long time, Modifiers modifiers, TouchType type, 
-			int slot, Point position);
+
+	public boolean onTouch(View view, long time, Modifiers modifiers, TouchType type, int slot, Point position);
 
 }

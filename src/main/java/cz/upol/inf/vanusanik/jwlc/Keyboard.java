@@ -34,46 +34,49 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.KeyboardCallback;
 
 /**
  * libwlc keyboard related functions/callbacks
+ * 
  * @author pvan
  *
  */
 public class Keyboard {
-	
+
 	/**
 	 * Sets the keyboard key callback
+	 * 
 	 * @param cb
 	 */
 	public static void setKeyboardCallback(final KeyboardCallback cb) {
 		Assert.assertNotNull(cb);
-		
+
 		JWLC.nativeHandler().wlc_set_keyboard_key_cb(new keyboard_callback() {
-			
+
 			public boolean callback(Pointer handle, int time, wlc_modifiers mods, int key, int keyState) {
-				return cb.onKeyboard(View.from(handle), 
-						Utils.getUnsignedInt(time), Modifiers.from(mods), 
+				return cb.onKeyboard(View.from(handle), Utils.getUnsignedInt(time), Modifiers.from(mods),
 						Utils.getUnsignedInt(key), KeyState.from(keyState));
 			}
 
 		});
 	}
-	
+
 	/**
-	 * Utility method to convert raw keycode to keysym. Passed modifiers may transform the key.
+	 * Utility method to convert raw keycode to keysym. Passed modifiers may
+	 * transform the key.
+	 * 
 	 * @param key
 	 * @param modifiers
 	 * @return symkey
 	 */
 	public static long getSymkeyForKey(long key, Modifiers modifiers) {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_keyboard_get_keysym_for_key(Utils.getAsUnsignedInt(key), 
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_keyboard_get_keysym_for_key(Utils.getAsUnsignedInt(key),
 				modifiers == null ? null : modifiers.to()));
 	}
 
-	 long getUtf32CharacterForKey(long key, Modifiers modifiers) {
-		 return Utils.getUnsignedInt(JWLC.nativeHandler()
-				 .wlc_keyboard_get_utf32_for_key(Utils.getAsUnsignedInt(key), modifiers.to()));
-	 }
-	 
-	 char[] getUtf32CharsForKey(long key, Modifiers modifiers) {
-		 return Character.toChars(Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
-	 }
+	public static long getUtf32CharacterForKey(long key, Modifiers modifiers) {
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_keyboard_get_utf32_for_key(Utils.getAsUnsignedInt(key), modifiers.to()));
+	}
+
+	public static char[] getUtf32CharsForKey(long key, Modifiers modifiers) {
+		return Character.toChars(Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
+	}
 }

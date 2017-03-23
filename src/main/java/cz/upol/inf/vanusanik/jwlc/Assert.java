@@ -25,15 +25,19 @@ package cz.upol.inf.vanusanik.jwlc;
 
 /**
  * Quick null check assert class.
+ * 
  * @author pvan
  *
  */
 public class Assert {
-	
+
 	/**
 	 * Fails when object is null
-	 * @param o test object
-	 * @throws NullPointerException when object is null
+	 * 
+	 * @param o
+	 *            test object
+	 * @throws NullPointerException
+	 *             when object is null
 	 */
 	public static void assertNotNull(Object o) {
 		if (o == null)

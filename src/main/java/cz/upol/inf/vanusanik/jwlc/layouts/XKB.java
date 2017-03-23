@@ -71,20 +71,24 @@ public class XKB {
 	public static final long XKB_KEY_Zenkaku = 0xff28 /* to Zenkaku */;
 	public static final long XKB_KEY_Hankaku = 0xff29 /* to Hankaku */;
 	public static final long XKB_KEY_Zenkaku_Hankaku = 0xff2a /*
-																 * Zenkaku/Hankaku
+																 * Zenkaku/
+																 * Hankaku
 																 * toggle
 																 */;
 	public static final long XKB_KEY_Touroku = 0xff2b /* Add to Dictionary */;
 	public static final long XKB_KEY_Massyo = 0xff2c /*
-														 * Delete from Dictionary
+														 * Delete from
+														 * Dictionary
 														 */;
 	public static final long XKB_KEY_Kana_Lock = 0xff2d /* Kana Lock */;
 	public static final long XKB_KEY_Kana_Shift = 0xff2e /* Kana Shift */;
 	public static final long XKB_KEY_Eisu_Shift = 0xff2f /*
-															 * Alphanumeric Shift
+															 * Alphanumeric
+															 * Shift
 															 */;
 	public static final long XKB_KEY_Eisu_toggle = 0xff30 /*
-															 * Alphanumeric toggle
+															 * Alphanumeric
+															 * toggle
 															 */;
 	public static final long XKB_KEY_Kanji_Bangou = 0xff37 /* Codeinput */;
 	public static final long XKB_KEY_Zen_Koho = 0xff3d /*
@@ -485,13 +489,15 @@ public class XKB {
 	 */
 	public static final long XKB_KEY_space = 0x0020 /* U+0020 SPACE */;
 	public static final long XKB_KEY_exclam = 0x0021 /*
-														 * U+0021 EXCLAMATION MARK
+														 * U+0021 EXCLAMATION
+														 * MARK
 														 */;
 	public static final long XKB_KEY_quotedbl = 0x0022 /*
 														 * U+0022 QUOTATION MARK
 														 */;
 	public static final long XKB_KEY_numbersign = 0x0023 /*
-															 * U+0023 NUMBER SIGN
+															 * U+0023 NUMBER
+															 * SIGN
 															 */;
 	public static final long XKB_KEY_dollar = 0x0024 /* U+0024 DOLLAR SIGN */;
 	public static final long XKB_KEY_percent = 0x0025 /* U+0025 PERCENT SIGN */;
@@ -613,8 +619,8 @@ public class XKB {
 												 * U+005A LATIN CAPITAL LETTER Z
 												 */;
 	public static final long XKB_KEY_bracketleft = 0x005b /*
-															 * U+005B LEFT SQUARE
-															 * BRACKET
+															 * U+005B LEFT
+															 * SQUARE BRACKET
 															 */;
 	public static final long XKB_KEY_backslash = 0x005c /*
 														 * U+005C REVERSE
@@ -715,8 +721,8 @@ public class XKB {
 														 */;
 	public static final long XKB_KEY_bar = 0x007c /* U+007C VERTICAL LINE */;
 	public static final long XKB_KEY_braceright = 0x007d /*
-															 * U+007D RIGHT CURLY
-															 * BRACKET
+															 * U+007D RIGHT
+															 * CURLY BRACKET
 															 */;
 	public static final long XKB_KEY_asciitilde = 0x007e /* U+007E TILDE */;
 
@@ -763,8 +769,8 @@ public class XKB {
 														 * SIGN
 														 */;
 	public static final long XKB_KEY_twosuperior = 0x00b2 /*
-															 * U+00B2 SUPERSCRIPT
-															 * TWO
+															 * U+00B2
+															 * SUPERSCRIPT TWO
 															 */;
 	public static final long XKB_KEY_threesuperior = 0x00b3 /*
 															 * U+00B3
@@ -781,8 +787,8 @@ public class XKB {
 																 */;
 	public static final long XKB_KEY_cedilla = 0x00b8 /* U+00B8 CEDILLA */;
 	public static final long XKB_KEY_onesuperior = 0x00b9 /*
-															 * U+00B9 SUPERSCRIPT
-															 * ONE
+															 * U+00B9
+															 * SUPERSCRIPT ONE
 															 */;
 	public static final long XKB_KEY_masculine = 0x00ba /*
 														 * U+00BA MASCULINE
@@ -801,8 +807,8 @@ public class XKB {
 															 * QUARTER
 															 */;
 	public static final long XKB_KEY_onehalf = 0x00bd /*
-														 * U+00BD VULGAR FRACTION
-														 * ONE HALF
+														 * U+00BD VULGAR
+														 * FRACTION ONE HALF
 														 */;
 	public static final long XKB_KEY_threequarters = 0x00be /*
 															 * U+00BE VULGAR
@@ -831,17 +837,17 @@ public class XKB {
 														 * LETTER A WITH TILDE
 														 */;
 	public static final long XKB_KEY_Adiaeresis = 0x00c4 /*
-															 * U+00C4 LATIN CAPITAL
-															 * LETTER A WITH
-															 * DIAERESIS
+															 * U+00C4 LATIN
+															 * CAPITAL LETTER A
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_Aring = 0x00c5 /*
 													 * U+00C5 LATIN CAPITAL
 													 * LETTER A WITH RING ABOVE
 													 */;
 	public static final long XKB_KEY_AE = 0x00c6 /*
-													 * U+00C6 LATIN CAPITAL LETTER
-													 * AE
+													 * U+00C6 LATIN CAPITAL
+													 * LETTER AE
 													 */;
 	public static final long XKB_KEY_Ccedilla = 0x00c7 /*
 														 * U+00C7 LATIN CAPITAL
@@ -861,9 +867,9 @@ public class XKB {
 															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_Ediaeresis = 0x00cb /*
-															 * U+00CB LATIN CAPITAL
-															 * LETTER E WITH
-															 * DIAERESIS
+															 * U+00CB LATIN
+															 * CAPITAL LETTER E
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_Igrave = 0x00cc /*
 														 * U+00CC LATIN CAPITAL
@@ -879,13 +885,13 @@ public class XKB {
 															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_Idiaeresis = 0x00cf /*
-															 * U+00CF LATIN CAPITAL
-															 * LETTER I WITH
-															 * DIAERESIS
+															 * U+00CF LATIN
+															 * CAPITAL LETTER I
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_ETH = 0x00d0 /*
-													 * U+00D0 LATIN CAPITAL LETTER
-													 * ETH
+													 * U+00D0 LATIN CAPITAL
+													 * LETTER ETH
 													 */;
 	public static final long XKB_KEY_Eth = 0x00d0 /* deprecated */;
 	public static final long XKB_KEY_Ntilde = 0x00d1 /*
@@ -910,9 +916,9 @@ public class XKB {
 														 * LETTER O WITH TILDE
 														 */;
 	public static final long XKB_KEY_Odiaeresis = 0x00d6 /*
-															 * U+00D6 LATIN CAPITAL
-															 * LETTER O WITH
-															 * DIAERESIS
+															 * U+00D6 LATIN
+															 * CAPITAL LETTER O
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_multiply = 0x00d7 /*
 														 * U+00D7 MULTIPLICATION
@@ -940,9 +946,9 @@ public class XKB {
 															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_Udiaeresis = 0x00dc /*
-															 * U+00DC LATIN CAPITAL
-															 * LETTER U WITH
-															 * DIAERESIS
+															 * U+00DC LATIN
+															 * CAPITAL LETTER U
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_Yacute = 0x00dd /*
 														 * U+00DD LATIN CAPITAL
@@ -966,25 +972,26 @@ public class XKB {
 														 * LETTER A WITH ACUTE
 														 */;
 	public static final long XKB_KEY_acircumflex = 0x00e2 /*
-															 * U+00E2 LATIN SMALL
-															 * LETTER A WITH
-															 * CIRCUMFLEX
+															 * U+00E2 LATIN
+															 * SMALL LETTER A
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_atilde = 0x00e3 /*
 														 * U+00E3 LATIN SMALL
 														 * LETTER A WITH TILDE
 														 */;
 	public static final long XKB_KEY_adiaeresis = 0x00e4 /*
-															 * U+00E4 LATIN SMALL
-															 * LETTER A WITH
-															 * DIAERESIS
+															 * U+00E4 LATIN
+															 * SMALL LETTER A
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_aring = 0x00e5 /*
 													 * U+00E5 LATIN SMALL LETTER
 													 * A WITH RING ABOVE
 													 */;
 	public static final long XKB_KEY_ae = 0x00e6 /*
-													 * U+00E6 LATIN SMALL LETTER AE
+													 * U+00E6 LATIN SMALL LETTER
+													 * AE
 													 */;
 	public static final long XKB_KEY_ccedilla = 0x00e7 /*
 														 * U+00E7 LATIN SMALL
@@ -999,14 +1006,14 @@ public class XKB {
 														 * LETTER E WITH ACUTE
 														 */;
 	public static final long XKB_KEY_ecircumflex = 0x00ea /*
-															 * U+00EA LATIN SMALL
-															 * LETTER E WITH
-															 * CIRCUMFLEX
+															 * U+00EA LATIN
+															 * SMALL LETTER E
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_ediaeresis = 0x00eb /*
-															 * U+00EB LATIN SMALL
-															 * LETTER E WITH
-															 * DIAERESIS
+															 * U+00EB LATIN
+															 * SMALL LETTER E
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_igrave = 0x00ec /*
 														 * U+00EC LATIN SMALL
@@ -1017,14 +1024,14 @@ public class XKB {
 														 * LETTER I WITH ACUTE
 														 */;
 	public static final long XKB_KEY_icircumflex = 0x00ee /*
-															 * U+00EE LATIN SMALL
-															 * LETTER I WITH
-															 * CIRCUMFLEX
+															 * U+00EE LATIN
+															 * SMALL LETTER I
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_idiaeresis = 0x00ef /*
-															 * U+00EF LATIN SMALL
-															 * LETTER I WITH
-															 * DIAERESIS
+															 * U+00EF LATIN
+															 * SMALL LETTER I
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_eth = 0x00f0 /*
 													 * U+00F0 LATIN SMALL LETTER
@@ -1043,18 +1050,18 @@ public class XKB {
 														 * LETTER O WITH ACUTE
 														 */;
 	public static final long XKB_KEY_ocircumflex = 0x00f4 /*
-															 * U+00F4 LATIN SMALL
-															 * LETTER O WITH
-															 * CIRCUMFLEX
+															 * U+00F4 LATIN
+															 * SMALL LETTER O
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_otilde = 0x00f5 /*
 														 * U+00F5 LATIN SMALL
 														 * LETTER O WITH TILDE
 														 */;
 	public static final long XKB_KEY_odiaeresis = 0x00f6 /*
-															 * U+00F6 LATIN SMALL
-															 * LETTER O WITH
-															 * DIAERESIS
+															 * U+00F6 LATIN
+															 * SMALL LETTER O
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_division = 0x00f7 /*
 														 * U+00F7 DIVISION SIGN
@@ -1076,14 +1083,14 @@ public class XKB {
 														 * LETTER U WITH ACUTE
 														 */;
 	public static final long XKB_KEY_ucircumflex = 0x00fb /*
-															 * U+00FB LATIN SMALL
-															 * LETTER U WITH
-															 * CIRCUMFLEX
+															 * U+00FB LATIN
+															 * SMALL LETTER U
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_udiaeresis = 0x00fc /*
-															 * U+00FC LATIN SMALL
-															 * LETTER U WITH
-															 * DIAERESIS
+															 * U+00FC LATIN
+															 * SMALL LETTER U
+															 * WITH DIAERESIS
 															 */;
 	public static final long XKB_KEY_yacute = 0x00fd /*
 														 * U+00FD LATIN SMALL
@@ -1094,9 +1101,9 @@ public class XKB {
 													 * THORN
 													 */;
 	public static final long XKB_KEY_ydiaeresis = 0x00ff /*
-															 * U+00FF LATIN SMALL
-															 * LETTER Y WITH
-															 * DIAERESIS
+															 * U+00FF LATIN
+															 * SMALL LETTER Y
+															 * WITH DIAERESIS
 															 */;
 
 	/*
@@ -1180,8 +1187,8 @@ public class XKB {
 														 * LETTER Z WITH ACUTE
 														 */;
 	public static final long XKB_KEY_doubleacute = 0x01bd /*
-															 * U+02DD DOUBLE ACUTE
-															 * ACCENT
+															 * U+02DD DOUBLE
+															 * ACUTE ACCENT
 															 */;
 	public static final long XKB_KEY_zcaron = 0x01be /*
 														 * U+017E LATIN SMALL
@@ -1303,9 +1310,9 @@ public class XKB {
 														 * LETTER N WITH CARON
 														 */;
 	public static final long XKB_KEY_odoubleacute = 0x01f5 /*
-															 * U+0151 LATIN SMALL
-															 * LETTER O WITH
-															 * DOUBLE ACUTE
+															 * U+0151 LATIN
+															 * SMALL LETTER O
+															 * WITH DOUBLE ACUTE
 															 */;
 	public static final long XKB_KEY_rcaron = 0x01f8 /*
 														 * U+0159 LATIN SMALL
@@ -1316,9 +1323,9 @@ public class XKB {
 													 * U WITH RING ABOVE
 													 */;
 	public static final long XKB_KEY_udoubleacute = 0x01fb /*
-															 * U+0171 LATIN SMALL
-															 * LETTER U WITH
-															 * DOUBLE ACUTE
+															 * U+0171 LATIN
+															 * SMALL LETTER U
+															 * WITH DOUBLE ACUTE
 															 */;
 	public static final long XKB_KEY_tcedilla = 0x01fe /*
 														 * U+0163 LATIN SMALL
@@ -1358,9 +1365,9 @@ public class XKB {
 														 * LETTER H WITH STROKE
 														 */;
 	public static final long XKB_KEY_hcircumflex = 0x02b6 /*
-															 * U+0125 LATIN SMALL
-															 * LETTER H WITH
-															 * CIRCUMFLEX
+															 * U+0125 LATIN
+															 * SMALL LETTER H
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_idotless = 0x02b9 /*
 														 * U+0131 LATIN SMALL
@@ -1371,9 +1378,9 @@ public class XKB {
 														 * LETTER G WITH BREVE
 														 */;
 	public static final long XKB_KEY_jcircumflex = 0x02bc /*
-															 * U+0135 LATIN SMALL
-															 * LETTER J WITH
-															 * CIRCUMFLEX
+															 * U+0135 LATIN
+															 * SMALL LETTER J
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_Cabovedot = 0x02c5 /*
 														 * U+010A LATIN CAPITAL
@@ -1410,9 +1417,9 @@ public class XKB {
 														 * ABOVE
 														 */;
 	public static final long XKB_KEY_ccircumflex = 0x02e6 /*
-															 * U+0109 LATIN SMALL
-															 * LETTER C WITH
-															 * CIRCUMFLEX
+															 * U+0109 LATIN
+															 * SMALL LETTER C
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_gabovedot = 0x02f5 /*
 														 * U+0121 LATIN SMALL
@@ -1420,18 +1427,18 @@ public class XKB {
 														 * ABOVE
 														 */;
 	public static final long XKB_KEY_gcircumflex = 0x02f8 /*
-															 * U+011D LATIN SMALL
-															 * LETTER G WITH
-															 * CIRCUMFLEX
+															 * U+011D LATIN
+															 * SMALL LETTER G
+															 * WITH CIRCUMFLEX
 															 */;
 	public static final long XKB_KEY_ubreve = 0x02fd /*
 														 * U+016D LATIN SMALL
 														 * LETTER U WITH BREVE
 														 */;
 	public static final long XKB_KEY_scircumflex = 0x02fe /*
-															 * U+015D LATIN SMALL
-															 * LETTER S WITH
-															 * CIRCUMFLEX
+															 * U+015D LATIN
+															 * SMALL LETTER S
+															 * WITH CIRCUMFLEX
 															 */;
 
 	/*
@@ -1492,8 +1499,8 @@ public class XKB {
 														 * LETTER T WITH STROKE
 														 */;
 	public static final long XKB_KEY_ENG = 0x03bd /*
-													 * U+014A LATIN CAPITAL LETTER
-													 * ENG
+													 * U+014A LATIN CAPITAL
+													 * LETTER ENG
 													 */;
 	public static final long XKB_KEY_eng = 0x03bf /*
 													 * U+014B LATIN SMALL LETTER
@@ -1615,9 +1622,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_babovedot = 0x1001e03 /*
-															 * U+1E03 LATIN SMALL
-															 * LETTER B WITH DOT
-															 * ABOVE
+															 * U+1E03 LATIN
+															 * SMALL LETTER B
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Dabovedot = 0x1001e0a /*
 															 * U+1E0A LATIN
@@ -1625,9 +1632,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_dabovedot = 0x1001e0b /*
-															 * U+1E0B LATIN SMALL
-															 * LETTER D WITH DOT
-															 * ABOVE
+															 * U+1E0B LATIN
+															 * SMALL LETTER D
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Fabovedot = 0x1001e1e /*
 															 * U+1E1E LATIN
@@ -1635,9 +1642,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_fabovedot = 0x1001e1f /*
-															 * U+1E1F LATIN SMALL
-															 * LETTER F WITH DOT
-															 * ABOVE
+															 * U+1E1F LATIN
+															 * SMALL LETTER F
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Mabovedot = 0x1001e40 /*
 															 * U+1E40 LATIN
@@ -1645,9 +1652,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_mabovedot = 0x1001e41 /*
-															 * U+1E41 LATIN SMALL
-															 * LETTER M WITH DOT
-															 * ABOVE
+															 * U+1E41 LATIN
+															 * SMALL LETTER M
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Pabovedot = 0x1001e56 /*
 															 * U+1E56 LATIN
@@ -1655,9 +1662,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_pabovedot = 0x1001e57 /*
-															 * U+1E57 LATIN SMALL
-															 * LETTER P WITH DOT
-															 * ABOVE
+															 * U+1E57 LATIN
+															 * SMALL LETTER P
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Sabovedot = 0x1001e60 /*
 															 * U+1E60 LATIN
@@ -1665,9 +1672,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_sabovedot = 0x1001e61 /*
-															 * U+1E61 LATIN SMALL
-															 * LETTER S WITH DOT
-															 * ABOVE
+															 * U+1E61 LATIN
+															 * SMALL LETTER S
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Tabovedot = 0x1001e6a /*
 															 * U+1E6A LATIN
@@ -1675,9 +1682,9 @@ public class XKB {
 															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_tabovedot = 0x1001e6b /*
-															 * U+1E6B LATIN SMALL
-															 * LETTER T WITH DOT
-															 * ABOVE
+															 * U+1E6B LATIN
+															 * SMALL LETTER T
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_Wgrave = 0x1001e80 /*
 														 * U+1E80 LATIN CAPITAL
@@ -1723,13 +1730,13 @@ public class XKB {
 													 * LIGATURE OE
 													 */;
 	public static final long XKB_KEY_oe = 0x13bd /*
-													 * U+0153 LATIN SMALL LIGATURE
-													 * OE
+													 * U+0153 LATIN SMALL
+													 * LIGATURE OE
 													 */;
 	public static final long XKB_KEY_Ydiaeresis = 0x13be /*
-															 * U+0178 LATIN CAPITAL
-															 * LETTER Y WITH
-															 * DIAERESIS
+															 * U+0178 LATIN
+															 * CAPITAL LETTER Y
+															 * WITH DIAERESIS
 															 */;
 
 	/*
@@ -1743,7 +1750,8 @@ public class XKB {
 															 * STOP
 															 */;
 	public static final long XKB_KEY_kana_openingbracket = 0x04a2 /*
-																	 * U+300C LEFT
+																	 * U+300C
+																	 * LEFT
 																	 * CORNER
 																	 * BRACKET
 																	 */;
@@ -1754,8 +1762,8 @@ public class XKB {
 																	 * BRACKET
 																	 */;
 	public static final long XKB_KEY_kana_comma = 0x04a4 /*
-															 * U+3001 IDEOGRAPHIC
-															 * COMMA
+															 * U+3001
+															 * IDEOGRAPHIC COMMA
 															 */;
 	public static final long XKB_KEY_kana_conjunctive = 0x04a5 /*
 																 * U+30FB
@@ -1764,228 +1772,235 @@ public class XKB {
 																 */;
 	public static final long XKB_KEY_kana_middledot = 0x04a5 /* deprecated */;
 	public static final long XKB_KEY_kana_WO = 0x04a6 /*
-														 * U+30F2 KATAKANA LETTER
-														 * WO
+														 * U+30F2 KATAKANA
+														 * LETTER WO
 														 */;
 	public static final long XKB_KEY_kana_a = 0x04a7 /*
-														 * U+30A1 KATAKANA LETTER
-														 * SMALL A
+														 * U+30A1 KATAKANA
+														 * LETTER SMALL A
 														 */;
 	public static final long XKB_KEY_kana_i = 0x04a8 /*
-														 * U+30A3 KATAKANA LETTER
-														 * SMALL I
+														 * U+30A3 KATAKANA
+														 * LETTER SMALL I
 														 */;
 	public static final long XKB_KEY_kana_u = 0x04a9 /*
-														 * U+30A5 KATAKANA LETTER
-														 * SMALL U
+														 * U+30A5 KATAKANA
+														 * LETTER SMALL U
 														 */;
 	public static final long XKB_KEY_kana_e = 0x04aa /*
-														 * U+30A7 KATAKANA LETTER
-														 * SMALL E
+														 * U+30A7 KATAKANA
+														 * LETTER SMALL E
 														 */;
 	public static final long XKB_KEY_kana_o = 0x04ab /*
-														 * U+30A9 KATAKANA LETTER
-														 * SMALL O
+														 * U+30A9 KATAKANA
+														 * LETTER SMALL O
 														 */;
 	public static final long XKB_KEY_kana_ya = 0x04ac /*
-														 * U+30E3 KATAKANA LETTER
-														 * SMALL YA
+														 * U+30E3 KATAKANA
+														 * LETTER SMALL YA
 														 */;
 	public static final long XKB_KEY_kana_yu = 0x04ad /*
-														 * U+30E5 KATAKANA LETTER
-														 * SMALL YU
+														 * U+30E5 KATAKANA
+														 * LETTER SMALL YU
 														 */;
 	public static final long XKB_KEY_kana_yo = 0x04ae /*
-														 * U+30E7 KATAKANA LETTER
-														 * SMALL YO
+														 * U+30E7 KATAKANA
+														 * LETTER SMALL YO
 														 */;
 	public static final long XKB_KEY_kana_tsu = 0x04af /*
-														 * U+30C3 KATAKANA LETTER
-														 * SMALL TU
+														 * U+30C3 KATAKANA
+														 * LETTER SMALL TU
 														 */;
 	public static final long XKB_KEY_kana_tu = 0x04af /* deprecated */;
 	public static final long XKB_KEY_prolongedsound = 0x04b0 /*
-																 * U+30FC KATAKANA-
+																 * U+30FC
+																 * KATAKANA-
 																 * HIRAGANA
 																 * PROLONGED
 																 * SOUND MARK
 																 */;
 	public static final long XKB_KEY_kana_A = 0x04b1 /*
-														 * U+30A2 KATAKANA LETTER A
+														 * U+30A2 KATAKANA
+														 * LETTER A
 														 */;
 	public static final long XKB_KEY_kana_I = 0x04b2 /*
-														 * U+30A4 KATAKANA LETTER I
+														 * U+30A4 KATAKANA
+														 * LETTER I
 														 */;
 	public static final long XKB_KEY_kana_U = 0x04b3 /*
-														 * U+30A6 KATAKANA LETTER U
+														 * U+30A6 KATAKANA
+														 * LETTER U
 														 */;
 	public static final long XKB_KEY_kana_E = 0x04b4 /*
-														 * U+30A8 KATAKANA LETTER E
+														 * U+30A8 KATAKANA
+														 * LETTER E
 														 */;
 	public static final long XKB_KEY_kana_O = 0x04b5 /*
-														 * U+30AA KATAKANA LETTER O
+														 * U+30AA KATAKANA
+														 * LETTER O
 														 */;
 	public static final long XKB_KEY_kana_KA = 0x04b6 /*
-														 * U+30AB KATAKANA LETTER
-														 * KA
+														 * U+30AB KATAKANA
+														 * LETTER KA
 														 */;
 	public static final long XKB_KEY_kana_KI = 0x04b7 /*
-														 * U+30AD KATAKANA LETTER
-														 * KI
+														 * U+30AD KATAKANA
+														 * LETTER KI
 														 */;
 	public static final long XKB_KEY_kana_KU = 0x04b8 /*
-														 * U+30AF KATAKANA LETTER
-														 * KU
+														 * U+30AF KATAKANA
+														 * LETTER KU
 														 */;
 	public static final long XKB_KEY_kana_KE = 0x04b9 /*
-														 * U+30B1 KATAKANA LETTER
-														 * KE
+														 * U+30B1 KATAKANA
+														 * LETTER KE
 														 */;
 	public static final long XKB_KEY_kana_KO = 0x04ba /*
-														 * U+30B3 KATAKANA LETTER
-														 * KO
+														 * U+30B3 KATAKANA
+														 * LETTER KO
 														 */;
 	public static final long XKB_KEY_kana_SA = 0x04bb /*
-														 * U+30B5 KATAKANA LETTER
-														 * SA
+														 * U+30B5 KATAKANA
+														 * LETTER SA
 														 */;
 	public static final long XKB_KEY_kana_SHI = 0x04bc /*
-														 * U+30B7 KATAKANA LETTER
-														 * SI
+														 * U+30B7 KATAKANA
+														 * LETTER SI
 														 */;
 	public static final long XKB_KEY_kana_SU = 0x04bd /*
-														 * U+30B9 KATAKANA LETTER
-														 * SU
+														 * U+30B9 KATAKANA
+														 * LETTER SU
 														 */;
 	public static final long XKB_KEY_kana_SE = 0x04be /*
-														 * U+30BB KATAKANA LETTER
-														 * SE
+														 * U+30BB KATAKANA
+														 * LETTER SE
 														 */;
 	public static final long XKB_KEY_kana_SO = 0x04bf /*
-														 * U+30BD KATAKANA LETTER
-														 * SO
+														 * U+30BD KATAKANA
+														 * LETTER SO
 														 */;
 	public static final long XKB_KEY_kana_TA = 0x04c0 /*
-														 * U+30BF KATAKANA LETTER
-														 * TA
+														 * U+30BF KATAKANA
+														 * LETTER TA
 														 */;
 	public static final long XKB_KEY_kana_CHI = 0x04c1 /*
-														 * U+30C1 KATAKANA LETTER
-														 * TI
+														 * U+30C1 KATAKANA
+														 * LETTER TI
 														 */;
 	public static final long XKB_KEY_kana_TI = 0x04c1 /* deprecated */;
 	public static final long XKB_KEY_kana_TSU = 0x04c2 /*
-														 * U+30C4 KATAKANA LETTER
-														 * TU
+														 * U+30C4 KATAKANA
+														 * LETTER TU
 														 */;
 	public static final long XKB_KEY_kana_TU = 0x04c2 /* deprecated */;
 	public static final long XKB_KEY_kana_TE = 0x04c3 /*
-														 * U+30C6 KATAKANA LETTER
-														 * TE
+														 * U+30C6 KATAKANA
+														 * LETTER TE
 														 */;
 	public static final long XKB_KEY_kana_TO = 0x04c4 /*
-														 * U+30C8 KATAKANA LETTER
-														 * TO
+														 * U+30C8 KATAKANA
+														 * LETTER TO
 														 */;
 	public static final long XKB_KEY_kana_NA = 0x04c5 /*
-														 * U+30CA KATAKANA LETTER
-														 * NA
+														 * U+30CA KATAKANA
+														 * LETTER NA
 														 */;
 	public static final long XKB_KEY_kana_NI = 0x04c6 /*
-														 * U+30CB KATAKANA LETTER
-														 * NI
+														 * U+30CB KATAKANA
+														 * LETTER NI
 														 */;
 	public static final long XKB_KEY_kana_NU = 0x04c7 /*
-														 * U+30CC KATAKANA LETTER
-														 * NU
+														 * U+30CC KATAKANA
+														 * LETTER NU
 														 */;
 	public static final long XKB_KEY_kana_NE = 0x04c8 /*
-														 * U+30CD KATAKANA LETTER
-														 * NE
+														 * U+30CD KATAKANA
+														 * LETTER NE
 														 */;
 	public static final long XKB_KEY_kana_NO = 0x04c9 /*
-														 * U+30CE KATAKANA LETTER
-														 * NO
+														 * U+30CE KATAKANA
+														 * LETTER NO
 														 */;
 	public static final long XKB_KEY_kana_HA = 0x04ca /*
-														 * U+30CF KATAKANA LETTER
-														 * HA
+														 * U+30CF KATAKANA
+														 * LETTER HA
 														 */;
 	public static final long XKB_KEY_kana_HI = 0x04cb /*
-														 * U+30D2 KATAKANA LETTER
-														 * HI
+														 * U+30D2 KATAKANA
+														 * LETTER HI
 														 */;
 	public static final long XKB_KEY_kana_FU = 0x04cc /*
-														 * U+30D5 KATAKANA LETTER
-														 * HU
+														 * U+30D5 KATAKANA
+														 * LETTER HU
 														 */;
 	public static final long XKB_KEY_kana_HU = 0x04cc /* deprecated */;
 	public static final long XKB_KEY_kana_HE = 0x04cd /*
-														 * U+30D8 KATAKANA LETTER
-														 * HE
+														 * U+30D8 KATAKANA
+														 * LETTER HE
 														 */;
 	public static final long XKB_KEY_kana_HO = 0x04ce /*
-														 * U+30DB KATAKANA LETTER
-														 * HO
+														 * U+30DB KATAKANA
+														 * LETTER HO
 														 */;
 	public static final long XKB_KEY_kana_MA = 0x04cf /*
-														 * U+30DE KATAKANA LETTER
-														 * MA
+														 * U+30DE KATAKANA
+														 * LETTER MA
 														 */;
 	public static final long XKB_KEY_kana_MI = 0x04d0 /*
-														 * U+30DF KATAKANA LETTER
-														 * MI
+														 * U+30DF KATAKANA
+														 * LETTER MI
 														 */;
 	public static final long XKB_KEY_kana_MU = 0x04d1 /*
-														 * U+30E0 KATAKANA LETTER
-														 * MU
+														 * U+30E0 KATAKANA
+														 * LETTER MU
 														 */;
 	public static final long XKB_KEY_kana_ME = 0x04d2 /*
-														 * U+30E1 KATAKANA LETTER
-														 * ME
+														 * U+30E1 KATAKANA
+														 * LETTER ME
 														 */;
 	public static final long XKB_KEY_kana_MO = 0x04d3 /*
-														 * U+30E2 KATAKANA LETTER
-														 * MO
+														 * U+30E2 KATAKANA
+														 * LETTER MO
 														 */;
 	public static final long XKB_KEY_kana_YA = 0x04d4 /*
-														 * U+30E4 KATAKANA LETTER
-														 * YA
+														 * U+30E4 KATAKANA
+														 * LETTER YA
 														 */;
 	public static final long XKB_KEY_kana_YU = 0x04d5 /*
-														 * U+30E6 KATAKANA LETTER
-														 * YU
+														 * U+30E6 KATAKANA
+														 * LETTER YU
 														 */;
 	public static final long XKB_KEY_kana_YO = 0x04d6 /*
-														 * U+30E8 KATAKANA LETTER
-														 * YO
+														 * U+30E8 KATAKANA
+														 * LETTER YO
 														 */;
 	public static final long XKB_KEY_kana_RA = 0x04d7 /*
-														 * U+30E9 KATAKANA LETTER
-														 * RA
+														 * U+30E9 KATAKANA
+														 * LETTER RA
 														 */;
 	public static final long XKB_KEY_kana_RI = 0x04d8 /*
-														 * U+30EA KATAKANA LETTER
-														 * RI
+														 * U+30EA KATAKANA
+														 * LETTER RI
 														 */;
 	public static final long XKB_KEY_kana_RU = 0x04d9 /*
-														 * U+30EB KATAKANA LETTER
-														 * RU
+														 * U+30EB KATAKANA
+														 * LETTER RU
 														 */;
 	public static final long XKB_KEY_kana_RE = 0x04da /*
-														 * U+30EC KATAKANA LETTER
-														 * RE
+														 * U+30EC KATAKANA
+														 * LETTER RE
 														 */;
 	public static final long XKB_KEY_kana_RO = 0x04db /*
-														 * U+30ED KATAKANA LETTER
-														 * RO
+														 * U+30ED KATAKANA
+														 * LETTER RO
 														 */;
 	public static final long XKB_KEY_kana_WA = 0x04dc /*
-														 * U+30EF KATAKANA LETTER
-														 * WA
+														 * U+30EF KATAKANA
+														 * LETTER WA
 														 */;
 	public static final long XKB_KEY_kana_N = 0x04dd /*
-														 * U+30F3 KATAKANA LETTER N
+														 * U+30F3 KATAKANA
+														 * LETTER N
 														 */;
 	public static final long XKB_KEY_voicedsound = 0x04de /*
 															 * U+309B
@@ -2063,7 +2078,9 @@ public class XKB {
 																 * PERCENT SIGN
 																 */;
 	public static final long XKB_KEY_Arabic_superscript_alef = 0x1000670 /*
-																			 * U+0670
+																			 * U
+																			 * +
+																			 * 0670
 																			 * ARABIC
 																			 * LETTER
 																			 * SUPERSCRIPT
@@ -2099,43 +2116,53 @@ public class XKB {
 																	 * FULL STOP
 																	 */;
 	public static final long XKB_KEY_Arabic_0 = 0x1000660 /*
-															 * U+0660 ARABIC-INDIC
+															 * U+0660
+															 * ARABIC-INDIC
 															 * DIGIT ZERO
 															 */;
 	public static final long XKB_KEY_Arabic_1 = 0x1000661 /*
-															 * U+0661 ARABIC-INDIC
+															 * U+0661
+															 * ARABIC-INDIC
 															 * DIGIT ONE
 															 */;
 	public static final long XKB_KEY_Arabic_2 = 0x1000662 /*
-															 * U+0662 ARABIC-INDIC
+															 * U+0662
+															 * ARABIC-INDIC
 															 * DIGIT TWO
 															 */;
 	public static final long XKB_KEY_Arabic_3 = 0x1000663 /*
-															 * U+0663 ARABIC-INDIC
+															 * U+0663
+															 * ARABIC-INDIC
 															 * DIGIT THREE
 															 */;
 	public static final long XKB_KEY_Arabic_4 = 0x1000664 /*
-															 * U+0664 ARABIC-INDIC
+															 * U+0664
+															 * ARABIC-INDIC
 															 * DIGIT FOUR
 															 */;
 	public static final long XKB_KEY_Arabic_5 = 0x1000665 /*
-															 * U+0665 ARABIC-INDIC
+															 * U+0665
+															 * ARABIC-INDIC
 															 * DIGIT FIVE
 															 */;
 	public static final long XKB_KEY_Arabic_6 = 0x1000666 /*
-															 * U+0666 ARABIC-INDIC
+															 * U+0666
+															 * ARABIC-INDIC
 															 * DIGIT SIX
 															 */;
 	public static final long XKB_KEY_Arabic_7 = 0x1000667 /*
-															 * U+0667 ARABIC-INDIC
+															 * U+0667
+															 * ARABIC-INDIC
 															 * DIGIT SEVEN
 															 */;
 	public static final long XKB_KEY_Arabic_8 = 0x1000668 /*
-															 * U+0668 ARABIC-INDIC
+															 * U+0668
+															 * ARABIC-INDIC
 															 * DIGIT EIGHT
 															 */;
 	public static final long XKB_KEY_Arabic_9 = 0x1000669 /*
-															 * U+0669 ARABIC-INDIC
+															 * U+0669
+															 * ARABIC-INDIC
 															 * DIGIT NINE
 															 */;
 	public static final long XKB_KEY_Arabic_semicolon = 0x05bb /*
@@ -2193,8 +2220,8 @@ public class XKB {
 															 * LETTER ALEF
 															 */;
 	public static final long XKB_KEY_Arabic_beh = 0x05c8 /*
-															 * U+0628 ARABIC LETTER
-															 * BEH
+															 * U+0628 ARABIC
+															 * LETTER BEH
 															 */;
 	public static final long XKB_KEY_Arabic_tehmarbuta = 0x05c9 /*
 																 * U+0629 ARABIC
@@ -2202,8 +2229,8 @@ public class XKB {
 																 * MARBUTA
 																 */;
 	public static final long XKB_KEY_Arabic_teh = 0x05ca /*
-															 * U+062A ARABIC LETTER
-															 * TEH
+															 * U+062A ARABIC
+															 * LETTER TEH
 															 */;
 	public static final long XKB_KEY_Arabic_theh = 0x05cb /*
 															 * U+062B ARABIC
@@ -2214,16 +2241,16 @@ public class XKB {
 															 * LETTER JEEM
 															 */;
 	public static final long XKB_KEY_Arabic_hah = 0x05cd /*
-															 * U+062D ARABIC LETTER
-															 * HAH
+															 * U+062D ARABIC
+															 * LETTER HAH
 															 */;
 	public static final long XKB_KEY_Arabic_khah = 0x05ce /*
 															 * U+062E ARABIC
 															 * LETTER KHAH
 															 */;
 	public static final long XKB_KEY_Arabic_dal = 0x05cf /*
-															 * U+062F ARABIC LETTER
-															 * DAL
+															 * U+062F ARABIC
+															 * LETTER DAL
 															 */;
 	public static final long XKB_KEY_Arabic_thal = 0x05d0 /*
 															 * U+0630 ARABIC
@@ -2246,24 +2273,24 @@ public class XKB {
 															 * LETTER SHEEN
 															 */;
 	public static final long XKB_KEY_Arabic_sad = 0x05d5 /*
-															 * U+0635 ARABIC LETTER
-															 * SAD
+															 * U+0635 ARABIC
+															 * LETTER SAD
 															 */;
 	public static final long XKB_KEY_Arabic_dad = 0x05d6 /*
-															 * U+0636 ARABIC LETTER
-															 * DAD
+															 * U+0636 ARABIC
+															 * LETTER DAD
 															 */;
 	public static final long XKB_KEY_Arabic_tah = 0x05d7 /*
-															 * U+0637 ARABIC LETTER
-															 * TAH
+															 * U+0637 ARABIC
+															 * LETTER TAH
 															 */;
 	public static final long XKB_KEY_Arabic_zah = 0x05d8 /*
-															 * U+0638 ARABIC LETTER
-															 * ZAH
+															 * U+0638 ARABIC
+															 * LETTER ZAH
 															 */;
 	public static final long XKB_KEY_Arabic_ain = 0x05d9 /*
-															 * U+0639 ARABIC LETTER
-															 * AIN
+															 * U+0639 ARABIC
+															 * LETTER AIN
 															 */;
 	public static final long XKB_KEY_Arabic_ghain = 0x05da /*
 															 * U+063A ARABIC
@@ -2274,20 +2301,20 @@ public class XKB {
 																 * TATWEEL
 																 */;
 	public static final long XKB_KEY_Arabic_feh = 0x05e1 /*
-															 * U+0641 ARABIC LETTER
-															 * FEH
+															 * U+0641 ARABIC
+															 * LETTER FEH
 															 */;
 	public static final long XKB_KEY_Arabic_qaf = 0x05e2 /*
-															 * U+0642 ARABIC LETTER
-															 * QAF
+															 * U+0642 ARABIC
+															 * LETTER QAF
 															 */;
 	public static final long XKB_KEY_Arabic_kaf = 0x05e3 /*
-															 * U+0643 ARABIC LETTER
-															 * KAF
+															 * U+0643 ARABIC
+															 * LETTER KAF
 															 */;
 	public static final long XKB_KEY_Arabic_lam = 0x05e4 /*
-															 * U+0644 ARABIC LETTER
-															 * LAM
+															 * U+0644 ARABIC
+															 * LETTER LAM
 															 */;
 	public static final long XKB_KEY_Arabic_meem = 0x05e5 /*
 															 * U+0645 ARABIC
@@ -2303,8 +2330,8 @@ public class XKB {
 														 */;
 	public static final long XKB_KEY_Arabic_heh = 0x05e7 /* deprecated */;
 	public static final long XKB_KEY_Arabic_waw = 0x05e8 /*
-															 * U+0648 ARABIC LETTER
-															 * WAW
+															 * U+0648 ARABIC
+															 * LETTER WAW
 															 */;
 	public static final long XKB_KEY_Arabic_alefmaksura = 0x05e9 /*
 																	 * U+0649
@@ -2314,8 +2341,8 @@ public class XKB {
 																	 * MAKSURA
 																	 */;
 	public static final long XKB_KEY_Arabic_yeh = 0x05ea /*
-															 * U+064A ARABIC LETTER
-															 * YEH
+															 * U+064A ARABIC
+															 * LETTER YEH
 															 */;
 	public static final long XKB_KEY_Arabic_fathatan = 0x05eb /*
 																 * U+064B ARABIC
@@ -2466,7 +2493,8 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_KA_descender = 0x100049a /*
-																		 * U+049A
+																		 * U+
+																		 * 049A
 																		 * CYRILLIC
 																		 * CAPITAL
 																		 * LETTER
@@ -2475,7 +2503,8 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_ka_descender = 0x100049b /*
-																		 * U+049B
+																		 * U+
+																		 * 049B
 																		 * CYRILLIC
 																		 * SMALL
 																		 * LETTER
@@ -2506,7 +2535,8 @@ public class XKB {
 																		 * STROKE
 																		 */;
 	public static final long XKB_KEY_Cyrillic_EN_descender = 0x10004a2 /*
-																		 * U+04A2
+																		 * U+
+																		 * 04A2
 																		 * CYRILLIC
 																		 * CAPITAL
 																		 * LETTER
@@ -2515,7 +2545,8 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_en_descender = 0x10004a3 /*
-																		 * U+04A3
+																		 * U+
+																		 * 04A3
 																		 * CYRILLIC
 																		 * SMALL
 																		 * LETTER
@@ -2524,7 +2555,8 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_U_straight = 0x10004ae /*
-																		 * U+04AE
+																		 * U+
+																		 * 04AE
 																		 * CYRILLIC
 																		 * CAPITAL
 																		 * LETTER
@@ -2532,7 +2564,8 @@ public class XKB {
 																		 * U
 																		 */;
 	public static final long XKB_KEY_Cyrillic_u_straight = 0x10004af /*
-																		 * U+04AF
+																		 * U+
+																		 * 04AF
 																		 * CYRILLIC
 																		 * SMALL
 																		 * LETTER
@@ -2540,7 +2573,9 @@ public class XKB {
 																		 * U
 																		 */;
 	public static final long XKB_KEY_Cyrillic_U_straight_bar = 0x10004b0 /*
-																			 * U+04B0
+																			 * U
+																			 * +
+																			 * 04B0
 																			 * CYRILLIC
 																			 * CAPITAL
 																			 * LETTER
@@ -2550,7 +2585,9 @@ public class XKB {
 																			 * STROKE
 																			 */;
 	public static final long XKB_KEY_Cyrillic_u_straight_bar = 0x10004b1 /*
-																			 * U+04B1
+																			 * U
+																			 * +
+																			 * 04B1
 																			 * CYRILLIC
 																			 * SMALL
 																			 * LETTER
@@ -2560,7 +2597,8 @@ public class XKB {
 																			 * STROKE
 																			 */;
 	public static final long XKB_KEY_Cyrillic_HA_descender = 0x10004b2 /*
-																		 * U+04B2
+																		 * U+
+																		 * 04B2
 																		 * CYRILLIC
 																		 * CAPITAL
 																		 * LETTER
@@ -2569,7 +2607,8 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_ha_descender = 0x10004b3 /*
-																		 * U+04B3
+																		 * U+
+																		 * 04B3
 																		 * CYRILLIC
 																		 * SMALL
 																		 * LETTER
@@ -2598,7 +2637,9 @@ public class XKB {
 																		 * DESCENDER
 																		 */;
 	public static final long XKB_KEY_Cyrillic_CHE_vertstroke = 0x10004b8 /*
-																			 * U+04B8
+																			 * U
+																			 * +
+																			 * 04B8
 																			 * CYRILLIC
 																			 * CAPITAL
 																			 * LETTER
@@ -2608,7 +2649,9 @@ public class XKB {
 																			 * STROKE
 																			 */;
 	public static final long XKB_KEY_Cyrillic_che_vertstroke = 0x10004b9 /*
-																			 * U+04B9
+																			 * U
+																			 * +
+																			 * 04B9
 																			 * CYRILLIC
 																			 * SMALL
 																			 * LETTER
@@ -2768,7 +2811,8 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_Serbian_dze = 0x06af /* deprecated */;
 	public static final long XKB_KEY_numerosign = 0x06b0 /*
-															 * U+2116 NUMERO SIGN
+															 * U+2116 NUMERO
+															 * SIGN
 															 */;
 	public static final long XKB_KEY_Serbian_DJE = 0x06b1 /*
 															 * U+0402 CYRILLIC
@@ -2898,7 +2942,8 @@ public class XKB {
 															 * SMALL LETTER I
 															 */;
 	public static final long XKB_KEY_Cyrillic_shorti = 0x06ca /*
-																 * U+0439 CYRILLIC
+																 * U+0439
+																 * CYRILLIC
 																 * SMALL LETTER
 																 * SHORT I
 																 */;
@@ -2977,7 +3022,8 @@ public class XKB {
 															 * SMALL LETTER E
 															 */;
 	public static final long XKB_KEY_Cyrillic_shcha = 0x06dd /*
-																 * U+0449 CYRILLIC
+																 * U+0449
+																 * CYRILLIC
 																 * SMALL LETTER
 																 * SHCHA
 																 */;
@@ -3034,7 +3080,8 @@ public class XKB {
 															 * CAPITAL LETTER I
 															 */;
 	public static final long XKB_KEY_Cyrillic_SHORTI = 0x06ea /*
-																 * U+0419 CYRILLIC
+																 * U+0419
+																 * CYRILLIC
 																 * CAPITAL
 																 * LETTER SHORT
 																 * I
@@ -3118,7 +3165,8 @@ public class XKB {
 															 * CAPITAL LETTER E
 															 */;
 	public static final long XKB_KEY_Cyrillic_SHCHA = 0x06fd /*
-																 * U+0429 CYRILLIC
+																 * U+0429
+																 * CYRILLIC
 																 * CAPITAL
 																 * LETTER SHCHA
 																 */;
@@ -3168,7 +3216,8 @@ public class XKB {
 																 * WITH TONOS
 																 */;
 	public static final long XKB_KEY_Greek_IOTAdieresis = 0x07a5 /*
-																	 * U+03AA GREEK
+																	 * U+03AA
+																	 * GREEK
 																	 * CAPITAL
 																	 * LETTER
 																	 * IOTA WITH
@@ -3247,14 +3296,16 @@ public class XKB {
 																 * TONOS
 																 */;
 	public static final long XKB_KEY_Greek_iotadieresis = 0x07b5 /*
-																	 * U+03CA GREEK
+																	 * U+03CA
+																	 * GREEK
 																	 * SMALL
 																	 * LETTER
 																	 * IOTA WITH
 																	 * DIALYTIKA
 																	 */;
 	public static final long XKB_KEY_Greek_iotaaccentdieresis = 0x07b6 /*
-																		 * U+0390
+																		 * U+
+																		 * 0390
 																		 * GREEK
 																		 * SMALL
 																		 * LETTER
@@ -3292,7 +3343,9 @@ public class XKB {
 																	 * DIALYTIKA
 																	 */;
 	public static final long XKB_KEY_Greek_upsilonaccentdieresis = 0x07ba /*
-																			 * U+03B0
+																			 * U
+																			 * +
+																			 * 03B0
 																			 * GREEK
 																			 * SMALL
 																			 * LETTER
@@ -3314,8 +3367,9 @@ public class XKB {
 															 * ALPHA
 															 */;
 	public static final long XKB_KEY_Greek_BETA = 0x07c2 /*
-															 * U+0392 GREEK CAPITAL
-															 * LETTER BETA
+															 * U+0392 GREEK
+															 * CAPITAL LETTER
+															 * BETA
 															 */;
 	public static final long XKB_KEY_Greek_GAMMA = 0x07c3 /*
 															 * U+0393 GREEK
@@ -3333,8 +3387,9 @@ public class XKB {
 															 * EPSILON
 															 */;
 	public static final long XKB_KEY_Greek_ZETA = 0x07c6 /*
-															 * U+0396 GREEK CAPITAL
-															 * LETTER ZETA
+															 * U+0396 GREEK
+															 * CAPITAL LETTER
+															 * ZETA
 															 */;
 	public static final long XKB_KEY_Greek_ETA = 0x07c7 /*
 														 * U+0397 GREEK CAPITAL
@@ -3346,8 +3401,9 @@ public class XKB {
 															 * THETA
 															 */;
 	public static final long XKB_KEY_Greek_IOTA = 0x07c9 /*
-															 * U+0399 GREEK CAPITAL
-															 * LETTER IOTA
+															 * U+0399 GREEK
+															 * CAPITAL LETTER
+															 * IOTA
 															 */;
 	public static final long XKB_KEY_Greek_KAPPA = 0x07ca /*
 															 * U+039A GREEK
@@ -3421,20 +3477,23 @@ public class XKB {
 															 * OMEGA
 															 */;
 	public static final long XKB_KEY_Greek_alpha = 0x07e1 /*
-															 * U+03B1 GREEK SMALL
-															 * LETTER ALPHA
+															 * U+03B1 GREEK
+															 * SMALL LETTER
+															 * ALPHA
 															 */;
 	public static final long XKB_KEY_Greek_beta = 0x07e2 /*
-															 * U+03B2 GREEK SMALL
-															 * LETTER BETA
+															 * U+03B2 GREEK
+															 * SMALL LETTER BETA
 															 */;
 	public static final long XKB_KEY_Greek_gamma = 0x07e3 /*
-															 * U+03B3 GREEK SMALL
-															 * LETTER GAMMA
+															 * U+03B3 GREEK
+															 * SMALL LETTER
+															 * GAMMA
 															 */;
 	public static final long XKB_KEY_Greek_delta = 0x07e4 /*
-															 * U+03B4 GREEK SMALL
-															 * LETTER DELTA
+															 * U+03B4 GREEK
+															 * SMALL LETTER
+															 * DELTA
 															 */;
 	public static final long XKB_KEY_Greek_epsilon = 0x07e5 /*
 															 * U+03B5 GREEK
@@ -3442,32 +3501,36 @@ public class XKB {
 															 * EPSILON
 															 */;
 	public static final long XKB_KEY_Greek_zeta = 0x07e6 /*
-															 * U+03B6 GREEK SMALL
-															 * LETTER ZETA
+															 * U+03B6 GREEK
+															 * SMALL LETTER ZETA
 															 */;
 	public static final long XKB_KEY_Greek_eta = 0x07e7 /*
 														 * U+03B7 GREEK SMALL
 														 * LETTER ETA
 														 */;
 	public static final long XKB_KEY_Greek_theta = 0x07e8 /*
-															 * U+03B8 GREEK SMALL
-															 * LETTER THETA
+															 * U+03B8 GREEK
+															 * SMALL LETTER
+															 * THETA
 															 */;
 	public static final long XKB_KEY_Greek_iota = 0x07e9 /*
-															 * U+03B9 GREEK SMALL
-															 * LETTER IOTA
+															 * U+03B9 GREEK
+															 * SMALL LETTER IOTA
 															 */;
 	public static final long XKB_KEY_Greek_kappa = 0x07ea /*
-															 * U+03BA GREEK SMALL
-															 * LETTER KAPPA
+															 * U+03BA GREEK
+															 * SMALL LETTER
+															 * KAPPA
 															 */;
 	public static final long XKB_KEY_Greek_lamda = 0x07eb /*
-															 * U+03BB GREEK SMALL
-															 * LETTER LAMDA
+															 * U+03BB GREEK
+															 * SMALL LETTER
+															 * LAMDA
 															 */;
 	public static final long XKB_KEY_Greek_lambda = 0x07eb /*
-															 * U+03BB GREEK SMALL
-															 * LETTER LAMDA
+															 * U+03BB GREEK
+															 * SMALL LETTER
+															 * LAMDA
 															 */;
 	public static final long XKB_KEY_Greek_mu = 0x07ec /*
 														 * U+03BC GREEK SMALL
@@ -3495,8 +3558,9 @@ public class XKB {
 														 * LETTER RHO
 														 */;
 	public static final long XKB_KEY_Greek_sigma = 0x07f2 /*
-															 * U+03C3 GREEK SMALL
-															 * LETTER SIGMA
+															 * U+03C3 GREEK
+															 * SMALL LETTER
+															 * SIGMA
 															 */;
 	public static final long XKB_KEY_Greek_finalsmallsigma = 0x07f3 /*
 																	 * U+03C2
@@ -3528,8 +3592,9 @@ public class XKB {
 														 * LETTER PSI
 														 */;
 	public static final long XKB_KEY_Greek_omega = 0x07f9 /*
-															 * U+03C9 GREEK SMALL
-															 * LETTER OMEGA
+															 * U+03C9 GREEK
+															 * SMALL LETTER
+															 * OMEGA
 															 */;
 	public static final long XKB_KEY_Greek_switch = 0xff7e /*
 															 * Alias for
@@ -3562,8 +3627,8 @@ public class XKB {
 															 * INTEGRAL
 															 */;
 	public static final long XKB_KEY_botintegral = 0x08a5 /*
-															 * U+2321 BOTTOM HALF
-															 * INTEGRAL
+															 * U+2321 BOTTOM
+															 * HALF INTEGRAL
 															 */;
 	public static final long XKB_KEY_vertconnector = 0x08a6 /*
 															 * (U+2502 BOX
@@ -3684,7 +3749,8 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_union = 0x08dd /* U+222A UNION */;
 	public static final long XKB_KEY_logicaland = 0x08de /*
-															 * U+2227 LOGICAL AND
+															 * U+2227 LOGICAL
+															 * AND
 															 */;
 	public static final long XKB_KEY_logicalor = 0x08df /* U+2228 LOGICAL OR */;
 	public static final long XKB_KEY_partialderivative = 0x08ef /*
@@ -3724,23 +3790,25 @@ public class XKB {
 															 * SHADE
 															 */;
 	public static final long XKB_KEY_ht = 0x09e2 /*
-													 * U+2409 SYMBOL FOR HORIZONTAL
-													 * TABULATION
+													 * U+2409 SYMBOL FOR
+													 * HORIZONTAL TABULATION
 													 */;
 	public static final long XKB_KEY_ff = 0x09e3 /*
-													 * U+240C SYMBOL FOR FORM FEED
+													 * U+240C SYMBOL FOR FORM
+													 * FEED
 													 */;
 	public static final long XKB_KEY_cr = 0x09e4 /*
-													 * U+240D SYMBOL FOR CARRIAGE
-													 * RETURN
+													 * U+240D SYMBOL FOR
+													 * CARRIAGE RETURN
 													 */;
 	public static final long XKB_KEY_lf = 0x09e5 /*
-													 * U+240A SYMBOL FOR LINE FEED
+													 * U+240A SYMBOL FOR LINE
+													 * FEED
 													 */;
 	public static final long XKB_KEY_nl = 0x09e8 /* U+2424 SYMBOL FOR NEWLINE */;
 	public static final long XKB_KEY_vt = 0x09e9 /*
-													 * U+240B SYMBOL FOR VERTICAL
-													 * TABULATION
+													 * U+240B SYMBOL FOR
+													 * VERTICAL TABULATION
 													 */;
 	public static final long XKB_KEY_lowrightcorner = 0x09ea /*
 																 * U+2518 BOX
@@ -3833,11 +3901,12 @@ public class XKB {
 														 * SPACE
 														 */;
 	public static final long XKB_KEY_digitspace = 0x0aa5 /*
-															 * U+2007 FIGURE SPACE
+															 * U+2007 FIGURE
+															 * SPACE
 															 */;
 	public static final long XKB_KEY_punctspace = 0x0aa6 /*
-															 * U+2008 PUNCTUATION
-															 * SPACE
+															 * U+2008
+															 * PUNCTUATION SPACE
 															 */;
 	public static final long XKB_KEY_thinspace = 0x0aa7 /* U+2009 THIN SPACE */;
 	public static final long XKB_KEY_hairspace = 0x0aa8 /* U+200A HAIR SPACE */;
@@ -3851,20 +3920,20 @@ public class XKB {
 														 * ELLIPSIS
 														 */;
 	public static final long XKB_KEY_doubbaselinedot = 0x0aaf /*
-																 * U+2025 TWO DOT
-																 * LEADER
+																 * U+2025 TWO
+																 * DOT LEADER
 																 */;
 	public static final long XKB_KEY_onethird = 0x0ab0 /*
-														 * U+2153 VULGAR FRACTION
-														 * ONE THIRD
+														 * U+2153 VULGAR
+														 * FRACTION ONE THIRD
 														 */;
 	public static final long XKB_KEY_twothirds = 0x0ab1 /*
 														 * U+2154 VULGAR
 														 * FRACTION TWO THIRDS
 														 */;
 	public static final long XKB_KEY_onefifth = 0x0ab2 /*
-														 * U+2155 VULGAR FRACTION
-														 * ONE FIFTH
+														 * U+2155 VULGAR
+														 * FRACTION ONE FIFTH
 														 */;
 	public static final long XKB_KEY_twofifths = 0x0ab3 /*
 														 * U+2156 VULGAR
@@ -3881,8 +3950,8 @@ public class XKB {
 															 * FIFTHS
 															 */;
 	public static final long XKB_KEY_onesixth = 0x0ab6 /*
-														 * U+2159 VULGAR FRACTION
-														 * ONE SIXTH
+														 * U+2159 VULGAR
+														 * FRACTION ONE SIXTH
 														 */;
 	public static final long XKB_KEY_fivesixths = 0x0ab7 /*
 															 * U+215A VULGAR
@@ -3898,7 +3967,8 @@ public class XKB {
 																 * BRACKET)
 																 */;
 	public static final long XKB_KEY_decimalpoint = 0x0abd /*
-															 * (U+002E FULL STOP)
+															 * (U+002E FULL
+															 * STOP)
 															 */;
 	public static final long XKB_KEY_rightanglebracket = 0x0abe /*
 																 * (U+27E9
@@ -3955,7 +4025,8 @@ public class XKB {
 																 * RECTANGLE)
 																 */;
 	public static final long XKB_KEY_leftsinglequotemark = 0x0ad0 /*
-																	 * U+2018 LEFT
+																	 * U+2018
+																	 * LEFT
 																	 * SINGLE
 																	 * QUOTATION
 																	 * MARK
@@ -3968,7 +4039,8 @@ public class XKB {
 																	 * MARK
 																	 */;
 	public static final long XKB_KEY_leftdoublequotemark = 0x0ad2 /*
-																	 * U+201C LEFT
+																	 * U+201C
+																	 * LEFT
 																	 * DOUBLE
 																	 * QUOTATION
 																	 * MARK
@@ -3990,7 +4062,8 @@ public class XKB {
 	public static final long XKB_KEY_minutes = 0x0ad6 /* U+2032 PRIME */;
 	public static final long XKB_KEY_seconds = 0x0ad7 /* U+2033 DOUBLE PRIME */;
 	public static final long XKB_KEY_latincross = 0x0ad9 /*
-															 * U+271D LATIN CROSS
+															 * U+271D LATIN
+															 * CROSS
 															 */;
 	public static final long XKB_KEY_hexagram = 0x0ada;
 	public static final long XKB_KEY_filledrectbullet = 0x0adb /*
@@ -4066,8 +4139,9 @@ public class XKB {
 																	 * TRIANGLE)
 																	 */;
 	public static final long XKB_KEY_leftpointer = 0x0aea /*
-															 * (U+261C WHITE LEFT
-															 * POINTING INDEX)
+															 * (U+261C WHITE
+															 * LEFT POINTING
+															 * INDEX)
 															 */;
 	public static final long XKB_KEY_rightpointer = 0x0aeb /*
 															 * (U+261E WHITE
@@ -4094,8 +4168,8 @@ public class XKB {
 	public static final long XKB_KEY_checkmark = 0x0af3 /* U+2713 CHECK MARK */;
 	public static final long XKB_KEY_ballotcross = 0x0af4 /* U+2717 BALLOT X */;
 	public static final long XKB_KEY_musicalsharp = 0x0af5 /*
-															 * U+266F MUSIC SHARP
-															 * SIGN
+															 * U+266F MUSIC
+															 * SHARP SIGN
 															 */;
 	public static final long XKB_KEY_musicalflat = 0x0af6 /*
 															 * U+266D MUSIC FLAT
@@ -4103,7 +4177,8 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_malesymbol = 0x0af7 /* U+2642 MALE SIGN */;
 	public static final long XKB_KEY_femalesymbol = 0x0af8 /*
-															 * U+2640 FEMALE SIGN
+															 * U+2640 FEMALE
+															 * SIGN
 															 */;
 	public static final long XKB_KEY_telephone = 0x0af9 /*
 														 * U+260E BLACK
@@ -4146,7 +4221,8 @@ public class XKB {
 														 * SIGN)
 														 */;
 	public static final long XKB_KEY_rightcaret = 0x0ba6 /*
-															 * (U+003E GREATER-THAN
+															 * (U+003E
+															 * GREATER-THAN
 															 * SIGN)
 															 */;
 	public static final long XKB_KEY_downcaret = 0x0ba8 /*
@@ -4188,8 +4264,8 @@ public class XKB {
 															 * LETTER ALEF
 															 */;
 	public static final long XKB_KEY_hebrew_bet = 0x0ce1 /*
-															 * U+05D1 HEBREW LETTER
-															 * BET
+															 * U+05D1 HEBREW
+															 * LETTER BET
 															 */;
 	public static final long XKB_KEY_hebrew_beth = 0x0ce1 /* deprecated */;
 	public static final long XKB_KEY_hebrew_gimel = 0x0ce2 /*
@@ -4207,8 +4283,8 @@ public class XKB {
 														 * HE
 														 */;
 	public static final long XKB_KEY_hebrew_waw = 0x0ce5 /*
-															 * U+05D5 HEBREW LETTER
-															 * VAV
+															 * U+05D5 HEBREW
+															 * LETTER VAV
 															 */;
 	public static final long XKB_KEY_hebrew_zain = 0x0ce6 /*
 															 * U+05D6 HEBREW
@@ -4221,13 +4297,13 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_hebrew_het = 0x0ce7 /* deprecated */;
 	public static final long XKB_KEY_hebrew_tet = 0x0ce8 /*
-															 * U+05D8 HEBREW LETTER
-															 * TET
+															 * U+05D8 HEBREW
+															 * LETTER TET
 															 */;
 	public static final long XKB_KEY_hebrew_teth = 0x0ce8 /* deprecated */;
 	public static final long XKB_KEY_hebrew_yod = 0x0ce9 /*
-															 * U+05D9 HEBREW LETTER
-															 * YOD
+															 * U+05D9 HEBREW
+															 * LETTER YOD
 															 */;
 	public static final long XKB_KEY_hebrew_finalkaph = 0x0cea /*
 																 * U+05DA HEBREW
@@ -4248,8 +4324,8 @@ public class XKB {
 																 * MEM
 																 */;
 	public static final long XKB_KEY_hebrew_mem = 0x0cee /*
-															 * U+05DE HEBREW LETTER
-															 * MEM
+															 * U+05DE HEBREW
+															 * LETTER MEM
 															 */;
 	public static final long XKB_KEY_hebrew_finalnun = 0x0cef /*
 																 * U+05DF HEBREW
@@ -4257,8 +4333,8 @@ public class XKB {
 																 * NUN
 																 */;
 	public static final long XKB_KEY_hebrew_nun = 0x0cf0 /*
-															 * U+05E0 HEBREW LETTER
-															 * NUN
+															 * U+05E0 HEBREW
+															 * LETTER NUN
 															 */;
 	public static final long XKB_KEY_hebrew_samech = 0x0cf1 /*
 															 * U+05E1 HEBREW
@@ -4303,8 +4379,8 @@ public class XKB {
 															 * LETTER SHIN
 															 */;
 	public static final long XKB_KEY_hebrew_taw = 0x0cfa /*
-															 * U+05EA HEBREW LETTER
-															 * TAV
+															 * U+05EA HEBREW
+															 * LETTER TAV
 															 */;
 	public static final long XKB_KEY_hebrew_taf = 0x0cfa /* deprecated */;
 	public static final long XKB_KEY_Hebrew_switch = 0xff7e /*
@@ -4393,7 +4469,8 @@ public class XKB {
 															 * THAN
 															 */;
 	public static final long XKB_KEY_Thai_thonangmontho = 0x0db1 /*
-																	 * U+0E11 THAI
+																	 * U+0E11
+																	 * THAI
 																	 * CHARACTER
 																	 * THO
 																	 * NANGMONTHO
@@ -4593,13 +4670,15 @@ public class XKB {
 															 * CHARACTER SARA O
 															 */;
 	public static final long XKB_KEY_Thai_saraaimaimuan = 0x0de3 /*
-																	 * U+0E43 THAI
+																	 * U+0E43
+																	 * THAI
 																	 * CHARACTER
 																	 * SARA AI
 																	 * MAIMUAN
 																	 */;
 	public static final long XKB_KEY_Thai_saraaimaimalai = 0x0de4 /*
-																	 * U+0E44 THAI
+																	 * U+0E44
+																	 * THAI
 																	 * CHARACTER
 																	 * SARA AI
 																	 * MAIMALAI
@@ -4697,8 +4776,8 @@ public class XKB {
 														 */;
 	public static final long XKB_KEY_Hangul_Start = 0xff32 /* Hangul start */;
 	public static final long XKB_KEY_Hangul_End = 0xff33 /*
-															 * Hangul end, English
-															 * start
+															 * Hangul end,
+															 * English start
 															 */;
 	public static final long XKB_KEY_Hangul_Hanja = 0xff34 /*
 															 * Start
@@ -4737,7 +4816,8 @@ public class XKB {
 																		 * candidate
 																		 */;
 	public static final long XKB_KEY_Hangul_Special = 0xff3f /*
-																 * Special symbols
+																 * Special
+																 * symbols
 																 */;
 	public static final long XKB_KEY_Hangul_switch = 0xff7e /*
 															 * Alias for
@@ -4854,7 +4934,8 @@ public class XKB {
 	 */
 
 	public static final long XKB_KEY_Armenian_ligature_ew = 0x1000587 /*
-																		 * U+0587
+																		 * U+
+																		 * 0587
 																		 * ARMENIAN
 																		 * SMALL
 																		 * LIGATURE
@@ -4872,12 +4953,15 @@ public class XKB {
 																	 * FULL STOP
 																	 */;
 	public static final long XKB_KEY_Armenian_separation_mark = 0x100055d /*
-																			 * U+055D
+																			 * U
+																			 * +
+																			 * 055D
 																			 * ARMENIAN
 																			 * COMMA
 																			 */;
 	public static final long XKB_KEY_Armenian_but = 0x100055d /*
-																 * U+055D ARMENIAN
+																 * U+055D
+																 * ARMENIAN
 																 * COMMA
 																 */;
 	public static final long XKB_KEY_Armenian_hyphen = 0x100058a /*
@@ -4927,42 +5011,50 @@ public class XKB {
 																	 * MARK
 																	 */;
 	public static final long XKB_KEY_Armenian_AYB = 0x1000531 /*
-																 * U+0531 ARMENIAN
+																 * U+0531
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER AYB
 																 */;
 	public static final long XKB_KEY_Armenian_ayb = 0x1000561 /*
-																 * U+0561 ARMENIAN
+																 * U+0561
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * AYB
 																 */;
 	public static final long XKB_KEY_Armenian_BEN = 0x1000532 /*
-																 * U+0532 ARMENIAN
+																 * U+0532
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER BEN
 																 */;
 	public static final long XKB_KEY_Armenian_ben = 0x1000562 /*
-																 * U+0562 ARMENIAN
+																 * U+0562
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * BEN
 																 */;
 	public static final long XKB_KEY_Armenian_GIM = 0x1000533 /*
-																 * U+0533 ARMENIAN
+																 * U+0533
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER GIM
 																 */;
 	public static final long XKB_KEY_Armenian_gim = 0x1000563 /*
-																 * U+0563 ARMENIAN
+																 * U+0563
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * GIM
 																 */;
 	public static final long XKB_KEY_Armenian_DA = 0x1000534 /*
-																 * U+0534 ARMENIAN
+																 * U+0534
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER DA
 																 */;
 	public static final long XKB_KEY_Armenian_da = 0x1000564 /*
-																 * U+0564 ARMENIAN
+																 * U+0564
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * DA
 																 */;
@@ -4979,12 +5071,14 @@ public class XKB {
 																 * ECH
 																 */;
 	public static final long XKB_KEY_Armenian_ZA = 0x1000536 /*
-																 * U+0536 ARMENIAN
+																 * U+0536
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER ZA
 																 */;
 	public static final long XKB_KEY_Armenian_za = 0x1000566 /*
-																 * U+0566 ARMENIAN
+																 * U+0566
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * ZA
 																 */;
@@ -4997,42 +5091,50 @@ public class XKB {
 															 * SMALL LETTER EH
 															 */;
 	public static final long XKB_KEY_Armenian_AT = 0x1000538 /*
-																 * U+0538 ARMENIAN
+																 * U+0538
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER ET
 																 */;
 	public static final long XKB_KEY_Armenian_at = 0x1000568 /*
-																 * U+0568 ARMENIAN
+																 * U+0568
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * ET
 																 */;
 	public static final long XKB_KEY_Armenian_TO = 0x1000539 /*
-																 * U+0539 ARMENIAN
+																 * U+0539
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER TO
 																 */;
 	public static final long XKB_KEY_Armenian_to = 0x1000569 /*
-																 * U+0569 ARMENIAN
+																 * U+0569
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * TO
 																 */;
 	public static final long XKB_KEY_Armenian_ZHE = 0x100053a /*
-																 * U+053A ARMENIAN
+																 * U+053A
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER ZHE
 																 */;
 	public static final long XKB_KEY_Armenian_zhe = 0x100056a /*
-																 * U+056A ARMENIAN
+																 * U+056A
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * ZHE
 																 */;
 	public static final long XKB_KEY_Armenian_INI = 0x100053b /*
-																 * U+053B ARMENIAN
+																 * U+053B
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER INI
 																 */;
 	public static final long XKB_KEY_Armenian_ini = 0x100056b /*
-																 * U+056B ARMENIAN
+																 * U+056B
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * INI
 																 */;
@@ -5049,52 +5151,62 @@ public class XKB {
 																 * LIWN
 																 */;
 	public static final long XKB_KEY_Armenian_KHE = 0x100053d /*
-																 * U+053D ARMENIAN
+																 * U+053D
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER XEH
 																 */;
 	public static final long XKB_KEY_Armenian_khe = 0x100056d /*
-																 * U+056D ARMENIAN
+																 * U+056D
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * XEH
 																 */;
 	public static final long XKB_KEY_Armenian_TSA = 0x100053e /*
-																 * U+053E ARMENIAN
+																 * U+053E
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER CA
 																 */;
 	public static final long XKB_KEY_Armenian_tsa = 0x100056e /*
-																 * U+056E ARMENIAN
+																 * U+056E
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * CA
 																 */;
 	public static final long XKB_KEY_Armenian_KEN = 0x100053f /*
-																 * U+053F ARMENIAN
+																 * U+053F
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER KEN
 																 */;
 	public static final long XKB_KEY_Armenian_ken = 0x100056f /*
-																 * U+056F ARMENIAN
+																 * U+056F
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * KEN
 																 */;
 	public static final long XKB_KEY_Armenian_HO = 0x1000540 /*
-																 * U+0540 ARMENIAN
+																 * U+0540
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER HO
 																 */;
 	public static final long XKB_KEY_Armenian_ho = 0x1000570 /*
-																 * U+0570 ARMENIAN
+																 * U+0570
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * HO
 																 */;
 	public static final long XKB_KEY_Armenian_DZA = 0x1000541 /*
-																 * U+0541 ARMENIAN
+																 * U+0541
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER JA
 																 */;
 	public static final long XKB_KEY_Armenian_dza = 0x1000571 /*
-																 * U+0571 ARMENIAN
+																 * U+0571
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * JA
 																 */;
@@ -5123,112 +5235,134 @@ public class XKB {
 																 * CHEH
 																 */;
 	public static final long XKB_KEY_Armenian_MEN = 0x1000544 /*
-																 * U+0544 ARMENIAN
+																 * U+0544
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER MEN
 																 */;
 	public static final long XKB_KEY_Armenian_men = 0x1000574 /*
-																 * U+0574 ARMENIAN
+																 * U+0574
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * MEN
 																 */;
 	public static final long XKB_KEY_Armenian_HI = 0x1000545 /*
-																 * U+0545 ARMENIAN
+																 * U+0545
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER YI
 																 */;
 	public static final long XKB_KEY_Armenian_hi = 0x1000575 /*
-																 * U+0575 ARMENIAN
+																 * U+0575
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * YI
 																 */;
 	public static final long XKB_KEY_Armenian_NU = 0x1000546 /*
-																 * U+0546 ARMENIAN
+																 * U+0546
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER NOW
 																 */;
 	public static final long XKB_KEY_Armenian_nu = 0x1000576 /*
-																 * U+0576 ARMENIAN
+																 * U+0576
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * NOW
 																 */;
 	public static final long XKB_KEY_Armenian_SHA = 0x1000547 /*
-																 * U+0547 ARMENIAN
+																 * U+0547
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER SHA
 																 */;
 	public static final long XKB_KEY_Armenian_sha = 0x1000577 /*
-																 * U+0577 ARMENIAN
+																 * U+0577
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * SHA
 																 */;
 	public static final long XKB_KEY_Armenian_VO = 0x1000548 /*
-																 * U+0548 ARMENIAN
+																 * U+0548
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER VO
 																 */;
 	public static final long XKB_KEY_Armenian_vo = 0x1000578 /*
-																 * U+0578 ARMENIAN
+																 * U+0578
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * VO
 																 */;
 	public static final long XKB_KEY_Armenian_CHA = 0x1000549 /*
-																 * U+0549 ARMENIAN
+																 * U+0549
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER CHA
 																 */;
 	public static final long XKB_KEY_Armenian_cha = 0x1000579 /*
-																 * U+0579 ARMENIAN
+																 * U+0579
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * CHA
 																 */;
 	public static final long XKB_KEY_Armenian_PE = 0x100054a /*
-																 * U+054A ARMENIAN
+																 * U+054A
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER PEH
 																 */;
 	public static final long XKB_KEY_Armenian_pe = 0x100057a /*
-																 * U+057A ARMENIAN
+																 * U+057A
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * PEH
 																 */;
 	public static final long XKB_KEY_Armenian_JE = 0x100054b /*
-																 * U+054B ARMENIAN
+																 * U+054B
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER JHEH
 																 */;
 	public static final long XKB_KEY_Armenian_je = 0x100057b /*
-																 * U+057B ARMENIAN
+																 * U+057B
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * JHEH
 																 */;
 	public static final long XKB_KEY_Armenian_RA = 0x100054c /*
-																 * U+054C ARMENIAN
+																 * U+054C
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER RA
 																 */;
 	public static final long XKB_KEY_Armenian_ra = 0x100057c /*
-																 * U+057C ARMENIAN
+																 * U+057C
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * RA
 																 */;
 	public static final long XKB_KEY_Armenian_SE = 0x100054d /*
-																 * U+054D ARMENIAN
+																 * U+054D
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER SEH
 																 */;
 	public static final long XKB_KEY_Armenian_se = 0x100057d /*
-																 * U+057D ARMENIAN
+																 * U+057D
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * SEH
 																 */;
 	public static final long XKB_KEY_Armenian_VEV = 0x100054e /*
-																 * U+054E ARMENIAN
+																 * U+054E
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER VEW
 																 */;
 	public static final long XKB_KEY_Armenian_vev = 0x100057e /*
-																 * U+057E ARMENIAN
+																 * U+057E
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * VEW
 																 */;
@@ -5245,22 +5379,26 @@ public class XKB {
 																 * TIWN
 																 */;
 	public static final long XKB_KEY_Armenian_RE = 0x1000550 /*
-																 * U+0550 ARMENIAN
+																 * U+0550
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER REH
 																 */;
 	public static final long XKB_KEY_Armenian_re = 0x1000580 /*
-																 * U+0580 ARMENIAN
+																 * U+0580
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * REH
 																 */;
 	public static final long XKB_KEY_Armenian_TSO = 0x1000551 /*
-																 * U+0551 ARMENIAN
+																 * U+0551
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER CO
 																 */;
 	public static final long XKB_KEY_Armenian_tso = 0x1000581 /*
-																 * U+0581 ARMENIAN
+																 * U+0581
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * CO
 																 */;
@@ -5289,12 +5427,14 @@ public class XKB {
 																 * PIWR
 																 */;
 	public static final long XKB_KEY_Armenian_KE = 0x1000554 /*
-																 * U+0554 ARMENIAN
+																 * U+0554
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER KEH
 																 */;
 	public static final long XKB_KEY_Armenian_ke = 0x1000584 /*
-																 * U+0584 ARMENIAN
+																 * U+0584
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * KEH
 																 */;
@@ -5307,17 +5447,20 @@ public class XKB {
 															 * SMALL LETTER OH
 															 */;
 	public static final long XKB_KEY_Armenian_FE = 0x1000556 /*
-																 * U+0556 ARMENIAN
+																 * U+0556
+																 * ARMENIAN
 																 * CAPITAL
 																 * LETTER FEH
 																 */;
 	public static final long XKB_KEY_Armenian_fe = 0x1000586 /*
-																 * U+0586 ARMENIAN
+																 * U+0586
+																 * ARMENIAN
 																 * SMALL LETTER
 																 * FEH
 																 */;
 	public static final long XKB_KEY_Armenian_apostrophe = 0x100055a /*
-																		 * U+055A
+																		 * U+
+																		 * 055A
 																		 * ARMENIAN
 																		 * APOSTROPHE
 																		 */;
@@ -5327,63 +5470,78 @@ public class XKB {
 	 */
 
 	public static final long XKB_KEY_Georgian_an = 0x10010d0 /*
-																 * U+10D0 GEORGIAN
+																 * U+10D0
+																 * GEORGIAN
 																 * LETTER AN
 																 */;
 	public static final long XKB_KEY_Georgian_ban = 0x10010d1 /*
-																 * U+10D1 GEORGIAN
+																 * U+10D1
+																 * GEORGIAN
 																 * LETTER BAN
 																 */;
 	public static final long XKB_KEY_Georgian_gan = 0x10010d2 /*
-																 * U+10D2 GEORGIAN
+																 * U+10D2
+																 * GEORGIAN
 																 * LETTER GAN
 																 */;
 	public static final long XKB_KEY_Georgian_don = 0x10010d3 /*
-																 * U+10D3 GEORGIAN
+																 * U+10D3
+																 * GEORGIAN
 																 * LETTER DON
 																 */;
 	public static final long XKB_KEY_Georgian_en = 0x10010d4 /*
-																 * U+10D4 GEORGIAN
+																 * U+10D4
+																 * GEORGIAN
 																 * LETTER EN
 																 */;
 	public static final long XKB_KEY_Georgian_vin = 0x10010d5 /*
-																 * U+10D5 GEORGIAN
+																 * U+10D5
+																 * GEORGIAN
 																 * LETTER VIN
 																 */;
 	public static final long XKB_KEY_Georgian_zen = 0x10010d6 /*
-																 * U+10D6 GEORGIAN
+																 * U+10D6
+																 * GEORGIAN
 																 * LETTER ZEN
 																 */;
 	public static final long XKB_KEY_Georgian_tan = 0x10010d7 /*
-																 * U+10D7 GEORGIAN
+																 * U+10D7
+																 * GEORGIAN
 																 * LETTER TAN
 																 */;
 	public static final long XKB_KEY_Georgian_in = 0x10010d8 /*
-																 * U+10D8 GEORGIAN
+																 * U+10D8
+																 * GEORGIAN
 																 * LETTER IN
 																 */;
 	public static final long XKB_KEY_Georgian_kan = 0x10010d9 /*
-																 * U+10D9 GEORGIAN
+																 * U+10D9
+																 * GEORGIAN
 																 * LETTER KAN
 																 */;
 	public static final long XKB_KEY_Georgian_las = 0x10010da /*
-																 * U+10DA GEORGIAN
+																 * U+10DA
+																 * GEORGIAN
 																 * LETTER LAS
 																 */;
 	public static final long XKB_KEY_Georgian_man = 0x10010db /*
-																 * U+10DB GEORGIAN
+																 * U+10DB
+																 * GEORGIAN
 																 * LETTER MAN
 																 */;
 	public static final long XKB_KEY_Georgian_nar = 0x10010dc /*
-																 * U+10DC GEORGIAN
+																 * U+10DC
+																 * GEORGIAN
 																 * LETTER NAR
 																 */;
 	public static final long XKB_KEY_Georgian_on = 0x10010dd /*
-																 * U+10DD GEORGIAN
+																 * U+10DD
+																 * GEORGIAN
 																 * LETTER ON
 																 */;
 	public static final long XKB_KEY_Georgian_par = 0x10010de /*
-																 * U+10DE GEORGIAN
+																 * U+10DE
+																 * GEORGIAN
 																 * LETTER PAR
 																 */;
 	public static final long XKB_KEY_Georgian_zhar = 0x10010df /*
@@ -5392,19 +5550,23 @@ public class XKB {
 																 * LETTER ZHAR
 																 */;
 	public static final long XKB_KEY_Georgian_rae = 0x10010e0 /*
-																 * U+10E0 GEORGIAN
+																 * U+10E0
+																 * GEORGIAN
 																 * LETTER RAE
 																 */;
 	public static final long XKB_KEY_Georgian_san = 0x10010e1 /*
-																 * U+10E1 GEORGIAN
+																 * U+10E1
+																 * GEORGIAN
 																 * LETTER SAN
 																 */;
 	public static final long XKB_KEY_Georgian_tar = 0x10010e2 /*
-																 * U+10E2 GEORGIAN
+																 * U+10E2
+																 * GEORGIAN
 																 * LETTER TAR
 																 */;
 	public static final long XKB_KEY_Georgian_un = 0x10010e3 /*
-																 * U+10E3 GEORGIAN
+																 * U+10E3
+																 * GEORGIAN
 																 * LETTER UN
 																 */;
 	public static final long XKB_KEY_Georgian_phar = 0x10010e4 /*
@@ -5423,7 +5585,8 @@ public class XKB {
 																 * LETTER GHAN
 																 */;
 	public static final long XKB_KEY_Georgian_qar = 0x10010e7 /*
-																 * U+10E7 GEORGIAN
+																 * U+10E7
+																 * GEORGIAN
 																 * LETTER QAR
 																 */;
 	public static final long XKB_KEY_Georgian_shin = 0x10010e8 /*
@@ -5437,15 +5600,18 @@ public class XKB {
 																 * LETTER CHIN
 																 */;
 	public static final long XKB_KEY_Georgian_can = 0x10010ea /*
-																 * U+10EA GEORGIAN
+																 * U+10EA
+																 * GEORGIAN
 																 * LETTER CAN
 																 */;
 	public static final long XKB_KEY_Georgian_jil = 0x10010eb /*
-																 * U+10EB GEORGIAN
+																 * U+10EB
+																 * GEORGIAN
 																 * LETTER JIL
 																 */;
 	public static final long XKB_KEY_Georgian_cil = 0x10010ec /*
-																 * U+10EC GEORGIAN
+																 * U+10EC
+																 * GEORGIAN
 																 * LETTER CIL
 																 */;
 	public static final long XKB_KEY_Georgian_char = 0x10010ed /*
@@ -5454,7 +5620,8 @@ public class XKB {
 																 * LETTER CHAR
 																 */;
 	public static final long XKB_KEY_Georgian_xan = 0x10010ee /*
-																 * U+10EE GEORGIAN
+																 * U+10EE
+																 * GEORGIAN
 																 * LETTER XAN
 																 */;
 	public static final long XKB_KEY_Georgian_jhan = 0x10010ef /*
@@ -5463,31 +5630,38 @@ public class XKB {
 																 * LETTER JHAN
 																 */;
 	public static final long XKB_KEY_Georgian_hae = 0x10010f0 /*
-																 * U+10F0 GEORGIAN
+																 * U+10F0
+																 * GEORGIAN
 																 * LETTER HAE
 																 */;
 	public static final long XKB_KEY_Georgian_he = 0x10010f1 /*
-																 * U+10F1 GEORGIAN
+																 * U+10F1
+																 * GEORGIAN
 																 * LETTER HE
 																 */;
 	public static final long XKB_KEY_Georgian_hie = 0x10010f2 /*
-																 * U+10F2 GEORGIAN
+																 * U+10F2
+																 * GEORGIAN
 																 * LETTER HIE
 																 */;
 	public static final long XKB_KEY_Georgian_we = 0x10010f3 /*
-																 * U+10F3 GEORGIAN
+																 * U+10F3
+																 * GEORGIAN
 																 * LETTER WE
 																 */;
 	public static final long XKB_KEY_Georgian_har = 0x10010f4 /*
-																 * U+10F4 GEORGIAN
+																 * U+10F4
+																 * GEORGIAN
 																 * LETTER HAR
 																 */;
 	public static final long XKB_KEY_Georgian_hoe = 0x10010f5 /*
-																 * U+10F5 GEORGIAN
+																 * U+10F5
+																 * GEORGIAN
 																 * LETTER HOE
 																 */;
 	public static final long XKB_KEY_Georgian_fi = 0x10010f6 /*
-																 * U+10F6 GEORGIAN
+																 * U+10F6
+																 * GEORGIAN
 																 * LETTER FI
 																 */;
 
@@ -5506,9 +5680,9 @@ public class XKB {
 														 * LETTER I WITH BREVE
 														 */;
 	public static final long XKB_KEY_Zstroke = 0x10001b5 /*
-															 * U+01B5 LATIN CAPITAL
-															 * LETTER Z WITH
-															 * STROKE
+															 * U+01B5 LATIN
+															 * CAPITAL LETTER Z
+															 * WITH STROKE
 															 */;
 	public static final long XKB_KEY_Gcaron = 0x10001e6 /*
 														 * U+01E6 LATIN CAPITAL
@@ -5519,23 +5693,23 @@ public class XKB {
 														 * LETTER O WITH CARON
 														 */;
 	public static final long XKB_KEY_Obarred = 0x100019f /*
-															 * U+019F LATIN CAPITAL
-															 * LETTER O WITH
-															 * MIDDLE TILDE
+															 * U+019F LATIN
+															 * CAPITAL LETTER O
+															 * WITH MIDDLE TILDE
 															 */;
 	public static final long XKB_KEY_xabovedot = 0x1001e8b /*
-															 * U+1E8B LATIN SMALL
-															 * LETTER X WITH DOT
-															 * ABOVE
+															 * U+1E8B LATIN
+															 * SMALL LETTER X
+															 * WITH DOT ABOVE
 															 */;
 	public static final long XKB_KEY_ibreve = 0x100012d /*
 														 * U+012D LATIN SMALL
 														 * LETTER I WITH BREVE
 														 */;
 	public static final long XKB_KEY_zstroke = 0x10001b6 /*
-															 * U+01B6 LATIN SMALL
-															 * LETTER Z WITH
-															 * STROKE
+															 * U+01B6 LATIN
+															 * SMALL LETTER Z
+															 * WITH STROKE
 															 */;
 	public static final long XKB_KEY_gcaron = 0x10001e7 /*
 														 * U+01E7 LATIN SMALL
@@ -5546,8 +5720,9 @@ public class XKB {
 														 * LETTER O WITH CARON
 														 */;
 	public static final long XKB_KEY_obarred = 0x1000275 /*
-															 * U+0275 LATIN SMALL
-															 * LETTER BARRED O
+															 * U+0275 LATIN
+															 * SMALL LETTER
+															 * BARRED O
 															 */;
 	public static final long XKB_KEY_SCHWA = 0x100018f /*
 														 * U+018F LATIN CAPITAL
@@ -5573,9 +5748,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_lbelowdot = 0x1001e37 /*
-															 * U+1E37 LATIN SMALL
-															 * LETTER L WITH DOT
-															 * BELOW
+															 * U+1E37 LATIN
+															 * SMALL LETTER L
+															 * WITH DOT BELOW
 															 */;
 
 	/*
@@ -5588,9 +5763,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_abelowdot = 0x1001ea1 /*
-															 * U+1EA1 LATIN SMALL
-															 * LETTER A WITH DOT
-															 * BELOW
+															 * U+1EA1 LATIN
+															 * SMALL LETTER A
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Ahook = 0x1001ea2 /*
 														 * U+1EA2 LATIN CAPITAL
@@ -5639,7 +5814,8 @@ public class XKB {
 																	 * AND GRAVE
 																	 */;
 	public static final long XKB_KEY_Acircumflexhook = 0x1001ea8 /*
-																	 * U+1EA8 LATIN
+																	 * U+1EA8
+																	 * LATIN
 																	 * CAPITAL
 																	 * LETTER A
 																	 * WITH
@@ -5648,7 +5824,8 @@ public class XKB {
 																	 * ABOVE
 																	 */;
 	public static final long XKB_KEY_acircumflexhook = 0x1001ea9 /*
-																	 * U+1EA9 LATIN
+																	 * U+1EA9
+																	 * LATIN
 																	 * SMALL
 																	 * LETTER A
 																	 * WITH
@@ -5675,7 +5852,8 @@ public class XKB {
 																	 * AND TILDE
 																	 */;
 	public static final long XKB_KEY_Acircumflexbelowdot = 0x1001eac /*
-																		 * U+1EAC
+																		 * U+
+																		 * 1EAC
 																		 * LATIN
 																		 * CAPITAL
 																		 * LETTER
@@ -5687,7 +5865,8 @@ public class XKB {
 																		 * BELOW
 																		 */;
 	public static final long XKB_KEY_acircumflexbelowdot = 0x1001ead /*
-																		 * U+1EAD
+																		 * U+
+																		 * 1EAD
 																		 * LATIN
 																		 * SMALL
 																		 * LETTER
@@ -5768,9 +5947,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_ebelowdot = 0x1001eb9 /*
-															 * U+1EB9 LATIN SMALL
-															 * LETTER E WITH DOT
-															 * BELOW
+															 * U+1EB9 LATIN
+															 * SMALL LETTER E
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Ehook = 0x1001eba /*
 														 * U+1EBA LATIN CAPITAL
@@ -5827,7 +6006,8 @@ public class XKB {
 																	 * AND GRAVE
 																	 */;
 	public static final long XKB_KEY_Ecircumflexhook = 0x1001ec2 /*
-																	 * U+1EC2 LATIN
+																	 * U+1EC2
+																	 * LATIN
 																	 * CAPITAL
 																	 * LETTER E
 																	 * WITH
@@ -5836,7 +6016,8 @@ public class XKB {
 																	 * ABOVE
 																	 */;
 	public static final long XKB_KEY_ecircumflexhook = 0x1001ec3 /*
-																	 * U+1EC3 LATIN
+																	 * U+1EC3
+																	 * LATIN
 																	 * SMALL
 																	 * LETTER E
 																	 * WITH
@@ -5863,7 +6044,8 @@ public class XKB {
 																	 * AND TILDE
 																	 */;
 	public static final long XKB_KEY_Ecircumflexbelowdot = 0x1001ec6 /*
-																		 * U+1EC6
+																		 * U+
+																		 * 1EC6
 																		 * LATIN
 																		 * CAPITAL
 																		 * LETTER
@@ -5875,7 +6057,8 @@ public class XKB {
 																		 * BELOW
 																		 */;
 	public static final long XKB_KEY_ecircumflexbelowdot = 0x1001ec7 /*
-																		 * U+1EC7
+																		 * U+
+																		 * 1EC7
 																		 * LATIN
 																		 * SMALL
 																		 * LETTER
@@ -5902,9 +6085,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_ibelowdot = 0x1001ecb /*
-															 * U+1ECB LATIN SMALL
-															 * LETTER I WITH DOT
-															 * BELOW
+															 * U+1ECB LATIN
+															 * SMALL LETTER I
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Obelowdot = 0x1001ecc /*
 															 * U+1ECC LATIN
@@ -5912,9 +6095,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_obelowdot = 0x1001ecd /*
-															 * U+1ECD LATIN SMALL
-															 * LETTER O WITH DOT
-															 * BELOW
+															 * U+1ECD LATIN
+															 * SMALL LETTER O
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Ohook = 0x1001ece /*
 														 * U+1ECE LATIN CAPITAL
@@ -5963,7 +6146,8 @@ public class XKB {
 																	 * AND GRAVE
 																	 */;
 	public static final long XKB_KEY_Ocircumflexhook = 0x1001ed4 /*
-																	 * U+1ED4 LATIN
+																	 * U+1ED4
+																	 * LATIN
 																	 * CAPITAL
 																	 * LETTER O
 																	 * WITH
@@ -5972,7 +6156,8 @@ public class XKB {
 																	 * ABOVE
 																	 */;
 	public static final long XKB_KEY_ocircumflexhook = 0x1001ed5 /*
-																	 * U+1ED5 LATIN
+																	 * U+1ED5
+																	 * LATIN
 																	 * SMALL
 																	 * LETTER O
 																	 * WITH
@@ -5999,7 +6184,8 @@ public class XKB {
 																	 * AND TILDE
 																	 */;
 	public static final long XKB_KEY_Ocircumflexbelowdot = 0x1001ed8 /*
-																		 * U+1ED8
+																		 * U+
+																		 * 1ED8
 																		 * LATIN
 																		 * CAPITAL
 																		 * LETTER
@@ -6011,7 +6197,8 @@ public class XKB {
 																		 * BELOW
 																		 */;
 	public static final long XKB_KEY_ocircumflexbelowdot = 0x1001ed9 /*
-																		 * U+1ED9
+																		 * U+
+																		 * 1ED9
 																		 * LATIN
 																		 * SMALL
 																		 * LETTER
@@ -6053,10 +6240,10 @@ public class XKB {
 															 * HOOK ABOVE
 															 */;
 	public static final long XKB_KEY_ohornhook = 0x1001edf /*
-															 * U+1EDF LATIN SMALL
-															 * LETTER O WITH
-															 * HORN AND HOOK
-															 * ABOVE
+															 * U+1EDF LATIN
+															 * SMALL LETTER O
+															 * WITH HORN AND
+															 * HOOK ABOVE
 															 */;
 	public static final long XKB_KEY_Ohorntilde = 0x1001ee0 /*
 															 * U+1EE0 LATIN
@@ -6089,9 +6276,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_ubelowdot = 0x1001ee5 /*
-															 * U+1EE5 LATIN SMALL
-															 * LETTER U WITH DOT
-															 * BELOW
+															 * U+1EE5 LATIN
+															 * SMALL LETTER U
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Uhook = 0x1001ee6 /*
 														 * U+1EE6 LATIN CAPITAL
@@ -6134,10 +6321,10 @@ public class XKB {
 															 * HOOK ABOVE
 															 */;
 	public static final long XKB_KEY_uhornhook = 0x1001eed /*
-															 * U+1EED LATIN SMALL
-															 * LETTER U WITH
-															 * HORN AND HOOK
-															 * ABOVE
+															 * U+1EED LATIN
+															 * SMALL LETTER U
+															 * WITH HORN AND
+															 * HOOK ABOVE
 															 */;
 	public static final long XKB_KEY_Uhorntilde = 0x1001eee /*
 															 * U+1EEE LATIN
@@ -6170,9 +6357,9 @@ public class XKB {
 															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_ybelowdot = 0x1001ef5 /*
-															 * U+1EF5 LATIN SMALL
-															 * LETTER Y WITH DOT
-															 * BELOW
+															 * U+1EF5 LATIN
+															 * SMALL LETTER Y
+															 * WITH DOT BELOW
 															 */;
 	public static final long XKB_KEY_Yhook = 0x1001ef6 /*
 														 * U+1EF6 LATIN CAPITAL
@@ -6210,15 +6397,16 @@ public class XKB {
 														 */;
 
 	public static final long XKB_KEY_EcuSign = 0x10020a0 /*
-															 * U+20A0 EURO-CURRENCY
+															 * U+20A0
+															 * EURO-CURRENCY
 															 * SIGN
 															 */;
 	public static final long XKB_KEY_ColonSign = 0x10020a1 /*
 															 * U+20A1 COLON SIGN
 															 */;
 	public static final long XKB_KEY_CruzeiroSign = 0x10020a2 /*
-																 * U+20A2 CRUZEIRO
-																 * SIGN
+																 * U+20A2
+																 * CRUZEIRO SIGN
 																 */;
 	public static final long XKB_KEY_FFrancSign = 0x10020a3 /*
 															 * U+20A3 FRENCH
@@ -6363,8 +6551,8 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_because = 0x1002235 /* U+2235 BECAUSE */;
 	public static final long XKB_KEY_approxeq = 0x1002248 /*
-															 * U+2245 ALMOST EQUAL
-															 * TO
+															 * U+2245 ALMOST
+															 * EQUAL TO
 															 */;
 	public static final long XKB_KEY_notapproxeq = 0x1002247 /*
 																 * U+2247 NOT
@@ -6391,7 +6579,8 @@ public class XKB {
 	public static final long XKB_KEY_braille_dot_9 = 0xfff9;
 	public static final long XKB_KEY_braille_dot_10 = 0xfffa;
 	public static final long XKB_KEY_braille_blank = 0x1002800 /*
-																 * U+2800 BRAILLE
+																 * U+2800
+																 * BRAILLE
 																 * PATTERN BLANK
 																 */;
 	public static final long XKB_KEY_braille_dots_1 = 0x1002801 /*
@@ -6773,7 +6962,8 @@ public class XKB {
 																	 * 23456
 																	 */;
 	public static final long XKB_KEY_braille_dots_123456 = 0x100283f /*
-																		 * U+283f
+																		 * U+
+																		 * 283f
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -6971,7 +7161,8 @@ public class XKB {
 																	 * 23457
 																	 */;
 	public static final long XKB_KEY_braille_dots_123457 = 0x100285f /*
-																		 * U+285f
+																		 * U+
+																		 * 285f
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7072,7 +7263,8 @@ public class XKB {
 																	 * 23467
 																	 */;
 	public static final long XKB_KEY_braille_dots_123467 = 0x100286f /*
-																		 * U+286f
+																		 * U+
+																		 * 286f
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7124,7 +7316,8 @@ public class XKB {
 																	 * 23567
 																	 */;
 	public static final long XKB_KEY_braille_dots_123567 = 0x1002877 /*
-																		 * U+2877
+																		 * U+
+																		 * 2877
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7151,7 +7344,8 @@ public class XKB {
 																	 * 24567
 																	 */;
 	public static final long XKB_KEY_braille_dots_124567 = 0x100287b /*
-																		 * U+287b
+																		 * U+
+																		 * 287b
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7165,21 +7359,24 @@ public class XKB {
 																	 * 34567
 																	 */;
 	public static final long XKB_KEY_braille_dots_134567 = 0x100287d /*
-																		 * U+287d
+																		 * U+
+																		 * 287d
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 134567
 																		 */;
 	public static final long XKB_KEY_braille_dots_234567 = 0x100287e /*
-																		 * U+287e
+																		 * U+
+																		 * 287e
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 234567
 																		 */;
 	public static final long XKB_KEY_braille_dots_1234567 = 0x100287f /*
-																		 * U+287f
+																		 * U+
+																		 * 287f
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7377,7 +7574,8 @@ public class XKB {
 																	 * 23458
 																	 */;
 	public static final long XKB_KEY_braille_dots_123458 = 0x100289f /*
-																		 * U+289f
+																		 * U+
+																		 * 289f
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7478,7 +7676,8 @@ public class XKB {
 																	 * 23468
 																	 */;
 	public static final long XKB_KEY_braille_dots_123468 = 0x10028af /*
-																		 * U+28af
+																		 * U+
+																		 * 28af
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7530,7 +7729,8 @@ public class XKB {
 																	 * 23568
 																	 */;
 	public static final long XKB_KEY_braille_dots_123568 = 0x10028b7 /*
-																		 * U+28b7
+																		 * U+
+																		 * 28b7
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7557,7 +7757,8 @@ public class XKB {
 																	 * 24568
 																	 */;
 	public static final long XKB_KEY_braille_dots_124568 = 0x10028bb /*
-																		 * U+28bb
+																		 * U+
+																		 * 28bb
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7571,21 +7772,24 @@ public class XKB {
 																	 * 34568
 																	 */;
 	public static final long XKB_KEY_braille_dots_134568 = 0x10028bd /*
-																		 * U+28bd
+																		 * U+
+																		 * 28bd
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 134568
 																		 */;
 	public static final long XKB_KEY_braille_dots_234568 = 0x10028be /*
-																		 * U+28be
+																		 * U+
+																		 * 28be
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 234568
 																		 */;
 	public static final long XKB_KEY_braille_dots_1234568 = 0x10028bf /*
-																		 * U+28bf
+																		 * U+
+																		 * 28bf
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7686,7 +7890,8 @@ public class XKB {
 																	 * 23478
 																	 */;
 	public static final long XKB_KEY_braille_dots_123478 = 0x10028cf /*
-																		 * U+28cf
+																		 * U+
+																		 * 28cf
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7738,7 +7943,8 @@ public class XKB {
 																	 * 23578
 																	 */;
 	public static final long XKB_KEY_braille_dots_123578 = 0x10028d7 /*
-																		 * U+28d7
+																		 * U+
+																		 * 28d7
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7765,7 +7971,8 @@ public class XKB {
 																	 * 24578
 																	 */;
 	public static final long XKB_KEY_braille_dots_124578 = 0x10028db /*
-																		 * U+28db
+																		 * U+
+																		 * 28db
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7779,21 +7986,24 @@ public class XKB {
 																	 * 34578
 																	 */;
 	public static final long XKB_KEY_braille_dots_134578 = 0x10028dd /*
-																		 * U+28dd
+																		 * U+
+																		 * 28dd
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 134578
 																		 */;
 	public static final long XKB_KEY_braille_dots_234578 = 0x10028de /*
-																		 * U+28de
+																		 * U+
+																		 * 28de
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 234578
 																		 */;
 	public static final long XKB_KEY_braille_dots_1234578 = 0x10028df /*
-																		 * U+28df
+																		 * U+
+																		 * 28df
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7845,7 +8055,8 @@ public class XKB {
 																	 * 23678
 																	 */;
 	public static final long XKB_KEY_braille_dots_123678 = 0x10028e7 /*
-																		 * U+28e7
+																		 * U+
+																		 * 28e7
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7872,7 +8083,8 @@ public class XKB {
 																	 * 24678
 																	 */;
 	public static final long XKB_KEY_braille_dots_124678 = 0x10028eb /*
-																		 * U+28eb
+																		 * U+
+																		 * 28eb
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7886,21 +8098,24 @@ public class XKB {
 																	 * 34678
 																	 */;
 	public static final long XKB_KEY_braille_dots_134678 = 0x10028ed /*
-																		 * U+28ed
+																		 * U+
+																		 * 28ed
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 134678
 																		 */;
 	public static final long XKB_KEY_braille_dots_234678 = 0x10028ee /*
-																		 * U+28ee
+																		 * U+
+																		 * 28ee
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 234678
 																		 */;
 	public static final long XKB_KEY_braille_dots_1234678 = 0x10028ef /*
-																		 * U+28ef
+																		 * U+
+																		 * 28ef
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7927,7 +8142,8 @@ public class XKB {
 																	 * 25678
 																	 */;
 	public static final long XKB_KEY_braille_dots_125678 = 0x10028f3 /*
-																		 * U+28f3
+																		 * U+
+																		 * 28f3
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7941,21 +8157,24 @@ public class XKB {
 																	 * 35678
 																	 */;
 	public static final long XKB_KEY_braille_dots_135678 = 0x10028f5 /*
-																		 * U+28f5
+																		 * U+
+																		 * 28f5
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 135678
 																		 */;
 	public static final long XKB_KEY_braille_dots_235678 = 0x10028f6 /*
-																		 * U+28f6
+																		 * U+
+																		 * 28f6
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 235678
 																		 */;
 	public static final long XKB_KEY_braille_dots_1235678 = 0x10028f7 /*
-																		 * U+28f7
+																		 * U+
+																		 * 28f7
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -7969,49 +8188,56 @@ public class XKB {
 																	 * 45678
 																	 */;
 	public static final long XKB_KEY_braille_dots_145678 = 0x10028f9 /*
-																		 * U+28f9
+																		 * U+
+																		 * 28f9
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 145678
 																		 */;
 	public static final long XKB_KEY_braille_dots_245678 = 0x10028fa /*
-																		 * U+28fa
+																		 * U+
+																		 * 28fa
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 245678
 																		 */;
 	public static final long XKB_KEY_braille_dots_1245678 = 0x10028fb /*
-																		 * U+28fb
+																		 * U+
+																		 * 28fb
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 1245678
 																		 */;
 	public static final long XKB_KEY_braille_dots_345678 = 0x10028fc /*
-																		 * U+28fc
+																		 * U+
+																		 * 28fc
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 345678
 																		 */;
 	public static final long XKB_KEY_braille_dots_1345678 = 0x10028fd /*
-																		 * U+28fd
+																		 * U+
+																		 * 28fd
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 1345678
 																		 */;
 	public static final long XKB_KEY_braille_dots_2345678 = 0x10028fe /*
-																		 * U+28fe
+																		 * U+
+																		 * 28fe
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
 																		 * 2345678
 																		 */;
 	public static final long XKB_KEY_braille_dots_12345678 = 0x10028ff /*
-																		 * U+28ff
+																		 * U+
+																		 * 28ff
 																		 * BRAILLE
 																		 * PATTERN
 																		 * DOTS-
@@ -8223,8 +8449,8 @@ public class XKB {
 															 * MAYANNA
 															 */;
 	public static final long XKB_KEY_Sinh_mba = 0x1000db9 /*
-															 * U+0DB9 SINHALA AMBA
-															 * BAYANNA
+															 * U+0DB9 SINHALA
+															 * AMBA BAYANNA
 															 */;
 	public static final long XKB_KEY_Sinh_ya = 0x1000dba /*
 															 * U+0DBA SINHALA
@@ -8287,16 +8513,16 @@ public class XKB {
 															 * IS-PILLA
 															 */;
 	public static final long XKB_KEY_Sinh_ii2 = 0x1000dd3 /*
-															 * U+0DD3 SINHALA DIGA
-															 * IS-PILLA
+															 * U+0DD3 SINHALA
+															 * DIGA IS-PILLA
 															 */;
 	public static final long XKB_KEY_Sinh_u2 = 0x1000dd4 /*
 															 * U+0DD4 SINHALA
 															 * PAA-PILLA
 															 */;
 	public static final long XKB_KEY_Sinh_uu2 = 0x1000dd6 /*
-															 * U+0DD6 SINHALA DIGA
-															 * PAA-PILLA
+															 * U+0DD6 SINHALA
+															 * DIGA PAA-PILLA
 															 */;
 	public static final long XKB_KEY_Sinh_ru2 = 0x1000dd8 /*
 															 * U+0DD8 SINHALA
@@ -8307,8 +8533,8 @@ public class XKB {
 															 * KOMBUVA
 															 */;
 	public static final long XKB_KEY_Sinh_ee2 = 0x1000dda /*
-															 * U+0DDA SINHALA DIGA
-															 * KOMBUVA
+															 * U+0DDA SINHALA
+															 * DIGA KOMBUVA
 															 */;
 	public static final long XKB_KEY_Sinh_ai2 = 0x1000ddb /*
 															 * U+0DDB SINHALA
@@ -8454,12 +8680,13 @@ public class XKB {
 																 */;
 	public static final long XKB_KEY_XF86AudioNext = 0x1008FF17 /* Next track */;
 	public static final long XKB_KEY_XF86HomePage = 0x1008FF18 /*
-																 * Display user's
-																 * home page
+																 * Display
+																 * user's home
+																 * page
 																 */;
 	public static final long XKB_KEY_XF86Mail = 0x1008FF19 /*
-															 * Invoke user's mail
-															 * program
+															 * Invoke user's
+															 * mail program
 															 */;
 	public static final long XKB_KEY_XF86Start = 0x1008FF1A /*
 															 * Start application
@@ -8478,8 +8705,8 @@ public class XKB {
 																	 * program
 																	 */;
 	public static final long XKB_KEY_XF86Memo = 0x1008FF1E /*
-															 * Invoke Memo taking
-															 * program
+															 * Invoke Memo
+															 * taking program
 															 */;
 	public static final long XKB_KEY_XF86ToDoList = 0x1008FF1F /*
 																 * Invoke To Do
@@ -8506,8 +8733,8 @@ public class XKB {
 																 */;
 	public static final long XKB_KEY_XF86RockerDown = 0x1008FF24 /* and down */;
 	public static final long XKB_KEY_XF86RockerEnter = 0x1008FF25 /*
-																	 * and let you
-																	 * press
+																	 * and let
+																	 * you press
 																	 * them
 																	 */;
 
@@ -8517,8 +8744,8 @@ public class XKB {
 															 * browser
 															 */;
 	public static final long XKB_KEY_XF86Forward = 0x1008FF27 /*
-																 * Like forward on
-																 * a browser
+																 * Like forward
+																 * on a browser
 																 */;
 	public static final long XKB_KEY_XF86Stop = 0x1008FF28 /*
 															 * Stop current
@@ -8534,8 +8761,9 @@ public class XKB {
 																 * entirely
 																 */;
 	public static final long XKB_KEY_XF86WakeUp = 0x1008FF2B /*
-																 * Wake up system
-																 * from sleep
+																 * Wake up
+																 * system from
+																 * sleep
 																 */;
 	public static final long XKB_KEY_XF86Eject = 0x1008FF2C /*
 															 * Eject device
@@ -8546,7 +8774,8 @@ public class XKB {
 																	 * screensaver
 																	 */;
 	public static final long XKB_KEY_XF86WWW = 0x1008FF2E /*
-															 * Invoke web browser
+															 * Invoke web
+															 * browser
 															 */;
 	public static final long XKB_KEY_XF86Sleep = 0x1008FF2F /*
 															 * Put system to
@@ -8557,11 +8786,13 @@ public class XKB {
 																 * locations
 																 */;
 	public static final long XKB_KEY_XF86AudioPause = 0x1008FF31 /*
-																	 * Pause audio
+																	 * Pause
+																	 * audio
 																	 * playing
 																	 */;
 	public static final long XKB_KEY_XF86AudioMedia = 0x1008FF32 /*
-																	 * Launch media
+																	 * Launch
+																	 * media
 																	 * collection
 																	 * app
 																	 */;
@@ -8585,15 +8816,17 @@ public class XKB {
 															 * web site
 															 */;
 	public static final long XKB_KEY_XF86History = 0x1008FF37 /*
-																 * Show history of
-																 * web surfing
+																 * Show history
+																 * of web
+																 * surfing
 																 */;
 	public static final long XKB_KEY_XF86OpenURL = 0x1008FF38 /*
 																 * Open selected
 																 * URL
 																 */;
 	public static final long XKB_KEY_XF86AddFavorite = 0x1008FF39 /*
-																	 * Add URL to
+																	 * Add URL
+																	 * to
 																	 * favorites
 																	 * list
 																	 */;
@@ -8704,7 +8937,8 @@ public class XKB {
 															 * Launch bookreader
 															 */;
 	public static final long XKB_KEY_XF86CD = 0x1008FF53 /*
-															 * Launch CD/DVD player
+															 * Launch CD/DVD
+															 * player
 															 */;
 	public static final long XKB_KEY_XF86Calculater = 0x1008FF54 /*
 																	 * Launch
@@ -8741,11 +8975,13 @@ public class XKB {
 	public static final long XKB_KEY_XF86Game = 0x1008FF5E /* Launch game */;
 	public static final long XKB_KEY_XF86Go = 0x1008FF5F /* Go to URL */;
 	public static final long XKB_KEY_XF86iTouch = 0x1008FF60 /*
-																 * Logitch iTouch-
-																 * don't use
+																 * Logitch
+																 * iTouch- don't
+																 * use
 																 */;
 	public static final long XKB_KEY_XF86LogOff = 0x1008FF61 /*
-																 * Log off system
+																 * Log off
+																 * system
 																 */;
 	public static final long XKB_KEY_XF86Market = 0x1008FF62 /* ?? */;
 	public static final long XKB_KEY_XF86Meeting = 0x1008FF63 /*
@@ -8768,8 +9004,8 @@ public class XKB {
 															 */;
 	public static final long XKB_KEY_XF86News = 0x1008FF69 /* News */;
 	public static final long XKB_KEY_XF86OfficeHome = 0x1008FF6A /*
-																	 * Office home
-																	 * (old
+																	 * Office
+																	 * home (old
 																	 * Staroffice)
 																	 */;
 	public static final long XKB_KEY_XF86Open = 0x1008FF6B /* Open */;
@@ -8787,8 +9023,9 @@ public class XKB {
 															 * Reply e.g., mail
 															 */;
 	public static final long XKB_KEY_XF86Reload = 0x1008FF73 /*
-																 * Reload web page,
-																 * file, etc.
+																 * Reload web
+																 * page, file,
+																 * etc.
 																 */;
 	public static final long XKB_KEY_XF86RotateWindows = 0x1008FF74 /*
 																	 * Rotate
@@ -8803,7 +9040,8 @@ public class XKB {
 															 * document, state
 															 */;
 	public static final long XKB_KEY_XF86ScrollUp = 0x1008FF78 /*
-																 * Scroll window/
+																 * Scroll
+																 * window/
 																 * contents up
 																 */;
 	public static final long XKB_KEY_XF86ScrollDown = 0x1008FF79 /*
@@ -8850,8 +9088,9 @@ public class XKB {
 															 * player
 															 */;
 	public static final long XKB_KEY_XF86WheelButton = 0x1008FF88 /*
-																	 * button from
-																	 * a mouse
+																	 * button
+																	 * from a
+																	 * mouse
 																	 * wheel
 																	 */;
 	public static final long XKB_KEY_XF86Word = 0x1008FF89 /*
@@ -8864,8 +9103,9 @@ public class XKB {
 																 * map, etc.
 																 */;
 	public static final long XKB_KEY_XF86ZoomOut = 0x1008FF8C /*
-																 * zoom out view,
-																 * map, etc.
+																 * zoom out
+																 * view, map,
+																 * etc.
 																 */;
 
 	public static final long XKB_KEY_XF86Away = 0x1008FF8D /*
@@ -8881,8 +9121,8 @@ public class XKB {
 																 * camera app.
 																 */;
 	public static final long XKB_KEY_XF86MailForward = 0x1008FF90 /*
-																	 * Forward in
-																	 * mail
+																	 * Forward
+																	 * in mail
 																	 */;
 	public static final long XKB_KEY_XF86Pictures = 0x1008FF91 /*
 																 * Show pictures
@@ -8893,7 +9133,8 @@ public class XKB {
 															 */;
 
 	public static final long XKB_KEY_XF86Battery = 0x1008FF93 /*
-																 * Display battery
+																 * Display
+																 * battery
 																 * information
 																 */;
 	public static final long XKB_KEY_XF86Bluetooth = 0x1008FF94 /*
@@ -8906,7 +9147,8 @@ public class XKB {
 															 * WLAN
 															 */;
 	public static final long XKB_KEY_XF86UWB = 0x1008FF96 /*
-															 * Enable/disable UWB
+															 * Enable/disable
+															 * UWB
 															 */;
 
 	public static final long XKB_KEY_XF86AudioForward = 0x1008FF97 /*
@@ -8955,9 +9197,9 @@ public class XKB {
 															 * seeking
 															 */;
 	public static final long XKB_KEY_XF86Select = 0x1008FFA0 /*
-																 * Select button on
-																 * joypads and
-																 * remotes
+																 * Select button
+																 * on joypads
+																 * and remotes
 																 */;
 	public static final long XKB_KEY_XF86View = 0x1008FFA1 /*
 															 * Show a view
@@ -8988,7 +9230,8 @@ public class XKB {
 																		 * trackstick
 																		 */;
 	public static final long XKB_KEY_XF86TouchpadOn = 0x1008FFB0 /*
-																	 * The touchpad
+																	 * The
+																	 * touchpad
 																	 * got
 																	 * switched
 																	 * on
@@ -9030,12 +9273,14 @@ public class XKB {
 																 * with grab
 																 */;
 	public static final long XKB_KEY_XF86Next_VMode = 0x1008FE22 /*
-																	 * next video
+																	 * next
+																	 * video
 																	 * mode
 																	 * available
 																	 */;
 	public static final long XKB_KEY_XF86Prev_VMode = 0x1008FE23 /*
-																	 * prev. video
+																	 * prev.
+																	 * video
 																	 * mode
 																	 * available
 																	 */;
@@ -9138,7 +9383,8 @@ public class XKB {
 															 * Same as XK_Prior
 															 */;
 	public static final long XKB_KEY_SunPageDown = 0x0000FF56 /*
-																 * Same as XK_Next
+																 * Same as
+																 * XK_Next
 																 */;
 
 	/*

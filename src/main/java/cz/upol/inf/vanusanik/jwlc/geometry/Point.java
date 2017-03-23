@@ -123,7 +123,8 @@ public class Point {
 	}
 
 	public static Point from(wlc_point point) {
-		if (point == null) return null;
+		if (point == null)
+			return null;
 		return Point.of(point.x, point.y);
 	}
 

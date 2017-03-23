@@ -31,6 +31,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
 
 /**
  * Wrapper access class for some useful global state function calls.
+ * 
  * @author pvan
  *
  */
@@ -40,9 +41,11 @@ public class JWLC {
 	 * Singleton native handler instance
 	 */
 	private static WLC instance;
-	
+
 	/**
-	 * Internal method, returns native handler to the libwlc, use with extreme caution
+	 * Internal method, returns native handler to the libwlc, use with extreme
+	 * caution
+	 * 
 	 * @return native handler
 	 */
 	public static WLC nativeHandler() {
@@ -55,8 +58,10 @@ public class JWLC {
 	}
 
 	/**
-	 * Initialize wlc. 
-	 * @throws RuntimeException when wlc fails to init
+	 * Initialize wlc.
+	 * 
+	 * @throws RuntimeException
+	 *             when wlc fails to init
 	 */
 	public static void init() {
 		if (!nativeHandler().wlc_init()) {
@@ -79,16 +84,17 @@ public class JWLC {
 	}
 
 	/**
-	 * Runs wlc event loop.
-	 * This method block.
+	 * Runs wlc event loop. This method block.
 	 */
 	public static void run() {
 		nativeHandler().wlc_run();
 	}
 
 	/**
-	 * Sets the logger callback. 
-	 * @param cb to be called when logger event happens.
+	 * Sets the logger callback.
+	 * 
+	 * @param cb
+	 *            to be called when logger event happens.
 	 */
 	public static void setLoggerCallback(final LoggerCallback cb) {
 		Assert.assertNotNull(cb);
@@ -104,13 +110,14 @@ public class JWLC {
 
 	/**
 	 * Executes program with provided arguments
+	 * 
 	 * @param bin
 	 * @param args
 	 */
 	public static void exec(String bin, String[] args) {
 		Assert.assertNotNull(bin);
 		Assert.assertNotNull(args);
-		
+
 		nativeHandler().wlc_exec(bin, args);
 	}
 }

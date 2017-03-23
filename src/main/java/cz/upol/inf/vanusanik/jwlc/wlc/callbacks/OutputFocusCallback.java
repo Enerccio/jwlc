@@ -28,5 +28,5 @@ import cz.upol.inf.vanusanik.jwlc.wlc.Output;
 public interface OutputFocusCallback {
 
 	public void onFocusChange(Output output, boolean focusState);
-	
+
 }

@@ -28,5 +28,5 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 public interface ViewStateRequestCallback {
 
 	public void onStateRequest(View view, int state, boolean toggle);
-	
+
 }
