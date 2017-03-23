@@ -369,9 +369,9 @@ public interface WLC extends Library {
 	/** Utility function to convert raw keycode to keysym. Passed modifiers may transform the key. */
 	int wlc_keyboard_get_keysym_for_key(int key, wlc_modifiers modifiers);
 
-//	/** Utility function to convert raw keycode to Unicode/UTF-32 codepoint. Passed modifiers may transform the key. */
-//	uint32_t wlc_keyboard_get_utf32_for_key(uint32_t key, const struct wlc_modifiers *modifiers);
-//
+	/** Utility function to convert raw keycode to Unicode/UTF-32 codepoint. Passed modifiers may transform the key. */
+	int wlc_keyboard_get_utf32_for_key(int key, wlc_modifiers mods);
+
 	/** Get current pointer position. */
 	void wlc_pointer_get_position(wlc_point position);
 

@@ -68,4 +68,12 @@ public class Keyboard {
 				modifiers == null ? null : modifiers.to()));
 	}
 
+	 long getUtf32CharacterForKey(long key, Modifiers modifiers) {
+		 return Utils.getUnsignedInt(JWLC.nativeHandler()
+				 .wlc_keyboard_get_utf32_for_key(Utils.getAsUnsignedInt(key), modifiers.to()));
+	 }
+	 
+	 char[] getUtf32CharsForKey(long key, Modifiers modifiers) {
+		 return Character.toChars(Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
+	 }
 }
