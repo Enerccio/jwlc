@@ -349,7 +349,7 @@ public class Example {
 					Geometry g = c.getAction().getView().getGeometry();
 					if (c.getAction().getEdges() > 0) {
 						Size min = new Size(80, 40);
-						Geometry n = new Geometry(g.getOrigin(), g.getSize());
+						Geometry n = new Geometry(g);
 						if ((c.getAction().getEdges() & ResizeEdge.LEFT) > 0) {
 							n.getSize().setW(n.getSize().getW() - dx);
 							n.getOrigin().setX(n.getOrigin().getX() + dx);

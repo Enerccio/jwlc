@@ -44,6 +44,11 @@ public class Geometry {
 	public Geometry() {
 
 	}
+	
+	public Geometry(Geometry other) {
+		this.origin = Point.of(other.origin.getX(), other.origin.getY());
+		this.size = Size.of(other.size.getW(), other.size.getH());
+	}
 
 	public Geometry(Point origin, Size size) {
 		this.origin = origin;
