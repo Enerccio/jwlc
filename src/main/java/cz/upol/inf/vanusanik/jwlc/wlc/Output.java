@@ -30,13 +30,21 @@ import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
 import cz.upol.inf.vanusanik.jwlc.Assert;
-import cz.upol.inf.vanusanik.jwlc.Utils;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.focus_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.output_resolution_callback;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextCreatedCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputCreatedCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputDestroyedCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputFocusCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputPostRenderCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputPreRenderCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputResolutionCallback;
 
 public class Output extends WLCHandle {
@@ -68,6 +76,28 @@ public class Output extends WLCHandle {
 			}
 		});
 	}
+	
+	public static void setDestroyedCallback(final OutputDestroyedCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_destroyed_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onOutputDestroyed(Output.from(handle));
+			}
+		});
+	}
+	
+	public static void setFocusCallback(final OutputFocusCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_focus_cb(new focus_callback() {
+
+			public void callback(Pointer handle, boolean focusState) {
+				cb.onFocusChange(Output.from(handle), focusState);
+			}
+		});
+	}
 
 	public static void setResolutionCallback(final OutputResolutionCallback cb) {
 		Assert.assertNotNull(cb);
@@ -77,6 +107,50 @@ public class Output extends WLCHandle {
 			public void callback(Pointer handle, wlc_size fromSize, wlc_size toSize) {
 				cb.onOutputResolution(Output.from(handle), Size.from(fromSize),
 						Size.from(toSize));
+			}
+		});
+	}
+	
+	public static void setPreRenderCallback(final OutputPreRenderCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_render_pre_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onOutputPreRender(Output.from(handle));
+			}
+		});
+	}
+	
+	public static void setPostRenderCallback(final OutputPostRenderCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_render_post_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onOutputPostRender(Output.from(handle));
+			}
+		});
+	}
+	
+	public static void setContextCreatedCallback(final OutputContextCreatedCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_context_created_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onOutputContextCreated(Output.from(handle));
+			}
+		});
+	}
+	
+	public static void setContextDestroyedCallback(final OutputContextDestroyedCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_output_context_destroyed_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onOutputContextDestroyed(Output.from(handle));
 			}
 		});
 	}

@@ -51,27 +51,27 @@ public interface WLC extends Library {
 	/** Output was created. Return false if you want to destroy the output. (e.g. failed to allocate data related to view) */
 	void wlc_set_output_created_cb(handle_callback cb);
 
-//	/** Output was destroyed. */
-//	void wlc_set_output_destroyed_cb(void (*cb)(wlc_handle output));
-//
-//	/** Output got or lost focus. */
-//	void wlc_set_output_focus_cb(void (*cb)(wlc_handle output, bool focus));
-//
+	/** Output was destroyed. */
+	void wlc_set_output_destroyed_cb(handle_callback_void cb);
+
+	/** Output got or lost focus. */
+	void wlc_set_output_focus_cb(focus_callback cb);
+
 	/** Output resolution changed. */
 	void wlc_set_output_resolution_cb(output_resolution_callback cb);
 	
-//	/** Output pre render hook. */
-//	void wlc_set_output_render_pre_cb(void (*cb)(wlc_handle output));
-//
-//	/** Output post render hook. */
-//	void wlc_set_output_render_post_cb(void (*cb)(wlc_handle output));
-//
-//	/** Output context is created. This generally happens on startup and when current tty changes */
-//	void wlc_set_output_context_created_cb(void (*cb)(wlc_handle output));
-//
-//	/** Output context was destroyed. */
-//	void wlc_set_output_context_destroyed_cb(void (*cb)(wlc_handle output));
-//
+	/** Output pre render hook. */
+	void wlc_set_output_render_pre_cb(handle_callback_void cb);
+
+	/** Output post render hook. */
+	void wlc_set_output_render_post_cb(handle_callback_void cb);
+
+	/** Output context is created. This generally happens on startup and when current tty changes */
+	void wlc_set_output_context_created_cb(handle_callback_void cb);
+
+	/** Output context was destroyed. */
+	void wlc_set_output_context_destroyed_cb(handle_callback_void cb);
+
 	/** View was created. Return false if you want to destroy the view. (e.g. failed to allocate data related to view) */
 	void wlc_set_view_created_cb(handle_callback cb);
 
