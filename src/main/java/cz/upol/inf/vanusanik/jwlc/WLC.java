@@ -184,29 +184,29 @@ public interface WLC extends Library {
 	 * Resolution applied by either wlc_output_set_resolution call or initially.
 	 * Do not use this for coordinate boundary.
 	 */
-	wlc_size wlc_output_get_resolution(int output);
+	wlc_size wlc_output_get_resolution(Pointer output);
 
 	/**
 	 * Get virtual resolution.
 	 * Resolution with transformations applied for proper rendering for example on high density displays.
 	 * Use this to figure out coordinate boundary.
 	 */
-	wlc_size wlc_output_get_virtual_resolution(int output);
+	wlc_size wlc_output_get_virtual_resolution(Pointer output);
 //
 	/** Set resolution. */
-	void wlc_output_set_resolution(int output, wlc_size resolution, int scale);
+	void wlc_output_set_resolution(Pointer output, wlc_size resolution, int scale);
 
 //	/** Get scale factor. */
 //	uint32_t wlc_output_get_scale(wlc_handle output);
 //
 	/** Get current visibility bitmask. */
-	int wlc_output_get_mask(int output);
+	int wlc_output_get_mask(Pointer output);
 
 //	/** Set visibility bitmask. */
 //	void wlc_output_set_mask(wlc_handle output, uint32_t mask);
 //
 	/** Get views in stack order. Returned array is a direct reference, careful when moving and destroying handles. */
-	Pointer wlc_output_get_views(int output, IntByReference memb);
+	Pointer wlc_output_get_views(Pointer output, IntByReference memb);
 //
 //	/**
 //	 * Get mutable views in creation order. Returned array is a direct reference, careful when moving and destroying handles.
@@ -224,19 +224,19 @@ public interface WLC extends Library {
 //	/** -- View API */
 //
 	/** Focus view. Pass zero for no focus. */
-	void wlc_view_focus(int view);
+	void wlc_view_focus(Pointer view);
 
 	/** Close view. */
-	void wlc_view_close(int view);
+	void wlc_view_close(Pointer view);
 
 	/** Get current output. */
-	int wlc_view_get_output(int view);
+	Pointer wlc_view_get_output(Pointer view);
 
 //	/** Set output. Alternatively you can wlc_output_set_views. */
 //	void wlc_view_set_output(wlc_handle view, wlc_handle output);
 //
 	/** Send behind everything. */
-	void wlc_view_send_to_back(int view);
+	void wlc_view_send_to_back(Pointer view);
 
 //	/** Send below another view. */
 //	void wlc_view_send_below(wlc_handle view, wlc_handle other);
@@ -245,28 +245,28 @@ public interface WLC extends Library {
 //	void wlc_view_bring_above(wlc_handle view, wlc_handle other);
 //
 	/** Bring to front of everything. */
-	void wlc_view_bring_to_front(int view);
+	void wlc_view_bring_to_front(Pointer view);
 //
 //	/** Get current visibility bitmask. */
 //	uint32_t wlc_view_get_mask(wlc_handle view);
 //
 	/** Set visibility bitmask. */
-	void wlc_view_set_mask(int view, int mask);
+	void wlc_view_set_mask(Pointer view, int mask);
 
 	/** Get current geometry. (what client sees) */
-	wlc_geometry wlc_view_get_geometry(int view);
+	wlc_geometry wlc_view_get_geometry(Pointer view);
 	
 	/**
 	 * Get size requested by positioner, as defined in xdg-shell v6.
 	 * Returns NULL if view has no valid positioner
 	 */
-	wlc_size wlc_view_positioner_get_size(int view);
+	wlc_size wlc_view_positioner_get_size(Pointer view);
 	
 	/**
 	 * Get anchor rectangle requested by positioner, as defined in xdg-shell v6.
 	 * Returns NULL if view has no valid positioner.
 	 */
-	wlc_geometry wlc_view_positioner_get_anchor_rect(int view);
+	wlc_geometry wlc_view_positioner_get_anchor_rect(Pointer view);
 //
 //	/**
 //	 * Get offset requested by positioner, as defined in xdg-shell v6.
@@ -300,7 +300,7 @@ public interface WLC extends Library {
 //	void wlc_view_get_visible_geometry(wlc_handle view, struct wlc_geometry *out_geometry);
 //
 	/** Set geometry. Set edges if the geometry change is caused by interactive resize. */
-	void wlc_view_set_geometry(int view, int edges, wlc_geometry g);
+	void wlc_view_set_geometry(Pointer view, int edges, wlc_geometry g);
 
 //	/** Get type bitfield. */
 //	uint32_t wlc_view_get_type(wlc_handle view);
@@ -312,10 +312,10 @@ public interface WLC extends Library {
 //	uint32_t wlc_view_get_state(wlc_handle view);
 //
 	/** Set state bit. Toggle indicates whether it is set or not. */
-	void wlc_view_set_state(int view, int state, boolean toggle);
+	void wlc_view_set_state(Pointer view, int state, boolean toggle);
 
 	/** Get parent view. */
-	int wlc_view_get_parent(int view);
+	Pointer wlc_view_get_parent(Pointer view);
 	
 //	/** Set parent view. */
 //	void wlc_view_set_parent(wlc_handle view, wlc_handle parent);

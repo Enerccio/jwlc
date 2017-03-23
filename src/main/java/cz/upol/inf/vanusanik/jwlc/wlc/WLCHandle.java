@@ -1,24 +1,26 @@
 package cz.upol.inf.vanusanik.jwlc.wlc;
 
+import com.sun.jna.Pointer;
+
 public class WLCHandle {
 	
-	private final long handle;
+	private final Pointer handle;
 	
-	protected WLCHandle(long handle) {
+	protected WLCHandle(Pointer handle) {
 		this.handle = handle;
 	}
 	
-	public static WLCHandle from(long handle) {
-		if (handle == 0)
+	public static WLCHandle from(Pointer handle) {
+		if (handle == null)
 			return null;
 		return new WLCHandle(handle);
 	}
 	
-	public long to() {
+	public Pointer to() {
 		return handle;
 	}
 
-	public long getHandle() {
+	public Pointer getHandle() {
 		return handle;
 	}
 	
@@ -26,7 +28,7 @@ public class WLCHandle {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (handle ^ (handle >>> 32));
+		result = prime * result + ((handle == null) ? 0 : handle.hashCode());
 		return result;
 	}
 
@@ -39,7 +41,10 @@ public class WLCHandle {
 		if (getClass() != obj.getClass())
 			return false;
 		WLCHandle other = (WLCHandle) obj;
-		if (handle != other.handle)
+		if (handle == null) {
+			if (other.handle != null)
+				return false;
+		} else if (!handle.equals(other.handle))
 			return false;
 		return true;
 	}

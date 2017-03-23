@@ -1,5 +1,7 @@
 package cz.upol.inf.vanusanik.jwlc;
 
+import com.sun.jna.Pointer;
+
 import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.KeyState;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers;
@@ -14,12 +16,13 @@ public class Keyboard {
 		
 		JWLC.nativeHandler().wlc_set_keyboard_key_cb(new keyboard_callback() {
 			
-			public boolean callback(int handle, int time, wlc_modifiers mods, int key, int keyState) {
-				cb.onKeyboard(View.from(Utils.getUnsignedInt(handle)), 
+			public boolean callback(Pointer handle, int time, wlc_modifiers mods, int key, int keyState) {
+				cb.onKeyboard(View.from(handle), 
 						Utils.getUnsignedInt(time), Modifiers.from(mods), 
 						Utils.getUnsignedInt(key), KeyState.from(keyState));
 				return false;
 			}
+
 		});
 	}
 	

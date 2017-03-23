@@ -76,6 +76,11 @@ public class Geometry {
 		return a.containOther(b);
 	}
 
+	@Override
+	public String toString() {
+		return "Geometry [origin=" + origin + ", size=" + size + "]";
+	}
+
 	public static class wlc_geometry extends Structure {
 
 		public wlc_point origin;

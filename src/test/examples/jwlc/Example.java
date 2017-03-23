@@ -4,7 +4,7 @@ import java.util.List;
 
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.Keyboard;
-import cz.upol.inf.vanusanik.jwlc.Pointer;
+import cz.upol.inf.vanusanik.jwlc.Mouse;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
@@ -136,8 +136,7 @@ public class Example {
 		c.getAction().setGrab(point);
 		view.bringToFront();
 		return true;
-	}
-	
+	}	
 
 	protected void stopInteractiveAction() {
 		if (c.getAction().getView() == null)
@@ -287,7 +286,7 @@ public class Example {
 			}
 		});
 		
-		Pointer.setPointerButtonCallback(new PointerButtonCallback() {
+		Mouse.setPointerButtonCallback(new PointerButtonCallback() {
 			
 			public boolean onPointerButton(View view, long time, Modifiers mods, long button, ButtonState state, Point position) {
 				if (state == ButtonState.STATE_PRESSED) {
