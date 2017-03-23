@@ -32,8 +32,17 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.KeyboardCallback;
 
+/**
+ * libwlc keyboard related functions/callbacks
+ * @author pvan
+ *
+ */
 public class Keyboard {
 	
+	/**
+	 * Sets the keyboard key callback
+	 * @param cb
+	 */
 	public static void setKeyboardCallback(final KeyboardCallback cb) {
 		Assert.assertNotNull(cb);
 		
@@ -48,6 +57,12 @@ public class Keyboard {
 		});
 	}
 	
+	/**
+	 * Utility method to convert raw keycode to keysym. Passed modifiers may transform the key.
+	 * @param key
+	 * @param modifiers
+	 * @return symkey
+	 */
 	public static long getSymkeyForKey(long key, Modifiers modifiers) {
 		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_keyboard_get_keysym_for_key(Utils.getAsUnsignedInt(key), 
 				modifiers == null ? null : modifiers.to()));

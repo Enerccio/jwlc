@@ -31,6 +31,11 @@ import com.sun.jna.Structure;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
 
+/**
+ * Wraps wlc_geometry in java wrapper.
+ * @author pvan
+ *
+ */
 public class Geometry {
 
 	private Point origin;
@@ -55,6 +60,10 @@ public class Geometry {
 		return new Geometry(geo.origin.x, geo.origin.y, geo.size.w, geo.size.h);
 	}
 	
+	/**
+	 * Applies the values from wlc_geometry to this object, used when original has byref call
+	 * @param geo
+	 */
 	public void reset(wlc_geometry geo) {
 		origin.setX(geo.origin.x);
 		origin.setY(geo.origin.y);
@@ -62,6 +71,10 @@ public class Geometry {
 		size.setW(geo.size.w);
 	}
 
+	/**
+	 * Converts to jna structure.
+	 * @return
+	 */
 	public wlc_geometry to() {
 		wlc_geometry geo = new wlc_geometry();
 		geo.origin = new wlc_point();

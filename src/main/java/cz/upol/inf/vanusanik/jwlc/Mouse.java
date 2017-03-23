@@ -36,8 +36,18 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerButtonCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerMotionCallback;
 
+/**
+ * Pointer related functions are grouped here.
+ * This class's name is Mouse because Pointer is used by jna.
+ * @author pvan
+ *
+ */
 public class Mouse {
 	
+	/**
+	 * Sets the callback for pointer button click
+	 * @param cb
+	 */
 	public static void setPointerButtonCallback(final PointerButtonCallback cb) {
 		Assert.assertNotNull(cb);
 		
@@ -52,6 +62,10 @@ public class Mouse {
 		});
 	}
 	
+	/**
+	 * Sets the callback for pointer movement 
+	 * @param cb
+	 */
 	public static void setPointerMotionCallback(final PointerMotionCallback cb) {
 		Assert.assertNotNull(cb);
 		
@@ -63,6 +77,10 @@ public class Mouse {
 		});
 	}
 
+	/**
+	 * Sets the pointer position on screen.
+	 * @param position
+	 */
 	public static void setPointerPosition(Point position) {
 		JWLC.nativeHandler().wlc_pointer_set_position(position.to());
 	}

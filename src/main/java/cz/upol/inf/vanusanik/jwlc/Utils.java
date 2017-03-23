@@ -25,10 +25,20 @@ package cz.upol.inf.vanusanik.jwlc;
 
 public class Utils {
 
+	/**
+	 * Converts from int to unsigned int stored in long
+	 * @param x
+	 * @return
+	 */
 	public static long getUnsignedInt(int x) {
 	    return x & 0x00000000ffffffffL;
 	}
 	
+	/**
+	 * Converts from unsigned int stored in long to usigned int stored in int
+	 * @param x
+	 * @return
+	 */
 	public static int getAsUnsignedInt(long x) {
 		return (int)x;
 	}

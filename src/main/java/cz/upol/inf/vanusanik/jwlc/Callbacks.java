@@ -31,6 +31,12 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
 
+/**
+ * Internal callback interfaces that are passed into libwlc jna accessor.
+ * Use with care.
+ * @author pvan
+ *
+ */
 public class Callbacks {
 
 	public interface handle_callback extends Callback {
