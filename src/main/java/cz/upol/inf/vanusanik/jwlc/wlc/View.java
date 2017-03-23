@@ -30,8 +30,10 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.focus_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.geometry_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_move_view_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.state_request_callback;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry;
@@ -41,9 +43,13 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewFocusCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewMoveToOutputCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewPostRenderCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewPreRenderCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestGeometryCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestMoveCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestResizeCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewStateRequestCallback;
 
 public class View extends WLCHandle {
 	
@@ -66,24 +72,8 @@ public class View extends WLCHandle {
 			return null;
 		return new View(handle);
 	}
-
-	public void setGeometry(long edges, Geometry geo) {
-		Assert.assertNotNull(geo);
-		
-		int e = Utils.getAsUnsignedInt(edges);
-		wlc_geometry g = geo.to();
-		JWLC.nativeHandler().wlc_view_set_geometry(this.to(), e, g);
-		geo.reset(g);
-	}
 	
-	public Geometry getGeometry() {
-		return Geometry.from(JWLC.nativeHandler().wlc_view_get_geometry(this.to()));
-	}
-
-	public View getParent() {
-		return View.from(JWLC.nativeHandler().wlc_view_get_parent(this.to()));
-	}
-	
+	/* Callbacks */
 	public static void setCreatedCallback(final ViewCreatedCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -93,22 +83,6 @@ public class View extends WLCHandle {
 				return cb.onViewCreated(View.from(handle));
 			}
 		});
-	}
-	
-	public Output getOutput() {
-		return Output.from(JWLC.nativeHandler().wlc_view_get_output(this.to()));
-	}
-	
-	public void setMask(long mask) {
-		JWLC.nativeHandler().wlc_view_set_mask(this.to(), Utils.getAsUnsignedInt(mask));
-	}
-	
-	public void bringToFront() {
-		JWLC.nativeHandler().wlc_view_bring_to_front(this.to());
-	}
-	
-	public void focus() {
-		JWLC.nativeHandler().wlc_view_focus(this.to());
 	}
 	
 	public static void setDestroyedCallback(final ViewDestroyedCallback cb) {
@@ -131,12 +105,6 @@ public class View extends WLCHandle {
 				cb.onFocusChange(View.from(handle), focus);
 			}			
 		});
-	}
-	
-	public void setState(int state, boolean toggle) {
-		Assert.assertNotNull(state);
-		
-		JWLC.nativeHandler().wlc_view_set_state(this.to(), state, toggle);
 	}
 	
 	public static void setRequestMoveCallback(final ViewRequestMoveCallback cb) {
@@ -170,6 +138,96 @@ public class View extends WLCHandle {
 				cb.onRequestGeometry(View.from(handle), Geometry.from(g));
 			}
 		});
+	}
+	
+	public static void setMoveToOutputCallback(final ViewMoveToOutputCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_view_move_to_output_cb(new handle_move_view_callback() {
+
+			public void callback(Pointer view, Pointer from, Pointer to) {
+				cb.onMoveToOutput(View.from(view), Output.from(from), Output.from(to));
+			}
+		});
+	}
+	
+	public static void setStateRequestCallback(final ViewStateRequestCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_view_request_state_cb(new state_request_callback() {
+
+			public void callback(Pointer view, int state, boolean toggle) {
+				cb.onStateRequest(View.from(view), state, toggle);
+			}
+		});
+	}
+	
+	public static void setPreRenderCallback(final ViewPreRenderCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_view_render_pre_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onPreRender(View.from(handle));
+			}
+		});
+	}
+	
+	public static void setPostRenderCallback(final ViewPostRenderCallback cb) {
+		Assert.assertNotNull(cb);
+
+		JWLC.nativeHandler().wlc_set_view_render_post_cb(new handle_callback_void() {
+
+			public void callback(Pointer handle) {
+				cb.onPostRender(View.from(handle));
+			}
+		});
+	}
+	
+	/* Methods */
+	/* Getters */
+	
+	public Geometry getGeometry() {
+		return Geometry.from(JWLC.nativeHandler().wlc_view_get_geometry(this.to()));
+	}
+
+	public View getParent() {
+		return View.from(JWLC.nativeHandler().wlc_view_get_parent(this.to()));
+	}
+	
+	public Output getOutput() {
+		return Output.from(JWLC.nativeHandler().wlc_view_get_output(this.to()));
+	}
+	
+	/* Setters */
+	
+	public void setMask(long mask) {
+		JWLC.nativeHandler().wlc_view_set_mask(this.to(), Utils.getAsUnsignedInt(mask));
+	}
+	
+	public void setState(int state, boolean toggle) {
+		Assert.assertNotNull(state);
+		
+		JWLC.nativeHandler().wlc_view_set_state(this.to(), state, toggle);
+	}
+	
+	public void setGeometry(long edges, Geometry geo) {
+		Assert.assertNotNull(geo);
+		
+		int e = Utils.getAsUnsignedInt(edges);
+		wlc_geometry g = geo.to();
+		JWLC.nativeHandler().wlc_view_set_geometry(this.to(), e, g);
+		geo.reset(g);
+	}
+	
+	/* Functionality */
+	
+	public void bringToFront() {
+		JWLC.nativeHandler().wlc_view_bring_to_front(this.to());
+	}
+	
+	public void focus() {
+		JWLC.nativeHandler().wlc_view_focus(this.to());
 	}
 
 	public void close() {

@@ -210,7 +210,7 @@ public class Example {
 
 		Output.setResolutionCallback(new OutputResolutionCallback() {
 
-			public void onOutputResolution(Output handle, Size fromSize, Size toSize) {
+			public void onResolution(Output handle, Size fromSize, Size toSize) {
 				relayout(handle);
 			}
 		});

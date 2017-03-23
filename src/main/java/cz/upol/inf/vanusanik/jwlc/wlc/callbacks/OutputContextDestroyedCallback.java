@@ -27,6 +27,6 @@ import cz.upol.inf.vanusanik.jwlc.wlc.Output;
 
 public interface OutputContextDestroyedCallback {
 
-	public void onOutputContextDestroyed(Output handle);
+	public void onContextDestroyed(Output handle);
 	
 }

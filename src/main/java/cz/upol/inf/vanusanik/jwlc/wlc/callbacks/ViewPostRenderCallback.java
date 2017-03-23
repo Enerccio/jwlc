@@ -23,10 +23,10 @@
  */
 package cz.upol.inf.vanusanik.jwlc.wlc.callbacks;
 
-import cz.upol.inf.vanusanik.jwlc.wlc.Output;
+import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
-public interface OutputPostRenderCallback {
+public interface ViewPostRenderCallback {
 
-	public void onPostRender(Output handle);
+	public void onPostRender(View view);
 	
 }

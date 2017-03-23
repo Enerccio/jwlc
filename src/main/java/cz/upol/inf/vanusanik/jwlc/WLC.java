@@ -27,17 +27,7 @@ import com.sun.jna.Library;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
-import cz.upol.inf.vanusanik.jwlc.Callbacks.focus_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.geometry_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.logger_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.output_resolution_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_button_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_movement_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
-import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.*;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
@@ -81,27 +71,27 @@ public interface WLC extends Library {
 	/** View got or lost focus. */
 	void wlc_set_view_focus_cb(focus_callback cb);
 
-//	/** View was moved to output. */
-//	void wlc_set_view_move_to_output_cb(void (*cb)(wlc_handle view, wlc_handle from_output, wlc_handle to_output));
-//
+	/** View was moved to output. */
+	void wlc_set_view_move_to_output_cb(handle_move_view_callback cb);
+
 	/** Request to set given geometry for view. Apply using wlc_view_set_geometry to agree. */
 	void wlc_set_view_request_geometry_cb(geometry_callback cb);
 
-//	/** Request to disable or enable the given state for view. Apply using wlc_view_set_state to agree. */
-//	void wlc_set_view_request_state_cb(void (*cb)(wlc_handle view, enum wlc_view_state_bit, bool toggle));
-//
+	/** Request to disable or enable the given state for view. Apply using wlc_view_set_state to agree. */
+	void wlc_set_view_request_state_cb(state_request_callback cb);
+
 	/** Request to move itself. Start a interactive move to agree. */
 	void wlc_set_view_request_move_cb(request_move_callback cb);
 
 	/** Request to resize itself with the given edges. Start a interactive resize to agree. */
 	void wlc_set_view_request_resize_cb(request_resize_callback cb);
 
-//	/** View pre render hook. */
-//	void wlc_set_view_render_pre_cb(void (*cb)(wlc_handle view));
-//
-//	/** View post render hook. */
-//	void wlc_set_view_render_post_cb(void (*cb)(wlc_handle view));
-//
+	/** View pre render hook. */
+	void wlc_set_view_render_pre_cb(handle_callback_void cb);
+
+	/** View post render hook. */
+	void wlc_set_view_render_post_cb(handle_callback_void cb);
+
 //	/** View properties (title, class, app_id) was updated */
 //	void wlc_set_view_properties_updated_cb(void (*cb)(wlc_handle view, uint32_t mask));
 //

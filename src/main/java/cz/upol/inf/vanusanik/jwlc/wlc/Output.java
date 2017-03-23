@@ -66,13 +66,15 @@ public class Output extends WLCHandle {
 		return new Output(handle);
 	}
 	
+	/* Callbacks */
+	
 	public static void setCreatedCallback(final OutputCreatedCallback cb) {
 		Assert.assertNotNull(cb);
 
 		JWLC.nativeHandler().wlc_set_output_created_cb(new handle_callback() {
 
 			public boolean callback(Pointer handle) {
-				return cb.onOutputCreated(Output.from(handle));
+				return cb.onCreated(Output.from(handle));
 			}
 		});
 	}
@@ -83,7 +85,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_destroyed_cb(new handle_callback_void() {
 
 			public void callback(Pointer handle) {
-				cb.onOutputDestroyed(Output.from(handle));
+				cb.onDestroyed(Output.from(handle));
 			}
 		});
 	}
@@ -105,7 +107,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_resolution_cb(new output_resolution_callback() {
 
 			public void callback(Pointer handle, wlc_size fromSize, wlc_size toSize) {
-				cb.onOutputResolution(Output.from(handle), Size.from(fromSize),
+				cb.onResolution(Output.from(handle), Size.from(fromSize),
 						Size.from(toSize));
 			}
 		});
@@ -117,7 +119,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_render_pre_cb(new handle_callback_void() {
 
 			public void callback(Pointer handle) {
-				cb.onOutputPreRender(Output.from(handle));
+				cb.onPreRender(Output.from(handle));
 			}
 		});
 	}
@@ -128,7 +130,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_render_post_cb(new handle_callback_void() {
 
 			public void callback(Pointer handle) {
-				cb.onOutputPostRender(Output.from(handle));
+				cb.onPostRender(Output.from(handle));
 			}
 		});
 	}
@@ -139,7 +141,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_context_created_cb(new handle_callback_void() {
 
 			public void callback(Pointer handle) {
-				cb.onOutputContextCreated(Output.from(handle));
+				cb.onContextCreated(Output.from(handle));
 			}
 		});
 	}
@@ -150,10 +152,13 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_context_destroyed_cb(new handle_callback_void() {
 
 			public void callback(Pointer handle) {
-				cb.onOutputContextDestroyed(Output.from(handle));
+				cb.onContextDestroyed(Output.from(handle));
 			}
 		});
 	}
+	
+	/* Methods */
+	/* Getters */
 	
 	public Size getVirtualResolution() {
 		return Size.from(JWLC.nativeHandler().wlc_output_get_virtual_resolution(this.to()));
@@ -187,14 +192,16 @@ public class Output extends WLCHandle {
 		return data;
 	}
 	
+	public Size getResolution() {
+		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
+	}
+	
+	/* Setters */
+	
 	public void setResolution(Size resolution, long scale) {
 		Assert.assertNotNull(resolution);
 		
 		JWLC.nativeHandler().wlc_output_set_resolution(this.to(), 
 				resolution.to(), Utils.getAsUnsignedInt(scale));
-	}
-
-	public Size getResolution() {
-		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
 	}
 }

@@ -27,6 +27,6 @@ import cz.upol.inf.vanusanik.jwlc.wlc.Output;
 
 public interface OutputContextCreatedCallback {
 
-	public void onOutputContextCreated(Output handle);
+	public void onContextCreated(Output handle);
 	
 }

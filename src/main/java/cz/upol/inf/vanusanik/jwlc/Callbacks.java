@@ -47,6 +47,10 @@ public class Callbacks {
 		void callback(Pointer handle);
 	}
 	
+	public interface handle_move_view_callback extends Callback {
+		void callback(Pointer view, Pointer from, Pointer to);
+	}
+	
 	public interface focus_callback extends Callback {
 		void callback(Pointer handle, boolean focus);
 	}
@@ -57,6 +61,10 @@ public class Callbacks {
 	
 	public interface output_resolution_callback extends Callback {
 		void callback(Pointer handle, wlc_size fromSize, wlc_size toSize);
+	}
+	
+	public interface state_request_callback extends Callback {
+		void callback(Pointer view, int state, boolean toggle);
 	}
 	
 	public interface request_move_callback extends Callback {
