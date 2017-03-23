@@ -16,4 +16,11 @@ public enum ButtonState {
 		return ni;
 	}
 
+	public static ButtonState from(int buttonState) {
+		for (ButtonState bs : values())
+			if (bs.ni == buttonState)
+				return bs;
+		return null;
+	}
+
 }

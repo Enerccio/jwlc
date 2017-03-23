@@ -20,7 +20,7 @@ public class ExampleSimpleCallback {
 		
 		Output.setCreatedCallback(new OutputCreatedCallback() {
 			
-			public boolean outputCreated(Output output) {
+			public boolean onOutputCreated(Output output) {
 				System.out.println("Output id " + output);
 				System.out.println(output.getViews());
 				return false;

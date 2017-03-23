@@ -17,6 +17,8 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputResolutionCallback;
 
 public class Output extends WLCHandle {
+	
+	public static final Output INVALID_OUTPUT = new Output(0);
 
 	protected Output(long handle) {
 		super(handle);
@@ -39,7 +41,7 @@ public class Output extends WLCHandle {
 		JWLC.nativeHandler().wlc_set_output_created_cb(new handle_callback() {
 
 			public boolean callback(int handle) {
-				return cb.outputCreated(Output.from(handle));
+				return cb.onOutputCreated(Output.from(Utils.getUnsignedInt(handle)));
 			}
 		});
 	}
@@ -65,11 +67,38 @@ public class Output extends WLCHandle {
 		List<View> data = new ArrayList<View>();
 
 		IntByReference memb = new IntByReference();
-		Pointer p = JWLC.nativeHandler().wlc_output_get_views(Utils.getAsUnsignedInt(this.getHandle()), memb);
+		Pointer p = JWLC.nativeHandler().wlc_output_get_views(Utils.getAsUnsignedInt(this.to()), memb);
 		long n = Utils.getUnsignedInt(memb.getValue());
 		for (long i = 0; i < n; i++)
-			data.add(View.from(Utils.getUnsignedInt(p.getInt(i))));
+			data.add(View.from(Utils.getUnsignedInt(p.getInt(i*4))));
 
 		return data;
+	}
+	
+	public long getMask() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_output_get_mask(Utils.getAsUnsignedInt(this.to())));
+	}
+	
+	public static List<Output> getOutputs() {
+		List<Output> data = new ArrayList<Output>();
+
+		IntByReference memb = new IntByReference();
+		Pointer p = JWLC.nativeHandler().wlc_get_outputs(memb);
+		long n = Utils.getUnsignedInt(memb.getValue());
+		for (long i = 0; i < n; i++)
+			data.add(Output.from(Utils.getUnsignedInt(p.getInt(i*4))));
+
+		return data;
+	}
+	
+	public void setResolution(Size resolution, long scale) {
+		Assert.assertNotNull(resolution);
+		
+		JWLC.nativeHandler().wlc_output_set_resolution(Utils.getAsUnsignedInt(this.to()), 
+				resolution.to(), Utils.getAsUnsignedInt(scale));
+	}
+
+	public Size getResolution() {
+		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(Utils.getAsUnsignedInt(this.to())));
 	}
 }

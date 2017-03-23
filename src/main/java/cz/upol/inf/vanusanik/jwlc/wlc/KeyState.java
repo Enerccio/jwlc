@@ -16,4 +16,11 @@ public enum KeyState {
 		return ni;
 	}
 
+	public static KeyState from(int keyState) {
+		for (KeyState ks : values())
+			if (ks.ni == keyState)
+				return ks;
+		return null;
+	}
+
 }

@@ -58,4 +58,11 @@ public class JWLC implements Runnable {
 		});
 
 	}
+
+	public static void exec(String bin, String[] args) {
+		Assert.assertNotNull(bin);
+		Assert.assertNotNull(args);
+		
+		nativeHandler().wlc_exec(bin, args);
+	}
 }

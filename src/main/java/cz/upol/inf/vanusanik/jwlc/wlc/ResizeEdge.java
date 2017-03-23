@@ -1,19 +1,15 @@
 package cz.upol.inf.vanusanik.jwlc.wlc;
 
-public enum ResizeEdge {
+public interface ResizeEdge {
 
-	NONE(0), TOP(1), BOTTOM(2), LEFT(4), TOP_LEFT(5), BOTTOM_LEFT(6), RIGHT(8), TOP_RIGHT(9), BOTTOM_RIGHT(10)
-
-	;
-
-	private int ni;
-
-	ResizeEdge(int ni) {
-		this.ni = ni;
-	}
-
-	public int to() {
-		return ni;
-	}
+	public static final int NONE = 0; 
+	public static final int TOP = 1; 
+	public static final int BOTTOM = 2; 
+	public static final int LEFT = 4; 
+	public static final int TOP_LEFT = 5; 
+	public static final int BOTTOM_LEFT = 6; 
+	public static final int RIGHT = 8; 
+	public static final int TOP_RIGHT = 9; 
+	public static final int BOTTOM_RIGHT = 10;
 
 }
