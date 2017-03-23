@@ -166,7 +166,7 @@ public class Example {
 
 	protected View getTopmost(Output output, int i) {
 		List<View> views = output.getViews();
-		return i <= views.size() ? views.get(i) : null;
+		return i < views.size() ? views.get(i) : null;
 	}
 
 	private void run() throws Exception {
