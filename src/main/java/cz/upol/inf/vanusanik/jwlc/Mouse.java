@@ -28,15 +28,18 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_button_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_movement_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_scroll_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.touch_callback;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.wlc.ButtonState;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
+import cz.upol.inf.vanusanik.jwlc.wlc.TouchType;
 import cz.upol.inf.vanusanik.jwlc.wlc.View;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerButtonCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerMotionCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerScrollCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerTouchCallback;
 
 /**
  * Pointer related functions are grouped here.
@@ -88,6 +91,19 @@ public class Mouse {
 					byte axisBits, double[] amount) {
 				return cb.onScroll(View.from(view), Utils.getUnsignedInt(time), 
 						Modifiers.from(mods), Utils.getUnsignedByte(axisBits), amount);
+			}
+		});
+	}
+	
+	public static void setTouchCallback(final PointerTouchCallback cb) {
+		Assert.assertNotNull(cb);
+		
+		JWLC.nativeHandler().wlc_set_touch_cb(new touch_callback() {
+			
+			public boolean callback(Pointer view, int time, wlc_modifiers mods, int touchType, int slot, wlc_point position) {
+				return cb.onTouch(View.from(view), Utils.getUnsignedInt(time), 
+						Modifiers.from(mods), TouchType.from(touchType), 
+						slot, Point.from(position));
 			}
 		});
 	}

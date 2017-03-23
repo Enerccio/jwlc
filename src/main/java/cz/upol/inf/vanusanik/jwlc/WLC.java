@@ -107,15 +107,15 @@ public interface WLC extends Library {
 	/** Motion event was triggered, view handle will be zero if there was no focus. Apply with wlc_pointer_set_position to agree. Return true to prevent sending the event to clients. */
 	void wlc_set_pointer_motion_cb(pointer_movement_callback cb);
 
-//	/** Touch event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
-//	void wlc_set_touch_cb(bool (*cb)(wlc_handle view, uint32_t time, const struct wlc_modifiers*, enum wlc_touch_type, int32_t slot, const struct wlc_point*));
-//
-//	/** Compositor is ready to accept clients. */
-//	void wlc_set_compositor_ready_cb(void (*cb)(void));
-//
-//	/** Compositor is about to terminate */
-//	void wlc_set_compositor_terminate_cb(void (*cb)(void));
-//
+	/** Touch event was triggered, view handle will be zero if there was no focus. Return true to prevent sending the event to clients. */
+	void wlc_set_touch_cb(touch_callback cb);
+
+	/** Compositor is ready to accept clients. */
+	void wlc_set_compositor_ready_cb(void_callback cb);
+
+	/** Compositor is about to terminate */
+	void wlc_set_compositor_terminate_cb(void_callback cb);
+
 //	/** Input device was created. Return value does nothing. (Experimental) */
 //	void wlc_set_input_created_cb(bool (*cb)(struct libinput_device *device));
 //

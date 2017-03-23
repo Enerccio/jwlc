@@ -39,4 +39,11 @@ public enum TouchType {
 		return ni;
 	}
 
+	public static TouchType from(int touchType) {
+		for (TouchType tt : values())
+			if (tt.ni == touchType)
+				return tt;
+		return null;
+	}
+
 }

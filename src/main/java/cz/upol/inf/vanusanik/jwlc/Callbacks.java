@@ -98,4 +98,12 @@ public class Callbacks {
 	public interface pointer_scroll_callback extends Callback {
 		boolean callback(Pointer view, int time, wlc_modifiers mods, byte axisBits, double[] amount);
 	}
+	
+	public interface touch_callback extends Callback {
+		boolean callback(Pointer view, int time, wlc_modifiers mods, int touchType, int slot, wlc_point position);
+	}
+	
+	public interface void_callback extends Callback {
+		void callback();
+	}
 }
