@@ -213,6 +213,44 @@ public class View extends WLCHandle {
 		return Output.from(JWLC.nativeHandler().wlc_view_get_output(this.to()));
 	}
 	
+	public long getState() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_state(this.to()));
+	}
+	
+	public String getTitle() {
+		return JWLC.nativeHandler().wlc_view_get_title(this.to());
+	}
+	
+	public String getShellInstance() {
+		return JWLC.nativeHandler().wlc_view_get_instance(this.to());
+	}
+	
+	public String getShellClass() {
+		return JWLC.nativeHandler().wlc_view_get_class(this.to());
+	}
+	
+	public String getAppId() {
+		return JWLC.nativeHandler().wlc_view_get_app_id(this.to());
+	}
+	
+	public long getPid() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_pid(this.to()));
+	}
+	
+	public long getType() {
+		return Utils.getAsUnsignedInt(JWLC.nativeHandler().wlc_view_get_type(this.to()));
+	}
+	
+	public Geometry getVisibleGeometry() {
+		wlc_geometry geo = new wlc_geometry();
+		JWLC.nativeHandler().wlc_view_get_visible_geometry(this.to(), geo);
+		return Geometry.from(geo);
+	}
+	
+	public long getMask() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_mask(this.to()));
+	}
+	
 	/* Setters */
 	
 	public void setMask(long mask) {
@@ -232,6 +270,23 @@ public class View extends WLCHandle {
 		wlc_geometry g = geo.to();
 		JWLC.nativeHandler().wlc_view_set_geometry(this.to(), e, g);
 		geo.reset(g);
+	}
+	
+	public void setParent(View parent) {
+		if (parent == null)
+			parent = INVALID_VIEW;
+		
+		JWLC.nativeHandler().wlc_view_set_parent(this.to(), parent.to());
+	}
+	
+	public void setType(long type, boolean toggle) {
+		JWLC.nativeHandler().wlc_view_set_type(this.to(), Utils.getAsUnsignedInt(type), toggle);
+	}
+	
+	public void setOutput(Output output) {
+		Assert.assertNotNull(output);
+		
+		JWLC.nativeHandler().wlc_view_set_output(this.to(), output.to());
 	}
 	
 	/* Functionality */
@@ -254,5 +309,13 @@ public class View extends WLCHandle {
 
 	public static void unfocus() {
 		INVALID_VIEW.focus();
+	}
+	
+	public void bringAbove(View other) {
+		JWLC.nativeHandler().wlc_view_bring_above(this.to(), other.to());
+	}
+	
+	public void bringBelow(View other) {
+		JWLC.nativeHandler().wlc_view_send_below(this.to(), other.to());
 	}
 }

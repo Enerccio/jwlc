@@ -235,9 +235,9 @@ public interface WLC extends Library {
 //
 //	/** Focus output. Pass zero for no focus. */
 //	void wlc_output_focus(wlc_handle output);
-//
-//	/** -- View API */
-//
+
+	/** -- View API */
+
 	/** Focus view. Pass zero for no focus. */
 	void wlc_view_focus(Pointer view);
 
@@ -247,24 +247,24 @@ public interface WLC extends Library {
 	/** Get current output. */
 	Pointer wlc_view_get_output(Pointer view);
 
-//	/** Set output. Alternatively you can wlc_output_set_views. */
-//	void wlc_view_set_output(wlc_handle view, wlc_handle output);
-//
+	/** Set output. Alternatively you can wlc_output_set_views. */
+	void wlc_view_set_output(Pointer view, Pointer output);
+
 	/** Send behind everything. */
 	void wlc_view_send_to_back(Pointer view);
 
-//	/** Send below another view. */
-//	void wlc_view_send_below(wlc_handle view, wlc_handle other);
-//
-//	/** Send above another view. */
-//	void wlc_view_bring_above(wlc_handle view, wlc_handle other);
-//
+	/** Send below another view. */
+	void wlc_view_send_below(Pointer view, Pointer other);
+
+	/** Send above another view. */
+	void wlc_view_bring_above(Pointer view, Pointer other);
+
 	/** Bring to front of everything. */
 	void wlc_view_bring_to_front(Pointer view);
-//
-//	/** Get current visibility bitmask. */
-//	uint32_t wlc_view_get_mask(wlc_handle view);
-//
+
+	/** Get current visibility bitmask. */
+	int wlc_view_get_mask(Pointer view);
+
 	/** Set visibility bitmask. */
 	void wlc_view_set_mask(Pointer view, int mask);
 
@@ -282,74 +282,74 @@ public interface WLC extends Library {
 	 * Returns NULL if view has no valid positioner.
 	 */
 	wlc_geometry wlc_view_positioner_get_anchor_rect(Pointer view);
-//
-//	/**
-//	 * Get offset requested by positioner, as defined in xdg-shell v6.
-//	 * Returns NULL if view has no valid positioner,
-//	 * or default value (0, 0) if positioner has no offset set.
-//	 */
-//	const struct wlc_point* wlc_view_positioner_get_offset(wlc_handle view);
-//
-//	/**
-//	 * Get anchor requested by positioner, as defined in xdg-shell v6.
-//	 * Returns default value WLC_BIT_ANCHOR_NONE if view has no valid positioner
-//	 * or if positioner has no anchor set.
-//	 */
-//	enum wlc_positioner_anchor_bit wlc_view_positioner_get_anchor(wlc_handle view);
-//
-//	/**
-//	 * Get anchor requested by positioner, as defined in xdg-shell v6.
-//	 * Returns default value WLC_BIT_GRAVITY_NONE if view has no valid positioner
-//	 * or if positioner has no gravity set.
-//	 */
-//	enum wlc_positioner_gravity_bit wlc_view_positioner_get_gravity(wlc_handle view);
-//
-//	/**
-//	 * Get constraint adjustment requested by positioner, as defined in xdg-shell v6.
-//	 * Returns default value WLC_BIT_CONSTRAINT_ADJUSTMENT_NONE if view has no
-//	 * valid positioner or if positioner has no constraint adjustment set.
-//	 */
-//	enum wlc_positioner_constraint_adjustment_bit wlc_view_positioner_get_constraint_adjustment(wlc_handle view);
-//
-//	/** Get visible geometry. (what wlc displays) */
-//	void wlc_view_get_visible_geometry(wlc_handle view, struct wlc_geometry *out_geometry);
-//
+
+	/**
+	 * Get offset requested by positioner, as defined in xdg-shell v6.
+	 * Returns NULL if view has no valid positioner,
+	 * or default value (0, 0) if positioner has no offset set.
+	 */
+	wlc_point wlc_view_positioner_get_offset(Pointer view);
+
+	/**
+	 * Get anchor requested by positioner, as defined in xdg-shell v6.
+	 * Returns default value WLC_BIT_ANCHOR_NONE if view has no valid positioner
+	 * or if positioner has no anchor set.
+	 */
+	int wlc_view_positioner_get_anchor(Pointer view);
+
+	/**
+	 * Get anchor requested by positioner, as defined in xdg-shell v6.
+	 * Returns default value WLC_BIT_GRAVITY_NONE if view has no valid positioner
+	 * or if positioner has no gravity set.
+	 */
+	int wlc_view_positioner_get_gravity(Pointer view);
+
+	/**
+	 * Get constraint adjustment requested by positioner, as defined in xdg-shell v6.
+	 * Returns default value WLC_BIT_CONSTRAINT_ADJUSTMENT_NONE if view has no
+	 * valid positioner or if positioner has no constraint adjustment set.
+	 */
+	int wlc_view_positioner_get_constraint_adjustment(Pointer view);
+
+	/** Get visible geometry. (what wlc displays) */
+	void wlc_view_get_visible_geometry(Pointer view, wlc_geometry out_geometry);
+
 	/** Set geometry. Set edges if the geometry change is caused by interactive resize. */
 	void wlc_view_set_geometry(Pointer view, int edges, wlc_geometry g);
 
-//	/** Get type bitfield. */
-//	uint32_t wlc_view_get_type(wlc_handle view);
-//
-//	/** Set type bit. Toggle indicates whether it is set or not. */
-//	void wlc_view_set_type(wlc_handle view, enum wlc_view_type_bit type, bool toggle);
-//
-//	/** Get current state bitfield. */
-//	uint32_t wlc_view_get_state(wlc_handle view);
-//
+	/** Get type bitfield. */
+	int wlc_view_get_type(Pointer view);
+
+	/** Set type bit. Toggle indicates whether it is set or not. */
+	void wlc_view_set_type(Pointer view, int type, boolean toggle);
+
+	/** Get current state bitfield. */
+	int wlc_view_get_state(Pointer view);
+
 	/** Set state bit. Toggle indicates whether it is set or not. */
 	void wlc_view_set_state(Pointer view, int state, boolean toggle);
 
 	/** Get parent view. */
 	Pointer wlc_view_get_parent(Pointer view);
 	
-//	/** Set parent view. */
-//	void wlc_view_set_parent(wlc_handle view, wlc_handle parent);
-//
-//	/** Get title. */
-//	const char* wlc_view_get_title(wlc_handle view);
-//
-//	/** Get instance. (shell-surface only) */
-//	const char* wlc_view_get_instance(wlc_handle view);
-//
-//	/** Get class. (shell-surface only) */
-//	const char* wlc_view_get_class(wlc_handle view);
-//
-//	/** Get app id. (xdg-surface only) */
-//	const char* wlc_view_get_app_id(wlc_handle view);
-//
-//	/** Get pid. */
-//	pid_t wlc_view_get_pid(wlc_handle view);
-//
+	/** Set parent view. */
+	void wlc_view_set_parent(Pointer view, Pointer parent);
+
+	/** Get title. */
+	String wlc_view_get_title(Pointer view);
+
+	/** Get instance. (shell-surface only) */
+	String wlc_view_get_instance(Pointer view);
+	
+	/** Get class. (shell-surface only) */
+	String wlc_view_get_class(Pointer view);
+
+	/** Get app id. (xdg-surface only) */
+	String wlc_view_get_app_id(Pointer view);
+	
+	/** Get pid. */
+	int wlc_view_get_pid(Pointer view);
+	
 //	/** --  Input API
 //	 * Very recent stuff, things may change.
 //	 * XXX: This api is dumb and assumes there is only single xkb state and keymap.
@@ -372,9 +372,9 @@ public interface WLC extends Library {
 //	/** Utility function to convert raw keycode to Unicode/UTF-32 codepoint. Passed modifiers may transform the key. */
 //	uint32_t wlc_keyboard_get_utf32_for_key(uint32_t key, const struct wlc_modifiers *modifiers);
 //
-//	/** Get current pointer position. */
-//	void wlc_pointer_get_position(struct wlc_point *out_position);
-//
+	/** Get current pointer position. */
+	void wlc_pointer_get_position(wlc_point position);
+
 	/** Set current pointer position. */
 	void wlc_pointer_set_position(wlc_point position);
 }

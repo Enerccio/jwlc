@@ -49,6 +49,8 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.PointerTouchCallback;
  */
 public class Mouse {
 	
+	/* Callbacks */
+	
 	/**
 	 * Sets the callback for pointer button click
 	 * @param cb
@@ -108,6 +110,17 @@ public class Mouse {
 		});
 	}
 
+	/* Methods */
+	/* Getters */
+	
+	public Point getPosition() {
+		wlc_point p = new wlc_point();
+		JWLC.nativeHandler().wlc_pointer_get_position(p);
+		return Point.from(p);
+	}
+	
+	/* Setters */
+	
 	/**
 	 * Sets the pointer position on screen.
 	 * @param position

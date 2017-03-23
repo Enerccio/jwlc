@@ -24,7 +24,9 @@
 package cz.upol.inf.vanusanik.jwlc.wlc;
 
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry;
+import cz.upol.inf.vanusanik.jwlc.geometry.Point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
 
 public class ViewPositioner {
@@ -43,4 +45,20 @@ public class ViewPositioner {
 		return Size.from(JWLC.nativeHandler().wlc_view_positioner_get_size(handler.to()));
 	}
 	
+	public Point getOffset() {
+		return Point.from(JWLC.nativeHandler().wlc_view_positioner_get_offset(handler.to()));
+	}
+	
+	public long getAnchor() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_positioner_get_anchor(handler.to()));
+	}
+	
+	public long getGravity() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_positioner_get_gravity(handler.to()));
+	}
+	
+	public long getConstraintAdjustment() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler()
+				.wlc_view_positioner_get_constraint_adjustment(handler.to()));
+	}
 }
