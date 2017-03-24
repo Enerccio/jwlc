@@ -226,9 +226,9 @@ public interface WLC extends Library {
 	 */
 	Pointer wlc_get_outputs(IntByReference memb);
 
-	// /** Get focused output. */
-	// wlc_handle wlc_get_focused_output(void);
-	//
+	 /** Get focused output. */
+	Pointer wlc_get_focused_output();
+	
 	// /** Get output name. */
 	// const char* wlc_output_get_name(wlc_handle output);
 	//

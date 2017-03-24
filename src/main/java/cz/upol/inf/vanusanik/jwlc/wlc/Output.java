@@ -194,6 +194,10 @@ public class Output extends WLCHandle {
 	public Size getResolution() {
 		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
 	}
+	
+	public static Output getFocused() {
+		return Output.from(JWLC.nativeHandler().wlc_get_focused_output());
+	}
 
 	/* Setters */
 

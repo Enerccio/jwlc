@@ -114,7 +114,7 @@ public class Mouse {
 	/* Methods */
 	/* Getters */
 
-	public Point getPosition() {
+	public static Point getPosition() {
 		wlc_point p = new wlc_point();
 		JWLC.nativeHandler().wlc_pointer_get_position(p);
 		return Point.from(p);
