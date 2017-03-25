@@ -192,13 +192,12 @@ public interface WLC extends Library {
 	/** Run event loop. */
 	void wlc_run();
 
-	//
-	// /** Link custom data to handle. */
-	// void wlc_handle_set_user_data(wlc_handle handle, const void *userdata);
-	//
-	// /** Get linked custom data from handle. */
-	// void* wlc_handle_get_user_data(wlc_handle handle);
-	//
+	/** Link custom data to handle. */
+	void wlc_handle_set_user_data(Pointer handle, Pointer userdata);	
+	
+	/** Get linked custom data from handle. */
+	Pointer wlc_handle_get_user_data(Pointer handle);
+	
 	// /** Add fd to event loop. Return value of callback is unused, you should
 	// return 0. */
 	// WLC_NONULLV(3) struct wlc_event_source* wlc_event_loop_add_fd(int fd,

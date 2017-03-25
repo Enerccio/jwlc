@@ -23,7 +23,13 @@
  */
 package cz.upol.inf.vanusanik.jwlc.wlc;
 
+import java.security.InvalidParameterException;
+
 import com.sun.jna.Pointer;
+
+import cz.upol.inf.vanusanik.jwlc.Assert;
+import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.utils.NativeString;
 
 public class WLCHandle {
 
@@ -77,4 +83,78 @@ public class WLCHandle {
 		return "WLCHandle [handle=" + handle + "]";
 	}
 
+	@SuppressWarnings("unchecked")
+	public <T> T getCustomData(Class<T> tclass) {
+		Pointer nativeData = getCustomDataPointer();
+		if (tclass.isAssignableFrom(WLCHandle.class)) {
+			if (tclass == Output.class)
+				return (T) Output.from(nativeData);
+			if (tclass == View.class)
+				return (T) View.from(nativeData);
+			return (T) from(nativeData);
+		}
+		if (String.class == tclass) {
+			return (T) nativeData.getString(0);
+		}
+		if (Number.class.isAssignableFrom(tclass)) {
+			if (tclass == Byte.class) {
+				return (T) Byte.valueOf(nativeData.getByte(0));
+			}
+			if (tclass == Short.class) {
+				return (T) Short.valueOf(nativeData.getShort(0));
+			}
+			if (tclass == Integer.class) {
+				return (T) Integer.valueOf(nativeData.getInt(0));
+			}
+			if (tclass == Long.class) {
+				return (T) Long.valueOf(nativeData.getLong(0));
+			}
+			if (tclass == Float.class) {
+				return (T) Float.valueOf(nativeData.getFloat(0));
+			}
+			if (tclass == Double.class) {
+				return (T) Double.valueOf(nativeData.getDouble(0));
+			}
+		}
+		throw new InvalidParameterException("referenced not found");
+	}
+	
+	private Pointer getCustomDataPointer() {
+		return JWLC.nativeHandler().wlc_handle_get_user_data(this.to());
+	}
+	
+	public <T> void setCustomData(T value) {
+		Assert.assertNotNull(value);
+
+		Pointer p = convertToPointer(value);
+		JWLC.nativeHandler().wlc_handle_set_user_data(this.to(), p);
+	}
+
+	private <T> Pointer convertToPointer(T value) {
+		if (value instanceof WLCHandle)
+			return ((WLCHandle)value).to();
+		if (value instanceof String) 
+			return new NativeString((String) value, false).getPointer();
+		if (value instanceof Number) {
+			if (value instanceof Byte) {
+				return new Pointer(((Byte)value).longValue());
+			}
+			if (value instanceof Short) {
+				return new Pointer(((Short)value).longValue());
+			}
+			if (value instanceof Integer) {
+				return new Pointer(((Integer)value).longValue());
+			}
+			if (value instanceof Long) {
+				return new Pointer(((Long)value).longValue());
+			}
+			if (value instanceof Float) {
+				return new Pointer(Float.floatToRawIntBits(((Float)value)));
+			}
+			if (value instanceof Double) {
+				return new Pointer(Double.doubleToRawLongBits(((Double)value)));
+			}
+		}
+		throw new InvalidParameterException("unknown type");
+	}
 }
