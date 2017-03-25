@@ -91,6 +91,7 @@ public class ExampleEventLoopFD {
 							} finally {
 								f.delete();
 							}
+							JWLC.terminate();
 							return 0;
 						}
 					}, pipePath);
@@ -99,7 +100,6 @@ public class ExampleEventLoopFD {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				JWLC.terminate();
 			}
 		});
 		
