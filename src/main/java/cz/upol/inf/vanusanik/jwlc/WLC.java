@@ -27,7 +27,24 @@ import com.sun.jna.Library;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
-import cz.upol.inf.vanusanik.jwlc.Callbacks.*;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.fd_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.focus_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.geometry_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_mask_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_move_view_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.logger_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.output_resolution_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_button_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_movement_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_scroll_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.state_request_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.touch_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.void_callback;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
@@ -193,17 +210,17 @@ public interface WLC extends Library {
 	void wlc_run();
 
 	/** Link custom data to handle. */
-	void wlc_handle_set_user_data(Pointer handle, Pointer userdata);	
-	
+	void wlc_handle_set_user_data(Pointer handle, Pointer userdata);
+
 	/** Get linked custom data from handle. */
 	Pointer wlc_handle_get_user_data(Pointer handle);
-	
-	// /** Add fd to event loop. Return value of callback is unused, you should
-	// return 0. */
-	// WLC_NONULLV(3) struct wlc_event_source* wlc_event_loop_add_fd(int fd,
-	// uint32_t mask, int (*cb)(int fd, uint32_t mask, void *userdata), void
-	// *userdata);
-	//
+
+	/**
+	 * Add fd to event loop. Return value of callback is unused, you should
+	 * return 0.
+	 */
+	Pointer wlc_event_loop_add_fd(int fd, int mask, fd_callback cb, Pointer data);
+
 	// /** Add timer to event loop. Return value of callback is unused, you
 	// should return 0. */
 	// WLC_NONULLV(1) struct wlc_event_source* wlc_event_loop_add_timer(int

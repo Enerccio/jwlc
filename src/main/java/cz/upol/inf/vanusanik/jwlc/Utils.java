@@ -23,6 +23,9 @@
  */
 package cz.upol.inf.vanusanik.jwlc;
 
+import java.io.FileDescriptor;
+import java.lang.reflect.Field;
+
 public class Utils {
 
 	/**
@@ -59,5 +62,28 @@ public class Utils {
 
 	public static short getAsUnsignedShort(int x) {
 		return (short) (x & 0xffff);
+	}
+
+	public static int getFD(FileDescriptor fd) {
+		try {
+			Field f = FileDescriptor.class.getField("fd");
+			f.setAccessible(true);
+			return f.getInt(fd);
+		} catch (Exception e) {
+		
+		}
+		return 0;
+	}
+	
+	public static FileDescriptor createFD(int fd) {
+		try {
+			FileDescriptor desc = new FileDescriptor();
+			Field f = FileDescriptor.class.getField("fd");
+			f.setAccessible(true);
+			f.set(desc, fd);
+			return desc;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

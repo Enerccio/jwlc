@@ -107,4 +107,8 @@ public class Callbacks {
 	public interface void_callback extends Callback {
 		void callback();
 	}
+	
+	public interface fd_callback extends Callback {
+		int callback(int fd, int mask, Pointer data);
+	}
 }
