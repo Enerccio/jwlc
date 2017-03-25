@@ -83,9 +83,13 @@ public class WLCHandle {
 		return "WLCHandle [handle=" + handle + "]";
 	}
 
-	@SuppressWarnings("unchecked")
 	public <T> T getCustomData(Class<T> tclass) {
 		Pointer nativeData = getCustomDataPointer();
+		return convertNativeData(nativeData, tclass);
+	}
+
+	@SuppressWarnings("unchecked")	
+	static <T> T convertNativeData(Pointer nativeData, Class<?> tclass) {
 		if (tclass.isAssignableFrom(WLCHandle.class)) {
 			if (tclass == Output.class)
 				return (T) Output.from(nativeData);
@@ -116,9 +120,11 @@ public class WLCHandle {
 				return (T) Double.valueOf(nativeData.getDouble(0));
 			}
 		}
+		if (tclass.isAssignableFrom(Pointer.class))
+			return (T) nativeData;
 		throw new InvalidParameterException("referenced not found");
 	}
-	
+
 	private Pointer getCustomDataPointer() {
 		return JWLC.nativeHandler().wlc_handle_get_user_data(this.to());
 	}
@@ -130,7 +136,7 @@ public class WLCHandle {
 		JWLC.nativeHandler().wlc_handle_set_user_data(this.to(), p);
 	}
 
-	private <T> Pointer convertToPointer(T value) {
+	static <T> Pointer convertToPointer(T value) {
 		if (value instanceof WLCHandle)
 			return ((WLCHandle)value).to();
 		if (value instanceof String) 
@@ -154,6 +160,9 @@ public class WLCHandle {
 			if (value instanceof Double) {
 				return new Pointer(Double.doubleToRawLongBits(((Double)value)));
 			}
+		}
+		if (value instanceof Pointer) {
+			return (Pointer)value;
 		}
 		throw new InvalidParameterException("unknown type");
 	}
