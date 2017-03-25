@@ -52,4 +52,12 @@ public class Utils {
 	public static byte getAsUnsignedByte(short x) {
 		return (byte) (x & 0xff);
 	}
+
+	public static int getUnsignedShort(short x) {
+		return Short.toUnsignedInt(x);
+	}
+
+	public static short getAsUnsignedShort(int x) {
+		return (short) (x & 0xffff);
+	}
 }

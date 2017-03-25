@@ -23,6 +23,7 @@
  */
 package cz.upol.inf.vanusanik.jwlc.wlc;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +39,7 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
+import cz.upol.inf.vanusanik.jwlc.utils.MutableViewList;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputCreatedCallback;
@@ -159,6 +161,18 @@ public class Output extends WLCHandle {
 	/* Methods */
 	/* Getters */
 
+	public String getName() {
+		return JWLC.nativeHandler().wlc_output_get_name(this.to());
+	}
+
+	public boolean isAsleep() {
+		return JWLC.nativeHandler().wlc_output_get_sleep(this.to());
+	}
+
+	public int getGammaSize() {
+		return Utils.getUnsignedShort(JWLC.nativeHandler().wlc_output_get_gamma_size(this.to()));
+	}
+
 	public Size getVirtualResolution() {
 		return Size.from(JWLC.nativeHandler().wlc_output_get_virtual_resolution(this.to()));
 	}
@@ -194,16 +208,64 @@ public class Output extends WLCHandle {
 	public Size getResolution() {
 		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
 	}
-	
+
 	public static Output getFocused() {
 		return Output.from(JWLC.nativeHandler().wlc_get_focused_output());
 	}
 
+	public long getScale() {
+		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_output_get_scale(this.to()));
+	}
+
+	public MutableViewList getMutableViews() {
+		IntByReference ref = new IntByReference();
+		Pointer p = JWLC.nativeHandler().wlc_output_get_mutable_views(this.to(), ref);
+		return new MutableViewList(p, ref.getValue());
+	}
+
 	/* Setters */
+
+	public void setSleep(boolean sleep) {
+		JWLC.nativeHandler().wlc_output_set_sleep(this.to(), sleep);
+	}
+
+	public void setGamma(int len, short[] r, short[] g, short[] b) {
+		Assert.assertNotNull(r);
+		Assert.assertNotNull(g);
+		Assert.assertNotNull(b);
+
+		if (!(r.length == len && g.length == len && b.length == len)) {
+			throw new InvalidParameterException("arrays must have same length of passed in len argument");
+		}
+
+		JWLC.nativeHandler().wlc_output_set_gamma(this.to(), Utils.getAsUnsignedShort(len), r, g, b);
+	}
 
 	public void setResolution(Size resolution, long scale) {
 		Assert.assertNotNull(resolution);
 
 		JWLC.nativeHandler().wlc_output_set_resolution(this.to(), resolution.to(), Utils.getAsUnsignedInt(scale));
+	}
+
+	public void setMask(long mask) {
+		JWLC.nativeHandler().wlc_output_set_mask(this.to(), Utils.getAsUnsignedInt(mask));
+	}
+
+	public boolean setViews(List<View> views) {
+		Pointer[] ptrArray = new Pointer[views.size()];
+		int it = 0;
+		for (View v : views)
+			ptrArray[it++] = v.to();
+		return JWLC.nativeHandler().wlc_output_set_views(this.to(), ptrArray, views.size());
+	}
+
+	/* Functionality */
+
+	public void focus() {
+		JWLC.nativeHandler().wlc_output_focus(this.to());
+	}
+
+	public static void unfocus() {
+		INVALID_OUTPUT.focus();
 	}
 }

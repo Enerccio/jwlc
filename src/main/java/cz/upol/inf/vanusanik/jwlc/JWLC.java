@@ -26,6 +26,7 @@ package cz.upol.inf.vanusanik.jwlc;
 import com.sun.jna.Native;
 
 import cz.upol.inf.vanusanik.jwlc.Callbacks.logger_callback;
+import cz.upol.inf.vanusanik.jwlc.wlc.BackendType;
 import cz.upol.inf.vanusanik.jwlc.wlc.LogType;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
 
@@ -119,5 +120,9 @@ public class JWLC {
 		Assert.assertNotNull(args);
 
 		nativeHandler().wlc_exec(bin, args);
+	}
+
+	public static BackendType getBackend() {
+		return BackendType.from(nativeHandler().wlc_get_backend_type());
 	}
 }

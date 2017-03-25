@@ -183,10 +183,9 @@ public interface WLC extends Library {
 	/** Terminate wlc. */
 	boolean wlc_terminate();
 
-	//
-	// /** Query backend wlc is using. */
-	// enum wlc_backend_type wlc_get_backend_type(void);
-	//
+	/** Query backend wlc is using. */
+	int wlc_get_backend_type();
+
 	/** Exec program. */
 	void wlc_exec(String bin, String[] args);
 
@@ -226,25 +225,24 @@ public interface WLC extends Library {
 	 */
 	Pointer wlc_get_outputs(IntByReference memb);
 
-	 /** Get focused output. */
+	/** Get focused output. */
 	Pointer wlc_get_focused_output();
-	
-	// /** Get output name. */
-	// const char* wlc_output_get_name(wlc_handle output);
-	//
-	// /** Get sleep state. */
-	// bool wlc_output_get_sleep(wlc_handle output);
-	//
-	// /** Wake up / sleep. */
-	// void wlc_output_set_sleep(wlc_handle output, bool sleep);
-	//
-	// /** Set gamma. R, G, and B are color ramp arrays of size elements. */
-	// void wlc_output_set_gamma(wlc_handle output, uint16_t size, uint16_t *r,
-	// uint16_t *g, uint16_t *b);
-	//
-	// /** Get gamma size */
-	// uint16_t wlc_output_get_gamma_size(wlc_handle output);
-	//
+
+	/** Get output name. */
+	String wlc_output_get_name(Pointer output);
+
+	/** Get sleep state. */
+	boolean wlc_output_get_sleep(Pointer output);
+
+	/** Wake up / sleep. */
+	void wlc_output_set_sleep(Pointer output, boolean sleep);
+
+	/** Set gamma. R, G, and B are color ramp arrays of size elements. */
+	void wlc_output_set_gamma(Pointer output, short size, short[] r, short[] g, short[] b);
+
+	/** Get gamma size */
+	short wlc_output_get_gamma_size(Pointer output);
+
 	/**
 	 * Get real resolution. Resolution applied by either
 	 * wlc_output_set_resolution call or initially. Do not use this for
@@ -263,39 +261,38 @@ public interface WLC extends Library {
 	/** Set resolution. */
 	void wlc_output_set_resolution(Pointer output, wlc_size resolution, int scale);
 
-	// /** Get scale factor. */
-	// uint32_t wlc_output_get_scale(wlc_handle output);
-	//
+	/** Get scale factor. */
+	int wlc_output_get_scale(Pointer output);
+
 	/** Get current visibility bitmask. */
 	int wlc_output_get_mask(Pointer output);
 
-	// /** Set visibility bitmask. */
-	// void wlc_output_set_mask(wlc_handle output, uint32_t mask);
-	//
+	/** Set visibility bitmask. */
+	void wlc_output_set_mask(Pointer output, int mask);
+
 	/**
 	 * Get views in stack order. Returned array is a direct reference, careful
 	 * when moving and destroying handles.
 	 */
 	Pointer wlc_output_get_views(Pointer output, IntByReference memb);
-	//
-	// /**
-	// * Get mutable views in creation order. Returned array is a direct
-	// reference, careful when moving and destroying handles.
-	// * This is mainly useful for wm's who need another view stack for inplace
-	// sorting.
-	// * For example tiling wms, may want to use this to keep their tiling order
-	// separated from floating order.
-	// */
-	// wlc_handle* wlc_output_get_mutable_views(wlc_handle output, size_t
-	// *out_memb);
-	//
-	// /** Set views in stack order. This will also change mutable views.
-	// Returns false on failure. */
-	// bool wlc_output_set_views(wlc_handle output, const wlc_handle *views,
-	// size_t memb);
-	//
-	// /** Focus output. Pass zero for no focus. */
-	// void wlc_output_focus(wlc_handle output);
+
+	/**
+	 * Get mutable views in creation order. Returned array is a direct
+	 * reference, careful when moving and destroying handles. This is mainly
+	 * useful for wm's who need another view stack for inplace sorting. For
+	 * example tiling wms, may want to use this to keep their tiling order
+	 * separated from floating order.
+	 */
+	Pointer wlc_output_get_mutable_views(Pointer output, IntByReference ref);
+
+	/**
+	 * Set views in stack order. This will also change mutable views. Returns
+	 * false on failure.
+	 */
+	boolean wlc_output_set_views(Pointer output, Pointer[] views, int memb);
+
+	/** Focus output. Pass zero for no focus. */
+	void wlc_output_focus(Pointer output);
 
 	/** -- View API */
 

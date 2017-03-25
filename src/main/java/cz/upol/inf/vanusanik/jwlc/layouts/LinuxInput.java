@@ -485,7 +485,8 @@ public class LinuxInput {
 	public static final long KEY_VENDOR = 0x168;
 	public static final long KEY_ARCHIVE = 0x169;
 	public static final long KEY_PROGRAM = 0x16a /*
-													 * Media Select Program Guide
+													 * Media Select Program
+													 * Guide
 													 */;
 	public static final long KEY_CHANNEL = 0x16b;
 	public static final long KEY_FAVORITES = 0x16c;
@@ -924,7 +925,8 @@ public class LinuxInput {
 															 */;
 	public static final long SW_VIDEOOUT_INSERT = 0x08 /* set = inserted */;
 	public static final long SW_CAMERA_LENS_COVER = 0x09 /*
-															 * set = lens covered
+															 * set = lens
+															 * covered
 															 */;
 	public static final long SW_KEYPAD_SLIDE = 0x0a /* set = keypad slide out */;
 	public static final long SW_FRONT_PROXIMITY = 0x0b /*

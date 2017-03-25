@@ -39,4 +39,11 @@ public enum BackendType {
 		return ni;
 	}
 
+	public static BackendType from(int backendType) {
+		for (BackendType bt : values())
+			if (bt.ni == backendType)
+				return bt;
+		return null;
+	}
+
 }
