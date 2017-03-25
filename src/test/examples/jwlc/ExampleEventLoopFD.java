@@ -26,13 +26,16 @@ package jwlc;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import cz.upol.inf.vanusanik.jwlc.Compositor;
 import cz.upol.inf.vanusanik.jwlc.EventLoop;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.wlc.FileDescriptorEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.LogType;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorReadyCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
 
@@ -58,9 +61,9 @@ public class ExampleEventLoopFD {
 			public void run() {
 				try {
 					FileOutputStream fos = new FileOutputStream(f);
-					Thread.sleep(10000);
+					Thread.sleep(3000);
 					fos.write("Hello, world".getBytes());
-					fos.close();
+					fos.flush();
 				} catch (Exception e) {
 					
 				}
@@ -68,26 +71,39 @@ public class ExampleEventLoopFD {
 			
 		}.start();
 		
-		JWLC.init();
-		
-		EventLoop.addFileDescriptorEvent(new FileInputStream(f).getFD(), FileDescriptorEvent.READABLE, new EventLoopFDEvent() {
+		Compositor.setReadyCallback(new CompositorReadyCallback() {
 			
-			public int onFDAvailable(FileDescriptor fd, long mask, Object data) {
-				System.out.println("Custom data from pipe " + data + ", mask " + mask);
-				FileInputStream fis = new FileInputStream(fd);
-				byte[] in = new byte[1024];
+			public void onReady() {
 				try {
-					fis.read(in);
-					System.out.print(new String(in));
+					EventLoop.addFileDescriptorEvent(new FileInputStream(f).getFD(), 
+							FileDescriptorEvent.READABLE, 
+							new EventLoopFDEvent() {
+						
+						public int onFDAvailable(FileDescriptor fd, long mask, Object data) {
+							System.out.println("Custom data from pipe " + data + ", mask " + mask);
+							FileInputStream fis = new FileInputStream(fd);
+							byte[] in = new byte[1024];
+							try {
+								fis.read(in);
+								System.out.print(new String(in));
+							} catch (IOException e) {
+								return 0;
+							} finally {
+								f.delete();
+							}
+							return 0;
+						}
+					}, pipePath);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
 				} catch (IOException e) {
-					return 0;
-				} finally {
-					f.delete();
+					e.printStackTrace();
 				}
-				return 0;
+				JWLC.terminate();
 			}
-		}, pipePath);
+		});
 		
+		JWLC.init();		
 		JWLC.run();
 	}
 

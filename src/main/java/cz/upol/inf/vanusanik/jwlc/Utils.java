@@ -66,7 +66,7 @@ public class Utils {
 
 	public static int getFD(FileDescriptor fd) {
 		try {
-			Field f = FileDescriptor.class.getField("fd");
+			Field f = FileDescriptor.class.getDeclaredField("fd");
 			f.setAccessible(true);
 			return f.getInt(fd);
 		} catch (Exception e) {
@@ -78,7 +78,7 @@ public class Utils {
 	public static FileDescriptor createFD(int fd) {
 		try {
 			FileDescriptor desc = new FileDescriptor();
-			Field f = FileDescriptor.class.getField("fd");
+			Field f = FileDescriptor.class.getDeclaredField("fd");
 			f.setAccessible(true);
 			f.set(desc, fd);
 			return desc;
