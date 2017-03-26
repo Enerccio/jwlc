@@ -29,9 +29,10 @@ import com.sun.jna.Pointer;
 
 import cz.upol.inf.vanusanik.jwlc.Assert;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 import cz.upol.inf.vanusanik.jwlc.utils.NativeString;
 
-public class WLCHandle {
+public class WLCHandle implements PointerContainer {
 
 	private final Pointer handle;
 

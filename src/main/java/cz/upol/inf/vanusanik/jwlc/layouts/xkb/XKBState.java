@@ -26,6 +26,7 @@ package cz.upol.inf.vanusanik.jwlc.layouts.xkb;
 import com.sun.jna.Pointer;
 
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
 /**
  * Dummy pointer holder class.
@@ -34,7 +35,7 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
  * @author enerccio
  *
  */
-public class XKBState {
+public class XKBState implements PointerContainer {
 
 	private final Pointer handle;
 

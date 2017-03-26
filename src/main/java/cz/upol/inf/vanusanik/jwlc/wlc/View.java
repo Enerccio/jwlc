@@ -36,11 +36,15 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.state_request_callback;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.Resource;
 import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
+import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClient;
+import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClientFactory;
+import cz.upol.inf.vanusanik.jwlc.wayland.impl.SimpleWaylandFactory;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewFocusCallback;
@@ -276,6 +280,23 @@ public class View extends WLCHandle {
 	public long getMask() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_mask(this.to()));
+	}
+	
+	public Resource getResource() {
+		return Resource.from(JWLC.nativeHandler().wlc_view_get_surface(this.to()));
+	}
+	
+	private static SimpleWaylandFactory waylandFactory = new SimpleWaylandFactory();
+	public WaylandClient getClient() {
+		return getClient(waylandFactory);
+	}
+	
+	public WaylandClient getClient(WaylandClientFactory factory) {
+		return factory.create(JWLC.nativeHandler().wlc_view_get_wl_client(this.to()));
+	}
+	
+	public Resource getRole() {
+		return Resource.from(JWLC.nativeHandler().wlc_view_get_role(this.to()));
 	}
 
 	/* Setters */

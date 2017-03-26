@@ -21,10 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package cz.upol.inf.vanusanik.jwlc.input;
+package cz.upol.inf.vanusanik.jwlc.wlc.callbacks;
 
-public interface LibinputDeviceDestroyedCallback {
+import cz.upol.inf.vanusanik.jwlc.input.LibinputDevice;
+
+public interface LibinputDeviceCreatedCallback {
 	
-	boolean onDestroyed(LibinputDevice device);
+	boolean onCreated(LibinputDevice device);
 
 }

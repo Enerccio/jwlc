@@ -11,7 +11,7 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.timer_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
 
-public class Event {
+public class Event implements PointerContainer {
 
 	private final Pointer handle;
 

@@ -28,9 +28,12 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.Assert;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.libinput_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.libinput_callback_void;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LibinputDeviceCreatedCallback;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LibinputDeviceDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
+import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
-public class LibinputDevice {
+public class LibinputDevice implements PointerContainer {
 	
 	private final Pointer handle;
 
