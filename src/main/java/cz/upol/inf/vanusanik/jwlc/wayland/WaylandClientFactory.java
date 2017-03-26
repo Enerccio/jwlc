@@ -28,5 +28,5 @@ import com.sun.jna.Pointer;
 public interface WaylandClientFactory {
 
 	WaylandClient create(Pointer p);
-	
+
 }

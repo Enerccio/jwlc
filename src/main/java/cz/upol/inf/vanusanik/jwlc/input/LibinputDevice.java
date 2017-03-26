@@ -34,7 +34,7 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
 public class LibinputDevice implements PointerContainer {
-	
+
 	private final Pointer handle;
 
 	protected LibinputDevice(Pointer handle) {
@@ -84,26 +84,29 @@ public class LibinputDevice implements PointerContainer {
 	public String toString() {
 		return "LibinputDevice [handle=" + handle + "]";
 	}
-	
-	public static void setCreatedCallback(final LibinputDeviceCreatedCallback cb) {
+
+	public static void setCreatedCallback(
+			final LibinputDeviceCreatedCallback cb) {
 		Assert.assertNotNull(cb);
-		
+
 		JWLC.nativeHandler().wlc_set_input_created_cb(new libinput_callback() {
-			
+
 			public boolean callback(Pointer device) {
 				return cb.onCreated(from(device));
 			}
 		});
 	}
-	
-	public static void setDestroyedCallback(final LibinputDeviceDestroyedCallback cb) {
+
+	public static void setDestroyedCallback(
+			final LibinputDeviceDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
-		
-		JWLC.nativeHandler().wlc_set_input_destroyed_cb(new libinput_callback_void() {
-			
-			public void callback(Pointer device) {
-				cb.onDestroyed(from(device));
-			}
-		});
+
+		JWLC.nativeHandler()
+				.wlc_set_input_destroyed_cb(new libinput_callback_void() {
+
+					public void callback(Pointer device) {
+						cb.onDestroyed(from(device));
+					}
+				});
 	}
 }

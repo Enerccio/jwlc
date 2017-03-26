@@ -28,9 +28,9 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClient;
 
 public class SimpleWaylandClient implements WaylandClient {
-	
+
 	private final Pointer p;
-	
+
 	SimpleWaylandClient(Pointer p) {
 		this.p = p;
 	}
@@ -72,5 +72,5 @@ public class SimpleWaylandClient implements WaylandClient {
 	public String toString() {
 		return "SimpleWaylandClient [p=" + p + "]";
 	}
-	
+
 }

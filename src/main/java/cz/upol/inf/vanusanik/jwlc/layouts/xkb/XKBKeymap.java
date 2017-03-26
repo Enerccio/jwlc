@@ -32,11 +32,12 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
  * Dummy pointer holder class.
  * 
  * Use this when working with xkb that you will need to wrap yourself
+ * 
  * @author enerccio
  *
  */
 public class XKBKeymap implements PointerContainer {
-	
+
 	private final Pointer handle;
 
 	protected XKBKeymap(Pointer handle) {

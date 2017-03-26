@@ -85,12 +85,12 @@ public class Keyboard {
 		return Character.toChars(
 				Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
 	}
-	
+
 	public static long[] getCurrentlyHeldKeys() {
 		IntByReference ref = new IntByReference();
 		Pointer buffer = JWLC.nativeHandler().wlc_keyboard_get_current_key(ref);
 		long[] keys = new long[ref.getValue()];
-		for (int i=0; i<keys.length; i++)
+		for (int i = 0; i < keys.length; i++)
 			keys[i] = Utils.getUnsignedInt(buffer.getInt(i * 4));
 		return keys;
 	}

@@ -26,7 +26,7 @@ package cz.upol.inf.vanusanik.jwlc.wlc.callbacks;
 import cz.upol.inf.vanusanik.jwlc.input.LibinputDevice;
 
 public interface LibinputDeviceCreatedCallback {
-	
+
 	boolean onCreated(LibinputDevice device);
 
 }

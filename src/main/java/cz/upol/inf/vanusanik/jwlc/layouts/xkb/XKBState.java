@@ -32,6 +32,7 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
  * Dummy pointer holder class.
  * 
  * Use this when working with xkb that you will need to wrap yourself
+ * 
  * @author enerccio
  *
  */
@@ -86,7 +87,7 @@ public class XKBState implements PointerContainer {
 	public String toString() {
 		return "XKBState [handle=" + handle + "]";
 	}
-	
+
 	public static XKBState get() {
 		return from(JWLC.nativeHandler().wlc_keyboard_get_xkb_state());
 	}

@@ -86,13 +86,11 @@ public class Event implements PointerContainer {
 		return true;
 	}
 
-
-
 	private static long usedData = 0;
 	private static Map<Long, Event> sourceMap = new HashMap<Long, Event>();
 
-	public static Event addFileDescriptorEvent(FileDescriptor fd,
-			long mask, final EventLoopFDEvent cb) {
+	public static Event addFileDescriptorEvent(FileDescriptor fd, long mask,
+			final EventLoopFDEvent cb) {
 		Assert.assertNotNull(fd);
 		Assert.assertNotNull(cb);
 

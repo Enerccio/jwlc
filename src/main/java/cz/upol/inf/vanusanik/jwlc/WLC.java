@@ -472,9 +472,9 @@ public interface WLC extends Library {
 
 	/** Set current pointer position. */
 	void wlc_pointer_set_position(wlc_point position);
-	
+
 	// wlc-wayland.h
-	
+
 	/** Returns Wayland display. */
 	Pointer wlc_get_wl_display();
 
@@ -488,17 +488,21 @@ public interface WLC extends Library {
 	Pointer wlc_resource_from_wl_surface_resource(Pointer resource);
 
 	/** Get surface size. */
-	wlc_size wlc_surface_get_size(Pointer surface); 
+	wlc_size wlc_surface_get_size(Pointer surface);
 
 	/** Return wl_surface resource from internal wlc surface. */
 	Pointer wlc_surface_get_wl_resource(Pointer surface);
 
 	/**
-	 * Turns wl_surface into a wlc view. Returns 0 on failure. This will also trigger view.created callback as any view would.
-	 * For the extra arguments see details of wl_resource_create and wl_resource_set_implementation.
-	 * The extra arguments may be set NULL, if you are not implementing Wayland interface for the surface role.
+	 * Turns wl_surface into a wlc view. Returns 0 on failure. This will also
+	 * trigger view.created callback as any view would. For the extra arguments
+	 * see details of wl_resource_create and wl_resource_set_implementation. The
+	 * extra arguments may be set NULL, if you are not implementing Wayland
+	 * interface for the surface role.
 	 */
-	Pointer wlc_view_from_surface(Pointer surface, Pointer wlClient, Pointer wlInterface, Pointer implementation, int version, int id, Pointer userdata);
+	Pointer wlc_view_from_surface(Pointer surface, Pointer wlClient,
+			Pointer wlInterface, Pointer implementation, int version, int id,
+			Pointer userdata);
 
 	/** Returns internal wlc surface from view handle */
 	Pointer wlc_view_get_surface(Pointer view);
@@ -507,55 +511,65 @@ public interface WLC extends Library {
 	Pointer wlc_surface_get_subsurfaces(Pointer parent, IntByReference ref);
 
 	/** Returns the size of a subsurface and its position relative to parent */
-	void wlc_get_subsurface_geometry(Pointer surface, wlc_geometry out_geometry);
+	void wlc_get_subsurface_geometry(Pointer surface,
+			wlc_geometry out_geometry);
 
 	/** Returns wl_client from view handle */
 	Pointer wlc_view_get_wl_client(Pointer view);
 
-	/** Returns surface role resource from view handle. Return value will be NULL if the view was not assigned role or created with wlc_view_create_from_surface(). */
-	Pointer wlc_view_get_role(Pointer view);
-	
-	// wlc-render.h
-	
 	/**
-	 * Write pixel data with the specific format to output's framebuffer.
-	 * If the geometry is out of bounds, it will be automaticall clamped.
+	 * Returns surface role resource from view handle. Return value will be NULL
+	 * if the view was not assigned role or created with
+	 * wlc_view_create_from_surface().
+	 */
+	Pointer wlc_view_get_role(Pointer view);
+
+	// wlc-render.h
+
+	/**
+	 * Write pixel data with the specific format to output's framebuffer. If the
+	 * geometry is out of bounds, it will be automaticall clamped.
 	 */
 	void wlc_pixels_write(int format, wlc_geometry geo, Pointer data);
-	
+
 	/**
-	 * Read pixel data from output's framebuffer.
-	 * If the geometry is out of bounds, it will be automatically clamped.
-	 * Potentially clamped geometry will be stored in out_geometry, to indicate width / height of the returned data.
+	 * Read pixel data from output's framebuffer. If the geometry is out of
+	 * bounds, it will be automatically clamped. Potentially clamped geometry
+	 * will be stored in out_geometry, to indicate width / height of the
+	 * returned data.
 	 */
-	void wlc_pixels_read(int format, wlc_geometry geo, wlc_geometry outgeo, Pointer data);
+	void wlc_pixels_read(int format, wlc_geometry geo, wlc_geometry outgeo,
+			Pointer data);
 
 	/** Renders surface. */
 	void wlc_surface_render(Pointer surface, wlc_geometry geo);
 
 	/**
-	 * Schedules output for rendering next frame. If output was already scheduled this is no-op,
-	 * if output is currently rendering, it will render immediately after.
+	 * Schedules output for rendering next frame. If output was already
+	 * scheduled this is no-op, if output is currently rendering, it will render
+	 * immediately after.
 	 */
 	void wlc_output_schedule_render(Pointer output);
 
 	/**
-	 * Adds frame callbacks of the given surface for the next output frame.
-	 * It applies recursively to all subsurfaces.
-	 * Useful when the compositor creates custom animations which require disabling internal rendering,
-	 * but still need to update the surface textures (for ex. video players).
+	 * Adds frame callbacks of the given surface for the next output frame. It
+	 * applies recursively to all subsurfaces. Useful when the compositor
+	 * creates custom animations which require disabling internal rendering, but
+	 * still need to update the surface textures (for ex. video players).
 	 */
 	void wlc_surface_flush_frame_callbacks(Pointer surface);
-	
 
 	/** Returns currently active renderer on the given output */
 	int wlc_output_get_renderer(Pointer output);
-	
+
 	/**
-	 * Fills out_textures[] with the textures of a surface. Returns false if surface is invalid.
-	 * Array must have at least 3 elements and should be refreshed at each frame.
-	 * Note that these are not only OpenGL textures but rather render-specific.
-	 * For more info what they are check the renderer's source code */
-	boolean wlc_surface_get_texture(Pointer surface, int[] outTextures, IntByReference format);
-	
+	 * Fills out_textures[] with the textures of a surface. Returns false if
+	 * surface is invalid. Array must have at least 3 elements and should be
+	 * refreshed at each frame. Note that these are not only OpenGL textures but
+	 * rather render-specific. For more info what they are check the renderer's
+	 * source code
+	 */
+	boolean wlc_surface_get_texture(Pointer surface, int[] outTextures,
+			IntByReference format);
+
 }

@@ -29,7 +29,7 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
 public class Display implements PointerContainer {
-	
+
 	private final Pointer handle;
 
 	protected Display(Pointer handle) {
@@ -82,13 +82,13 @@ public class Display implements PointerContainer {
 
 	/* Methods */
 	/* Getters */
-	
+
 	public static Display getDisplay() {
 		return from(JWLC.nativeHandler().wlc_get_wl_display());
 	}
-	
+
 	/* Setters */
-	
+
 	/* Functionality */
-	
+
 }

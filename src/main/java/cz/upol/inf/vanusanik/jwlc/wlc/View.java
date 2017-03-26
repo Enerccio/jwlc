@@ -281,20 +281,22 @@ public class View extends WLCHandle {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_mask(this.to()));
 	}
-	
+
 	public Resource getResource() {
-		return Resource.from(JWLC.nativeHandler().wlc_view_get_surface(this.to()));
+		return Resource
+				.from(JWLC.nativeHandler().wlc_view_get_surface(this.to()));
 	}
-	
+
 	private static SimpleWaylandFactory waylandFactory = new SimpleWaylandFactory();
 	public WaylandClient getClient() {
 		return getClient(waylandFactory);
 	}
-	
+
 	public WaylandClient getClient(WaylandClientFactory factory) {
-		return factory.create(JWLC.nativeHandler().wlc_view_get_wl_client(this.to()));
+		return factory
+				.create(JWLC.nativeHandler().wlc_view_get_wl_client(this.to()));
 	}
-	
+
 	public Resource getRole() {
 		return Resource.from(JWLC.nativeHandler().wlc_view_get_role(this.to()));
 	}

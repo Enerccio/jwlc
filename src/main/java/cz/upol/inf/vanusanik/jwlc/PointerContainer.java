@@ -29,5 +29,5 @@ public interface PointerContainer {
 
 	public Pointer to();
 	public Pointer getHandle();
-	
+
 }

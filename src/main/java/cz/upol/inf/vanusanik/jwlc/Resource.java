@@ -40,16 +40,16 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 import cz.upol.inf.vanusanik.jwlc.wlc.WLCHandle;
 
 public class Resource implements PointerContainer {
-	
+
 	public static class Textures {
 		private final long[] textures;
 		private final SurfaceFormat format;
-		
+
 		public Textures(long[] textures, SurfaceFormat format) {
 			this.textures = textures;
 			this.format = format;
 		}
-		
+
 		public long[] getTextures() {
 			return textures;
 		}
@@ -61,10 +61,10 @@ public class Resource implements PointerContainer {
 		public String toString() {
 			return "Textures [textures=" + Arrays.toString(textures)
 					+ ", format=" + format + "]";
-		}	
-		
+		}
+
 	}
-	
+
 	private final Pointer handle;
 
 	protected Resource(Pointer handle) {
@@ -117,89 +117,97 @@ public class Resource implements PointerContainer {
 
 	/* Methods */
 	/* Getters */
-	
+
 	public Resource getInternalWLCSurface() {
 		Assert.assertNotNull(this);
 		Assert.assertNotNull(this.handle);
-	
-		return Resource.from(JWLC.nativeHandler().wlc_resource_from_wl_surface_resource(to()));
+
+		return Resource.from(JWLC.nativeHandler()
+				.wlc_resource_from_wl_surface_resource(to()));
 	}
-	
+
 	public Size getSurfaceSize() {
 		return Size.from(JWLC.nativeHandler().wlc_surface_get_size(this.to()));
 	}
-	
+
 	public List<Resource> getSubsurfaces() {
 		List<Resource> rList = new ArrayList<Resource>();
 		IntByReference ref = new IntByReference();
-		
-		Pointer data = JWLC.nativeHandler().wlc_surface_get_subsurfaces(this.to(), ref);
-		for (int i=0; i<ref.getValue(); i++)
+
+		Pointer data = JWLC.nativeHandler()
+				.wlc_surface_get_subsurfaces(this.to(), ref);
+		for (int i = 0; i < ref.getValue(); i++)
 			rList.add(from(data.getPointer(i * Pointer.SIZE)));
-		
+
 		return rList;
 	}
-	
+
 	public Geometry getRelativeGeometry() {
 		wlc_geometry g = new wlc_geometry();
 		JWLC.nativeHandler().wlc_get_subsurface_geometry(this.to(), g);
 		return Geometry.from(g);
 	}
-	
+
 	public Textures getTextures() {
 		return getTextures(3);
 	}
-	
+
 	public Textures getTextures(int count) {
 		if (count < 3)
-			throw new IllegalArgumentException("number of textures must be at least 3");
+			throw new IllegalArgumentException(
+					"number of textures must be at least 3");
 		int[] textures = new int[count];
 		IntByReference format = new IntByReference();
-		if (!JWLC.nativeHandler().wlc_surface_get_texture(this.to(), textures, format))
+		if (!JWLC.nativeHandler().wlc_surface_get_texture(this.to(), textures,
+				format))
 			return null;
 		SurfaceFormat fmt = SurfaceFormat.from(format.getValue());
 		long[] data = new long[count];
-		for (int i=0; i<count; i++)
+		for (int i = 0; i < count; i++)
 			data[i] = Utils.getUnsignedInt(textures[i]);
 		return new Textures(data, fmt);
 	}
-	
+
 	/* Setters */
-	
+
 	/* Functionality */
-	
+
 	public WLCHandle convertFromSufrace() {
 		Assert.assertNotNull(this);
 		Assert.assertNotNull(this.handle);
-		
-		return WLCHandle.from(JWLC.nativeHandler().wlc_handle_from_wl_surface_resource(to()));
+
+		return WLCHandle.from(
+				JWLC.nativeHandler().wlc_handle_from_wl_surface_resource(to()));
 	}
-	
+
 	public WLCHandle convertFromOutput() {
 		Assert.assertNotNull(this);
 		Assert.assertNotNull(this.handle);
-	
-		return WLCHandle.from(JWLC.nativeHandler().wlc_handle_from_wl_output_resource(to()));
+
+		return WLCHandle.from(
+				JWLC.nativeHandler().wlc_handle_from_wl_output_resource(to()));
 	}
-	
+
 	public Resource convertInternalWLCSurface() {
 		Assert.assertNotNull(this);
 		Assert.assertNotNull(this.handle);
-		
-		return Resource.from(JWLC.nativeHandler().wlc_surface_get_wl_resource(to()));
+
+		return Resource
+				.from(JWLC.nativeHandler().wlc_surface_get_wl_resource(to()));
 	}
-	
-	public View convertToView(WaylandClient client, WaylandInterface wayInterface, 
-			PointerContainer implementation,  long version, long id, PointerContainer userdata) {
-		View v = View.from(JWLC.nativeHandler().wlc_view_from_surface(to(), 
-				client.to(), wayInterface.to(), implementation.to(), 
-				Utils.getAsUnsignedInt(version), Utils.getAsUnsignedInt(id), 
+
+	public View convertToView(WaylandClient client,
+			WaylandInterface wayInterface, PointerContainer implementation,
+			long version, long id, PointerContainer userdata) {
+		View v = View.from(JWLC.nativeHandler().wlc_view_from_surface(to(),
+				client.to(), wayInterface.to(), implementation.to(),
+				Utils.getAsUnsignedInt(version), Utils.getAsUnsignedInt(id),
 				userdata.to()));
 		if (v.equals(View.INVALID_VIEW))
 			return null;
 		return v;
 	}
-	
+
 	public void flushFrameCallbacks() {
 		JWLC.nativeHandler().wlc_surface_flush_frame_callbacks(this.to());
 	}

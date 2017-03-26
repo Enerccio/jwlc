@@ -241,9 +241,10 @@ public class Output extends WLCHandle {
 				ref);
 		return new MutableViewList(p, ref.getValue());
 	}
-	
+
 	public Renderer getRenderer() {
-		return Renderer.from(JWLC.nativeHandler().wlc_output_get_renderer(this.to()));
+		return Renderer
+				.from(JWLC.nativeHandler().wlc_output_get_renderer(this.to()));
 	}
 
 	/* Setters */
@@ -296,7 +297,7 @@ public class Output extends WLCHandle {
 	public static void unfocus() {
 		INVALID_OUTPUT.focus();
 	}
-	
+
 	public void requestRepaint() {
 		JWLC.nativeHandler().wlc_output_schedule_render(this.to());
 	}
