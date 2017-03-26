@@ -54,11 +54,11 @@ public class ExampleEventLoopFD {
 		final String pipePath = "/tmp/mypipe";
 		Process p = Runtime.getRuntime().exec("mkfifo " + pipePath);
 		p.waitFor();
-		
+
 		final File f = new File(pipePath);
-		
+
 		new Thread() {
-			
+
 			public void run() {
 				try {
 					FileOutputStream fos = new FileOutputStream(f);
@@ -66,36 +66,41 @@ public class ExampleEventLoopFD {
 					fos.write("Hello, world".getBytes());
 					fos.flush();
 				} catch (Exception e) {
-					
+
 				}
 			}
-			
+
 		}.start();
-		
+
 		Compositor.setReadyCallback(new CompositorReadyCallback() {
-			
+
 			public void onReady() {
 				try {
-					EventLoop.addFileDescriptorEvent(new FileInputStream(f).getFD(), 
-							FileDescriptorEvent.READABLE, 
+					EventLoop.addFileDescriptorEvent(
+							new FileInputStream(f).getFD(),
+							FileDescriptorEvent.READABLE,
 							new EventLoopFDEvent() {
-						
-						public int onFDAvailable(EventSource event, FileDescriptor fd, long mask, Object data) {
-							System.out.println("Custom data from pipe " + data + ", mask " + mask);
-							FileInputStream fis = new FileInputStream(fd);
-							byte[] in = new byte[1024];
-							try {
-								fis.read(in);
-								System.out.print(new String(in));
-							} catch (IOException e) {
-								return 0;
-							} finally {
-								f.delete();
-							}
-							JWLC.terminate();
-							return 0;
-						}
-					}, pipePath);
+
+								public int onFDAvailable(EventSource event,
+										FileDescriptor fd, long mask,
+										Object data) {
+									System.out.println("Custom data from pipe "
+											+ data + ", mask " + mask);
+									FileInputStream fis = new FileInputStream(
+											fd);
+									byte[] in = new byte[1024];
+									try {
+										fis.read(in);
+										System.out.print(new String(in));
+									} catch (IOException e) {
+										return 0;
+									} finally {
+										f.delete();
+									}
+									JWLC.terminate();
+									return 0;
+								}
+							}, pipePath);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
@@ -103,8 +108,8 @@ public class ExampleEventLoopFD {
 				}
 			}
 		});
-		
-		JWLC.init();		
+
+		JWLC.init();
 		JWLC.run();
 	}
 

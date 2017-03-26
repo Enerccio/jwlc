@@ -40,15 +40,17 @@ public class Compositor {
 		});
 	}
 
-	public static void setTerminatedCallback(final CompositorTerminatedCallback cb) {
+	public static void setTerminatedCallback(
+			final CompositorTerminatedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_compositor_terminate_cb(new void_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_compositor_terminate_cb(new void_callback() {
 
-			public void callback() {
-				cb.onTerminated();
-			}
-		});
+					public void callback() {
+						cb.onTerminated();
+					}
+				});
 	}
 
 }

@@ -47,9 +47,9 @@ public class ExampleRef {
 				return true;
 			}
 		});
-		
+
 		Output.setFocusCallback(new OutputFocusCallback() {
-			
+
 			public void onFocusChange(Output output, boolean focusState) {
 				System.out.println(output.getCustomData(String.class));
 			}

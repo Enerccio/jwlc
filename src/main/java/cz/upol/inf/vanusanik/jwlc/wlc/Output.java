@@ -84,12 +84,13 @@ public class Output extends WLCHandle {
 	public static void setDestroyedCallback(final OutputDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_destroyed_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_output_destroyed_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onDestroyed(Output.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onDestroyed(Output.from(handle));
+					}
+				});
 	}
 
 	public static void setFocusCallback(final OutputFocusCallback cb) {
@@ -103,59 +104,70 @@ public class Output extends WLCHandle {
 		});
 	}
 
-	public static void setResolutionCallback(final OutputResolutionCallback cb) {
+	public static void setResolutionCallback(
+			final OutputResolutionCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_resolution_cb(new output_resolution_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_output_resolution_cb(new output_resolution_callback() {
 
-			public void callback(Pointer handle, wlc_size fromSize, wlc_size toSize) {
-				cb.onResolution(Output.from(handle), Size.from(fromSize), Size.from(toSize));
-			}
-		});
+					public void callback(Pointer handle, wlc_size fromSize,
+							wlc_size toSize) {
+						cb.onResolution(Output.from(handle),
+								Size.from(fromSize), Size.from(toSize));
+					}
+				});
 	}
 
 	public static void setPreRenderCallback(final OutputPreRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_render_pre_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_output_render_pre_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onPreRender(Output.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onPreRender(Output.from(handle));
+					}
+				});
 	}
 
-	public static void setPostRenderCallback(final OutputPostRenderCallback cb) {
+	public static void setPostRenderCallback(
+			final OutputPostRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_render_post_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_output_render_post_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onPostRender(Output.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onPostRender(Output.from(handle));
+					}
+				});
 	}
 
-	public static void setContextCreatedCallback(final OutputContextCreatedCallback cb) {
+	public static void setContextCreatedCallback(
+			final OutputContextCreatedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_context_created_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_output_context_created_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onContextCreated(Output.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onContextCreated(Output.from(handle));
+					}
+				});
 	}
 
-	public static void setContextDestroyedCallback(final OutputContextDestroyedCallback cb) {
+	public static void setContextDestroyedCallback(
+			final OutputContextDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_output_context_destroyed_cb(new handle_callback_void() {
+		JWLC.nativeHandler().wlc_set_output_context_destroyed_cb(
+				new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onContextDestroyed(Output.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onContextDestroyed(Output.from(handle));
+					}
+				});
 	}
 
 	/* Methods */
@@ -170,11 +182,13 @@ public class Output extends WLCHandle {
 	}
 
 	public int getGammaSize() {
-		return Utils.getUnsignedShort(JWLC.nativeHandler().wlc_output_get_gamma_size(this.to()));
+		return Utils.getUnsignedShort(
+				JWLC.nativeHandler().wlc_output_get_gamma_size(this.to()));
 	}
 
 	public Size getVirtualResolution() {
-		return Size.from(JWLC.nativeHandler().wlc_output_get_virtual_resolution(this.to()));
+		return Size.from(JWLC.nativeHandler()
+				.wlc_output_get_virtual_resolution(this.to()));
 	}
 
 	public List<View> getViews() {
@@ -190,7 +204,8 @@ public class Output extends WLCHandle {
 	}
 
 	public long getMask() {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_output_get_mask(this.to()));
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_output_get_mask(this.to()));
 	}
 
 	public static List<Output> getOutputs() {
@@ -206,7 +221,8 @@ public class Output extends WLCHandle {
 	}
 
 	public Size getResolution() {
-		return Size.from(JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
+		return Size.from(
+				JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
 	}
 
 	public static Output getFocused() {
@@ -214,12 +230,14 @@ public class Output extends WLCHandle {
 	}
 
 	public long getScale() {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_output_get_scale(this.to()));
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_output_get_scale(this.to()));
 	}
 
 	public MutableViewList getMutableViews() {
 		IntByReference ref = new IntByReference();
-		Pointer p = JWLC.nativeHandler().wlc_output_get_mutable_views(this.to(), ref);
+		Pointer p = JWLC.nativeHandler().wlc_output_get_mutable_views(this.to(),
+				ref);
 		return new MutableViewList(p, ref.getValue());
 	}
 
@@ -235,20 +253,24 @@ public class Output extends WLCHandle {
 		Assert.assertNotNull(b);
 
 		if (!(r.length == len && g.length == len && b.length == len)) {
-			throw new InvalidParameterException("arrays must have same length of passed in len argument");
+			throw new InvalidParameterException(
+					"arrays must have same length of passed in len argument");
 		}
 
-		JWLC.nativeHandler().wlc_output_set_gamma(this.to(), Utils.getAsUnsignedShort(len), r, g, b);
+		JWLC.nativeHandler().wlc_output_set_gamma(this.to(),
+				Utils.getAsUnsignedShort(len), r, g, b);
 	}
 
 	public void setResolution(Size resolution, long scale) {
 		Assert.assertNotNull(resolution);
 
-		JWLC.nativeHandler().wlc_output_set_resolution(this.to(), resolution.to(), Utils.getAsUnsignedInt(scale));
+		JWLC.nativeHandler().wlc_output_set_resolution(this.to(),
+				resolution.to(), Utils.getAsUnsignedInt(scale));
 	}
 
 	public void setMask(long mask) {
-		JWLC.nativeHandler().wlc_output_set_mask(this.to(), Utils.getAsUnsignedInt(mask));
+		JWLC.nativeHandler().wlc_output_set_mask(this.to(),
+				Utils.getAsUnsignedInt(mask));
 	}
 
 	public boolean setViews(List<View> views) {
@@ -256,7 +278,8 @@ public class Output extends WLCHandle {
 		int it = 0;
 		for (View v : views)
 			ptrArray[it++] = v.to();
-		return JWLC.nativeHandler().wlc_output_set_views(this.to(), ptrArray, views.size());
+		return JWLC.nativeHandler().wlc_output_set_views(this.to(), ptrArray,
+				views.size());
 	}
 
 	/* Functionality */

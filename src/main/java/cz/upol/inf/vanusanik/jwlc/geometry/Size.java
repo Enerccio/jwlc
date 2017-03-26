@@ -138,7 +138,7 @@ public class Size {
 
 		@Override
 		protected List<String> getFieldOrder() {
-			return Arrays.asList(new String[] { "w", "h" });
+			return Arrays.asList(new String[]{"w", "h"});
 		}
 
 	}

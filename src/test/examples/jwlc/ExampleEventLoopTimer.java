@@ -41,12 +41,12 @@ public class ExampleEventLoopTimer {
 				System.out.println(type + ": " + message);
 			}
 		});
-		
+
 		Compositor.setReadyCallback(new CompositorReadyCallback() {
-			
+
 			public void onReady() {
 				EventSource src = EventLoop.addEvent(new EventLoopEvent() {
-					
+
 					public int onEvent(EventSource event, Object data) {
 						System.out.println(data);
 						EventLoop.timerUpdate(event, 1000);
@@ -54,20 +54,20 @@ public class ExampleEventLoopTimer {
 					}
 				}, "test1");
 				EventSource src2 = EventLoop.addEvent(new EventLoopEvent() {
-					
+
 					public int onEvent(EventSource event, Object data) {
 						System.out.println(data);
 						JWLC.terminate();
 						return 0;
 					}
 				}, "test2");
-				
+
 				EventLoop.timerUpdate(src, 1000);
 				EventLoop.timerUpdate(src2, 2500);
 			}
 		});
-		
-		JWLC.init();		
+
+		JWLC.init();
 		JWLC.run();
 	}
 

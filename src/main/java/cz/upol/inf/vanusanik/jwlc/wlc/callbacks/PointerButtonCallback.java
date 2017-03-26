@@ -30,6 +30,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 public interface PointerButtonCallback {
 
-	public boolean onButton(View view, long time, Modifiers mods, long button, ButtonState state, Point position);
+	public boolean onButton(View view, long time, Modifiers mods, long button,
+			ButtonState state, Point position);
 
 }

@@ -141,7 +141,7 @@ public class Point {
 
 		@Override
 		protected List<String> getFieldOrder() {
-			return Arrays.asList(new String[] { "x", "y" });
+			return Arrays.asList(new String[]{"x", "y"});
 		}
 
 	}

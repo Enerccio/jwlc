@@ -88,7 +88,7 @@ public class WLCHandle {
 		return convertNativeData(nativeData, tclass);
 	}
 
-	@SuppressWarnings("unchecked")	
+	@SuppressWarnings("unchecked")
 	static <T> T convertNativeData(Pointer nativeData, Class<?> tclass) {
 		if (tclass.isAssignableFrom(WLCHandle.class)) {
 			if (tclass == Output.class)
@@ -128,7 +128,7 @@ public class WLCHandle {
 	private Pointer getCustomDataPointer() {
 		return JWLC.nativeHandler().wlc_handle_get_user_data(this.to());
 	}
-	
+
 	public <T> void setCustomData(T value) {
 		Assert.assertNotNull(value);
 
@@ -138,31 +138,32 @@ public class WLCHandle {
 
 	static <T> Pointer convertToPointer(T value) {
 		if (value instanceof WLCHandle)
-			return ((WLCHandle)value).to();
-		if (value instanceof String) 
+			return ((WLCHandle) value).to();
+		if (value instanceof String)
 			return new NativeString((String) value, false).getPointer();
 		if (value instanceof Number) {
 			if (value instanceof Byte) {
-				return new Pointer(((Byte)value).longValue());
+				return new Pointer(((Byte) value).longValue());
 			}
 			if (value instanceof Short) {
-				return new Pointer(((Short)value).longValue());
+				return new Pointer(((Short) value).longValue());
 			}
 			if (value instanceof Integer) {
-				return new Pointer(((Integer)value).longValue());
+				return new Pointer(((Integer) value).longValue());
 			}
 			if (value instanceof Long) {
-				return new Pointer(((Long)value).longValue());
+				return new Pointer(((Long) value).longValue());
 			}
 			if (value instanceof Float) {
-				return new Pointer(Float.floatToRawIntBits(((Float)value)));
+				return new Pointer(Float.floatToRawIntBits(((Float) value)));
 			}
 			if (value instanceof Double) {
-				return new Pointer(Double.doubleToRawLongBits(((Double)value)));
+				return new Pointer(
+						Double.doubleToRawLongBits(((Double) value)));
 			}
 		}
 		if (value instanceof Pointer) {
-			return (Pointer)value;
+			return (Pointer) value;
 		}
 		throw new InvalidParameterException("unknown type");
 	}

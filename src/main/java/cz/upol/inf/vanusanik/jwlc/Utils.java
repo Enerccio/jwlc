@@ -70,11 +70,11 @@ public class Utils {
 			f.setAccessible(true);
 			return f.getInt(fd);
 		} catch (Exception e) {
-		
+
 		}
 		return 0;
 	}
-	
+
 	public static FileDescriptor createFD(int fd) {
 		try {
 			FileDescriptor desc = new FileDescriptor();

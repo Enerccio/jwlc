@@ -113,9 +113,12 @@ public class Geometry {
 	}
 
 	public boolean containOther(Geometry other) {
-		return origin.getX() <= other.getOrigin().getX() && origin.getY() <= other.getOrigin().getY()
-				&& origin.getX() + size.getW() >= other.getOrigin().getX() + other.getSize().getW()
-				&& origin.getY() + size.getH() >= other.getOrigin().getY() + other.getSize().getH();
+		return origin.getX() <= other.getOrigin().getX()
+				&& origin.getY() <= other.getOrigin().getY()
+				&& origin.getX() + size.getW() >= other.getOrigin().getX()
+						+ other.getSize().getW()
+				&& origin.getY() + size.getH() >= other.getOrigin().getY()
+						+ other.getSize().getH();
 	}
 
 	public boolean contains(Geometry a, Geometry b) {
@@ -134,7 +137,7 @@ public class Geometry {
 
 		@Override
 		protected List<String> getFieldOrder() {
-			return Arrays.asList(new String[] { "origin", "size" });
+			return Arrays.asList(new String[]{"origin", "size"});
 		}
 
 	}

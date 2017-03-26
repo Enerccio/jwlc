@@ -60,14 +60,20 @@ public class Mouse {
 	public static void setButtonCallback(final PointerButtonCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_pointer_button_cb(new pointer_button_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_pointer_button_cb(new pointer_button_callback() {
 
-			public boolean callback(Pointer handle, int time, wlc_modifiers mods, int button, int buttonState,
-					wlc_point point) {
-				return cb.onButton(View.from(handle), Utils.getUnsignedInt(time), Modifiers.from(mods),
-						Utils.getUnsignedInt(button), ButtonState.from(buttonState), Point.from(point));
-			}
-		});
+					public boolean callback(Pointer handle, int time,
+							wlc_modifiers mods, int button, int buttonState,
+							wlc_point point) {
+						return cb.onButton(View.from(handle),
+								Utils.getUnsignedInt(time),
+								Modifiers.from(mods),
+								Utils.getUnsignedInt(button),
+								ButtonState.from(buttonState),
+								Point.from(point));
+					}
+				});
 	}
 
 	/**
@@ -78,24 +84,32 @@ public class Mouse {
 	public static void setMotionCallback(final PointerMotionCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_pointer_motion_cb(new pointer_movement_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_pointer_motion_cb(new pointer_movement_callback() {
 
-			public boolean callback(Pointer handle, int time, wlc_point point) {
-				return cb.onMotion(View.from(handle), Utils.getUnsignedInt(time), Point.from(point));
-			}
-		});
+					public boolean callback(Pointer handle, int time,
+							wlc_point point) {
+						return cb.onMotion(View.from(handle),
+								Utils.getUnsignedInt(time), Point.from(point));
+					}
+				});
 	}
 
 	public static void setScrollCallback(final PointerScrollCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_pointer_scroll_cb(new pointer_scroll_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_pointer_scroll_cb(new pointer_scroll_callback() {
 
-			public boolean callback(Pointer view, int time, wlc_modifiers mods, byte axisBits, double[] amount) {
-				return cb.onScroll(View.from(view), Utils.getUnsignedInt(time), Modifiers.from(mods),
-						Utils.getUnsignedByte(axisBits), amount);
-			}
-		});
+					public boolean callback(Pointer view, int time,
+							wlc_modifiers mods, byte axisBits,
+							double[] amount) {
+						return cb.onScroll(View.from(view),
+								Utils.getUnsignedInt(time),
+								Modifiers.from(mods),
+								Utils.getUnsignedByte(axisBits), amount);
+					}
+				});
 	}
 
 	public static void setTouchCallback(final PointerTouchCallback cb) {
@@ -103,10 +117,11 @@ public class Mouse {
 
 		JWLC.nativeHandler().wlc_set_touch_cb(new touch_callback() {
 
-			public boolean callback(Pointer view, int time, wlc_modifiers mods, int touchType, int slot,
-					wlc_point position) {
-				return cb.onTouch(View.from(view), Utils.getUnsignedInt(time), Modifiers.from(mods),
-						TouchType.from(touchType), slot, Point.from(position));
+			public boolean callback(Pointer view, int time, wlc_modifiers mods,
+					int touchType, int slot, wlc_point position) {
+				return cb.onTouch(View.from(view), Utils.getUnsignedInt(time),
+						Modifiers.from(mods), TouchType.from(touchType), slot,
+						Point.from(position));
 			}
 		});
 	}

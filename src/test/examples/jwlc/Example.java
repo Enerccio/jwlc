@@ -128,7 +128,10 @@ public class Example {
 			Geometry anchorRect = v.positioner.getAnchorRect();
 			if (anchorRect == null) {
 				Geometry g = new Geometry(toggle ? w + ew : 0, y,
-						(!toggle && j == positioned - 1 ? r.getW() : (toggle ? w : w + ew)), j < 2 ? h + eh : h);
+						(!toggle && j == positioned - 1
+								? r.getW()
+								: (toggle ? w : w + ew)),
+						j < 2 ? h + eh : h);
 				v.setGeometry(0, g);
 				y = y + (!(toggle = !toggle) ? g.getSize().getH() : 0);
 				++j;
@@ -142,8 +145,10 @@ public class Example {
 				View parent = v.getParent();
 				if (parent != null) {
 					Geometry parentGeometry = parent.getGeometry();
-					g.getOrigin().setX(g.getOrigin().getX() + parentGeometry.getOrigin().getX());
-					g.getOrigin().setY(g.getOrigin().getY() + parentGeometry.getOrigin().getY());
+					g.getOrigin().setX(g.getOrigin().getX()
+							+ parentGeometry.getOrigin().getX());
+					g.getOrigin().setY(g.getOrigin().getY()
+							+ parentGeometry.getOrigin().getY());
 				}
 				v.setGeometry(0, g);
 			}
@@ -182,8 +187,12 @@ public class Example {
 		int halfh = g.getOrigin().getY() + g.getSize().getH() / 2;
 
 		if (c.getAction().getEdges() != edges) {
-			long newEdges = (origin.getX() < halfw ? ResizeEdge.LEFT : (origin.getX() > halfw ? ResizeEdge.RIGHT : 0))
-					| (origin.getY() < halfh ? ResizeEdge.TOP : (origin.getY() > halfh ? ResizeEdge.BOTTOM : 0));
+			long newEdges = (origin.getX() < halfw
+					? ResizeEdge.LEFT
+					: (origin.getX() > halfw ? ResizeEdge.RIGHT : 0))
+					| (origin.getY() < halfh
+							? ResizeEdge.TOP
+							: (origin.getY() > halfh ? ResizeEdge.BOTTOM : 0));
 			c.getAction().setEdges(newEdges);
 		}
 
@@ -208,7 +217,8 @@ public class Example {
 
 		Output.setResolutionCallback(new OutputResolutionCallback() {
 
-			public void onResolution(Output handle, Size fromSize, Size toSize) {
+			public void onResolution(Output handle, Size fromSize,
+					Size toSize) {
 				relayout(handle);
 			}
 		});
@@ -268,15 +278,18 @@ public class Example {
 
 		Keyboard.setKeyboardCallback(new KeyboardCallback() {
 
-			public boolean onKeyboard(View view, long time, Modifiers modifiers, long key, KeyState state) {
+			public boolean onKeyboard(View view, long time, Modifiers modifiers,
+					long key, KeyState state) {
 				long sym = Keyboard.getSymkeyForKey(key, null);
 
 				if (state == KeyState.STATE_PRESSED) {
 					if (view != null) {
-						if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_q) {
+						if ((modifiers.getMods() & Modifier.CTRL) > 0
+								&& sym == XKB.XKB_KEY_q) {
 							view.close();
 							return true;
-						} else if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_Down) {
+						} else if ((modifiers.getMods() & Modifier.CTRL) > 0
+								&& sym == XKB.XKB_KEY_Down) {
 							view.sendToBack();
 
 							View topmost = getTopmost(view.getOutput(), 0);
@@ -289,16 +302,19 @@ public class Example {
 						}
 					}
 
-					if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_Escape) {
+					if ((modifiers.getMods() & Modifier.CTRL) > 0
+							&& sym == XKB.XKB_KEY_Escape) {
 						JWLC.terminate();
 						return true;
-					} else if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym == XKB.XKB_KEY_Return) {
-						String terminal = System.getenv("TERMINAL") != null ? System.getenv("TERMINAL")
+					} else if ((modifiers.getMods() & Modifier.CTRL) > 0
+							&& sym == XKB.XKB_KEY_Return) {
+						String terminal = System.getenv("TERMINAL") != null
+								? System.getenv("TERMINAL")
 								: "weston-terminal";
-						JWLC.exec(terminal, new String[] { terminal });
+						JWLC.exec(terminal, new String[]{terminal});
 						return true;
-					} else if ((modifiers.getMods() & Modifier.CTRL) > 0 && sym >= XKB.XKB_KEY_1
-							&& sym <= XKB.XKB_KEY_9) {
+					} else if ((modifiers.getMods() & Modifier.CTRL) > 0
+							&& sym >= XKB.XKB_KEY_1 && sym <= XKB.XKB_KEY_9) {
 						List<Output> outputs = Output.getOutputs();
 						long scale = sym - XKB.XKB_KEY_1 + 1;
 
@@ -317,18 +333,20 @@ public class Example {
 
 		Mouse.setButtonCallback(new PointerButtonCallback() {
 
-			public boolean onButton(View view, long time, Modifiers mods, long button, ButtonState state,
-					Point position) {
+			public boolean onButton(View view, long time, Modifiers mods,
+					long button, ButtonState state, Point position) {
 				if (state == ButtonState.STATE_PRESSED) {
 					if (view == null)
 						View.unfocus();
 					else {
 						view.focus();
 
-						if ((mods.getMods() & Modifier.CTRL) > 0 && button == LinuxInput.BTN_LEFT) {
+						if ((mods.getMods() & Modifier.CTRL) > 0
+								&& button == LinuxInput.BTN_LEFT) {
 							startInteractiveMove(view, position);
 						}
-						if ((mods.getMods() & Modifier.CTRL) > 0 && button == LinuxInput.BTN_RIGHT) {
+						if ((mods.getMods() & Modifier.CTRL) > 0
+								&& button == LinuxInput.BTN_RIGHT) {
 							startInteractiveResize(view, 0, position);
 						}
 
@@ -354,14 +372,16 @@ public class Example {
 						if ((c.getAction().getEdges() & ResizeEdge.LEFT) > 0) {
 							n.getSize().setW(n.getSize().getW() - dx);
 							n.getOrigin().setX(n.getOrigin().getX() + dx);
-						} else if ((c.getAction().getEdges() & ResizeEdge.RIGHT) > 0) {
+						} else if ((c.getAction().getEdges()
+								& ResizeEdge.RIGHT) > 0) {
 							n.getSize().setW(n.getSize().getW() + dx);
 						}
 
 						if ((c.getAction().getEdges() & ResizeEdge.TOP) > 0) {
 							n.getSize().setH(n.getSize().getH() - dy);
 							n.getOrigin().setY(n.getOrigin().getY() + dy);
-						} else if ((c.getAction().getEdges() & ResizeEdge.BOTTOM) > 0) {
+						} else if ((c.getAction().getEdges()
+								& ResizeEdge.BOTTOM) > 0) {
 							n.getSize().setH(n.getSize().getH() + dy);
 						}
 

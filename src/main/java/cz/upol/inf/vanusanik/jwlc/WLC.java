@@ -220,10 +220,13 @@ public interface WLC extends Library {
 	 * Add fd to event loop. Return value of callback is unused, you should
 	 * return 0.
 	 */
-	Pointer wlc_event_loop_add_fd(int fd, int mask, fd_callback cb, Pointer data);
+	Pointer wlc_event_loop_add_fd(int fd, int mask, fd_callback cb,
+			Pointer data);
 
-	/** Add timer to event loop. Return value of callback is unused, you
-	should return 0. */
+	/**
+	 * Add timer to event loop. Return value of callback is unused, you should
+	 * return 0.
+	 */
 	Pointer wlc_event_loop_add_timer(timer_callback cb, Pointer data);
 
 	/** Update timer to trigger after delay. Returns true on success. */
@@ -231,9 +234,9 @@ public interface WLC extends Library {
 
 	/** Remove event source from event loop. */
 	void wlc_event_source_remove(Pointer source);
-	
-	 /** -- Output API */
-	
+
+	/** -- Output API */
+
 	/**
 	 * Get outputs. Returned array is a direct reference, careful when moving
 	 * and destroying handles.
@@ -253,7 +256,8 @@ public interface WLC extends Library {
 	void wlc_output_set_sleep(Pointer output, boolean sleep);
 
 	/** Set gamma. R, G, and B are color ramp arrays of size elements. */
-	void wlc_output_set_gamma(Pointer output, short size, short[] r, short[] g, short[] b);
+	void wlc_output_set_gamma(Pointer output, short size, short[] r, short[] g,
+			short[] b);
 
 	/** Get gamma size */
 	short wlc_output_get_gamma_size(Pointer output);
@@ -274,7 +278,8 @@ public interface WLC extends Library {
 
 	//
 	/** Set resolution. */
-	void wlc_output_set_resolution(Pointer output, wlc_size resolution, int scale);
+	void wlc_output_set_resolution(Pointer output, wlc_size resolution,
+			int scale);
 
 	/** Get scale factor. */
 	int wlc_output_get_scale(Pointer output);

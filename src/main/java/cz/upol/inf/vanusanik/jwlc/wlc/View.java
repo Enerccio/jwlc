@@ -90,12 +90,13 @@ public class View extends WLCHandle {
 	public static void setDestroyedCallback(final ViewDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_destroyed_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_view_destroyed_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onViewDestroyed(View.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onViewDestroyed(View.from(handle));
+					}
+				});
 	}
 
 	public static void setFocusCallback(final ViewFocusCallback cb) {
@@ -109,100 +110,122 @@ public class View extends WLCHandle {
 		});
 	}
 
-	public static void setRequestMoveCallback(final ViewRequestMoveCallback cb) {
+	public static void setRequestMoveCallback(
+			final ViewRequestMoveCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_request_move_cb(new request_move_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_view_request_move_cb(new request_move_callback() {
 
-			public void callback(Pointer handle, wlc_point point) {
-				cb.onRequestMove(View.from(handle), Point.from(point));
-			}
-		});
+					public void callback(Pointer handle, wlc_point point) {
+						cb.onRequestMove(View.from(handle), Point.from(point));
+					}
+				});
 	}
 
-	public static void setRequestResizeCallback(final ViewRequestResizeCallback cb) {
+	public static void setRequestResizeCallback(
+			final ViewRequestResizeCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_request_resize_cb(new request_resize_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_view_request_resize_cb(new request_resize_callback() {
 
-			public void callback(Pointer handle, int edges, wlc_point point) {
-				cb.onRequestResize(View.from(handle), Utils.getUnsignedInt(edges), Point.from(point));
-			}
-		});
+					public void callback(Pointer handle, int edges,
+							wlc_point point) {
+						cb.onRequestResize(View.from(handle),
+								Utils.getUnsignedInt(edges), Point.from(point));
+					}
+				});
 	}
 
-	public static void setRequestGeometry(final ViewRequestGeometryCallback cb) {
+	public static void setRequestGeometry(
+			final ViewRequestGeometryCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_request_geometry_cb(new geometry_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_view_request_geometry_cb(new geometry_callback() {
 
-			public void callback(Pointer handle, wlc_geometry g) {
-				cb.onRequestGeometry(View.from(handle), Geometry.from(g));
-			}
-		});
+					public void callback(Pointer handle, wlc_geometry g) {
+						cb.onRequestGeometry(View.from(handle),
+								Geometry.from(g));
+					}
+				});
 	}
 
-	public static void setMoveToOutputCallback(final ViewMoveToOutputCallback cb) {
+	public static void setMoveToOutputCallback(
+			final ViewMoveToOutputCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_move_to_output_cb(new handle_move_view_callback() {
+		JWLC.nativeHandler().wlc_set_view_move_to_output_cb(
+				new handle_move_view_callback() {
 
-			public void callback(Pointer view, Pointer from, Pointer to) {
-				cb.onMoveToOutput(View.from(view), Output.from(from), Output.from(to));
-			}
-		});
+					public void callback(Pointer view, Pointer from,
+							Pointer to) {
+						cb.onMoveToOutput(View.from(view), Output.from(from),
+								Output.from(to));
+					}
+				});
 	}
 
-	public static void setStateRequestCallback(final ViewStateRequestCallback cb) {
+	public static void setStateRequestCallback(
+			final ViewStateRequestCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_request_state_cb(new state_request_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_view_request_state_cb(new state_request_callback() {
 
-			public void callback(Pointer view, int state, boolean toggle) {
-				cb.onStateRequest(View.from(view), state, toggle);
-			}
-		});
+					public void callback(Pointer view, int state,
+							boolean toggle) {
+						cb.onStateRequest(View.from(view), state, toggle);
+					}
+				});
 	}
 
 	public static void setPreRenderCallback(final ViewPreRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_render_pre_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_view_render_pre_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onPreRender(View.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onPreRender(View.from(handle));
+					}
+				});
 	}
 
 	public static void setPostRenderCallback(final ViewPostRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_render_post_cb(new handle_callback_void() {
+		JWLC.nativeHandler()
+				.wlc_set_view_render_post_cb(new handle_callback_void() {
 
-			public void callback(Pointer handle) {
-				cb.onPostRender(View.from(handle));
-			}
-		});
+					public void callback(Pointer handle) {
+						cb.onPostRender(View.from(handle));
+					}
+				});
 	}
 
-	public static void setPropertiesUpdatedCallback(final ViewPropertiesUpdatedCallback cb) {
+	public static void setPropertiesUpdatedCallback(
+			final ViewPropertiesUpdatedCallback cb) {
 		Assert.assertNotNull(cb);
 
-		JWLC.nativeHandler().wlc_set_view_properties_updated_cb(new handle_mask_callback() {
+		JWLC.nativeHandler()
+				.wlc_set_view_properties_updated_cb(new handle_mask_callback() {
 
-			public void callback(Pointer view, int uintmask) {
-				cb.onPropertiesUpdated(View.from(view), Utils.getUnsignedInt(uintmask));
-			}
+					public void callback(Pointer view, int uintmask) {
+						cb.onPropertiesUpdated(View.from(view),
+								Utils.getUnsignedInt(uintmask));
+					}
 
-		});
+				});
 	}
 
 	/* Methods */
 	/* Getters */
 
 	public Geometry getGeometry() {
-		return Geometry.from(JWLC.nativeHandler().wlc_view_get_geometry(this.to()));
+		return Geometry
+				.from(JWLC.nativeHandler().wlc_view_get_geometry(this.to()));
 	}
 
 	public View getParent() {
@@ -214,7 +237,8 @@ public class View extends WLCHandle {
 	}
 
 	public long getState() {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_state(this.to()));
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_view_get_state(this.to()));
 	}
 
 	public String getTitle() {
@@ -234,11 +258,13 @@ public class View extends WLCHandle {
 	}
 
 	public long getPid() {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_pid(this.to()));
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_view_get_pid(this.to()));
 	}
 
 	public long getType() {
-		return Utils.getAsUnsignedInt(JWLC.nativeHandler().wlc_view_get_type(this.to()));
+		return Utils.getAsUnsignedInt(
+				JWLC.nativeHandler().wlc_view_get_type(this.to()));
 	}
 
 	public Geometry getVisibleGeometry() {
@@ -248,13 +274,15 @@ public class View extends WLCHandle {
 	}
 
 	public long getMask() {
-		return Utils.getUnsignedInt(JWLC.nativeHandler().wlc_view_get_mask(this.to()));
+		return Utils.getUnsignedInt(
+				JWLC.nativeHandler().wlc_view_get_mask(this.to()));
 	}
 
 	/* Setters */
 
 	public void setMask(long mask) {
-		JWLC.nativeHandler().wlc_view_set_mask(this.to(), Utils.getAsUnsignedInt(mask));
+		JWLC.nativeHandler().wlc_view_set_mask(this.to(),
+				Utils.getAsUnsignedInt(mask));
 	}
 
 	public void setState(int state, boolean toggle) {
@@ -280,7 +308,8 @@ public class View extends WLCHandle {
 	}
 
 	public void setType(long type, boolean toggle) {
-		JWLC.nativeHandler().wlc_view_set_type(this.to(), Utils.getAsUnsignedInt(type), toggle);
+		JWLC.nativeHandler().wlc_view_set_type(this.to(),
+				Utils.getAsUnsignedInt(type), toggle);
 	}
 
 	public void setOutput(Output output) {

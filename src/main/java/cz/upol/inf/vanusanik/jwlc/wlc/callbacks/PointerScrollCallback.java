@@ -28,6 +28,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 public interface PointerScrollCallback {
 
-	public boolean onScroll(View view, long time, Modifiers modifiers, short axis, double[] amount);
+	public boolean onScroll(View view, long time, Modifiers modifiers,
+			short axis, double[] amount);
 
 }

@@ -81,11 +81,13 @@ public class Callbacks {
 	}
 
 	public interface keyboard_callback extends Callback {
-		boolean callback(Pointer handle, int time, wlc_modifiers mods, int key, int keyState);
+		boolean callback(Pointer handle, int time, wlc_modifiers mods, int key,
+				int keyState);
 	}
 
 	public interface pointer_button_callback extends Callback {
-		boolean callback(Pointer handle, int time, wlc_modifiers mods, int button, int buttonState, wlc_point point);
+		boolean callback(Pointer handle, int time, wlc_modifiers mods,
+				int button, int buttonState, wlc_point point);
 	}
 
 	public interface pointer_movement_callback extends Callback {
@@ -97,21 +99,23 @@ public class Callbacks {
 	}
 
 	public interface pointer_scroll_callback extends Callback {
-		boolean callback(Pointer view, int time, wlc_modifiers mods, byte axisBits, double[] amount);
+		boolean callback(Pointer view, int time, wlc_modifiers mods,
+				byte axisBits, double[] amount);
 	}
 
 	public interface touch_callback extends Callback {
-		boolean callback(Pointer view, int time, wlc_modifiers mods, int touchType, int slot, wlc_point position);
+		boolean callback(Pointer view, int time, wlc_modifiers mods,
+				int touchType, int slot, wlc_point position);
 	}
 
 	public interface void_callback extends Callback {
 		void callback();
 	}
-	
+
 	public interface fd_callback extends Callback {
 		int callback(int fd, int mask, Pointer data);
 	}
-	
+
 	public interface timer_callback extends Callback {
 		int callback(Pointer data);
 	}

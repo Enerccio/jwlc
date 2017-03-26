@@ -76,7 +76,7 @@ public class Modifiers {
 
 		@Override
 		protected List<String> getFieldOrder() {
-			return Arrays.asList(new String[] { "leds", "mods" });
+			return Arrays.asList(new String[]{"leds", "mods"});
 		}
 
 	}

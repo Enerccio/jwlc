@@ -3,7 +3,7 @@ package cz.upol.inf.vanusanik.jwlc;
 import com.sun.jna.Pointer;
 
 public class EventSource {
-	
+
 	private final Pointer handle;
 	private final long dataPointer;
 
