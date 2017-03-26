@@ -39,4 +39,11 @@ public enum SurfaceFormat {
 		return ni;
 	}
 
+	public static SurfaceFormat from(int format) {
+		for (SurfaceFormat fmt : values())
+			if (fmt.ni == format)
+				return fmt;
+		return null;
+	}
+
 }

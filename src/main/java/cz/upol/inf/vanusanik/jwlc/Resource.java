@@ -1,6 +1,7 @@
 package cz.upol.inf.vanusanik.jwlc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.sun.jna.Pointer;
@@ -9,12 +10,37 @@ import com.sun.jna.ptr.IntByReference;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
+import cz.upol.inf.vanusanik.jwlc.render.SurfaceFormat;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClient;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandInterface;
 import cz.upol.inf.vanusanik.jwlc.wlc.View;
 import cz.upol.inf.vanusanik.jwlc.wlc.WLCHandle;
 
 public class Resource implements PointerContainer {
+	
+	public static class Textures {
+		private final long[] textures;
+		private final SurfaceFormat format;
+		
+		public Textures(long[] textures, SurfaceFormat format) {
+			this.textures = textures;
+			this.format = format;
+		}
+		
+		public long[] getTextures() {
+			return textures;
+		}
+		public SurfaceFormat getFormat() {
+			return format;
+		}
+
+		@Override
+		public String toString() {
+			return "Textures [textures=" + Arrays.toString(textures)
+					+ ", format=" + format + "]";
+		}	
+		
+	}
 	
 	private final Pointer handle;
 
@@ -97,6 +123,24 @@ public class Resource implements PointerContainer {
 		return Geometry.from(g);
 	}
 	
+	public Textures getTextures() {
+		return getTextures(3);
+	}
+	
+	public Textures getTextures(int count) {
+		if (count < 3)
+			throw new IllegalArgumentException("number of textures must be at least 3");
+		int[] textures = new int[count];
+		IntByReference format = new IntByReference();
+		if (!JWLC.nativeHandler().wlc_surface_get_texture(this.to(), textures, format))
+			return null;
+		SurfaceFormat fmt = SurfaceFormat.from(format.getValue());
+		long[] data = new long[count];
+		for (int i=0; i<count; i++)
+			data[i] = Utils.getUnsignedInt(textures[i]);
+		return new Textures(data, fmt);
+	}
+	
 	/* Setters */
 	
 	/* Functionality */
@@ -133,4 +177,7 @@ public class Resource implements PointerContainer {
 		return v;
 	}
 	
+	public void flushFrameCallbacks() {
+		JWLC.nativeHandler().wlc_surface_flush_frame_callbacks(this.to());
+	}
 }

@@ -39,6 +39,7 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.Utils;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
+import cz.upol.inf.vanusanik.jwlc.render.Renderer;
 import cz.upol.inf.vanusanik.jwlc.utils.MutableViewList;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextCreatedCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputContextDestroyedCallback;
@@ -240,6 +241,10 @@ public class Output extends WLCHandle {
 				ref);
 		return new MutableViewList(p, ref.getValue());
 	}
+	
+	public Renderer getRenderer() {
+		return Renderer.from(JWLC.nativeHandler().wlc_output_get_renderer(this.to()));
+	}
 
 	/* Setters */
 
@@ -290,5 +295,9 @@ public class Output extends WLCHandle {
 
 	public static void unfocus() {
 		INVALID_OUTPUT.focus();
+	}
+	
+	public void requestRepaint() {
+		JWLC.nativeHandler().wlc_output_schedule_render(this.to());
 	}
 }

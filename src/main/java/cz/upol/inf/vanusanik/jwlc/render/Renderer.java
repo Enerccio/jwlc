@@ -39,4 +39,11 @@ public enum Renderer {
 		return ni;
 	}
 
+	public static Renderer from(int renderer) {
+		for (Renderer r : values())
+			if (r.ni == renderer)
+				return r;
+		return null;
+	}
+
 }
