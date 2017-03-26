@@ -50,9 +50,17 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputPostRenderCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputPreRenderCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputResolutionCallback;
 
+/**
+ * wlc_output abstraction wrapper class.
+ * @author enerccio
+ *
+ */
 public class Output extends WLCHandle {
 
-	public static final Output INVALID_OUTPUT = new Output(null);
+	/**
+	 * Invalid output, where handle pointer is 0.
+	 */
+	public static final Output INVALID_OUTPUT = new Output(new Pointer(0));
 
 	protected Output(Pointer handle) {
 		super(handle);
@@ -63,6 +71,13 @@ public class Output extends WLCHandle {
 		return "Output [getHandle()=" + getHandle() + "]";
 	}
 
+	/**
+	 * Creates output from provided pointer.
+	 * 
+	 * Internal method, use with care.
+	 * @param handle
+	 * @return
+	 */
 	public static Output from(Pointer handle) {
 		if (handle == null)
 			return null;
@@ -71,6 +86,10 @@ public class Output extends WLCHandle {
 
 	/* Callbacks */
 
+	/**
+	 * Sets callback to be called when output is created.
+	 * @param cb
+	 */
 	public static void setCreatedCallback(final OutputCreatedCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -82,6 +101,10 @@ public class Output extends WLCHandle {
 		});
 	}
 
+	/**
+	 * Sets callback to be called when output is destroyed.
+	 * @param cb
+	 */
 	public static void setDestroyedCallback(final OutputDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -94,6 +117,10 @@ public class Output extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when output focus is changed.
+	 * @param cb
+	 */
 	public static void setFocusCallback(final OutputFocusCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -105,6 +132,10 @@ public class Output extends WLCHandle {
 		});
 	}
 
+	/**
+	 * Sets callback when resolution of this output is changed.
+	 * @param cb
+	 */
 	public static void setResolutionCallback(
 			final OutputResolutionCallback cb) {
 		Assert.assertNotNull(cb);
@@ -120,6 +151,10 @@ public class Output extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback which is called when output is about to be rendered.
+	 * @param cb
+	 */
 	public static void setPreRenderCallback(final OutputPreRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -132,6 +167,10 @@ public class Output extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback which is called when output was rendered.
+	 * @param cb
+	 */
 	public static void setPostRenderCallback(
 			final OutputPostRenderCallback cb) {
 		Assert.assertNotNull(cb);
@@ -145,6 +184,10 @@ public class Output extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when context is created for this output.
+	 * @param cb
+	 */
 	public static void setContextCreatedCallback(
 			final OutputContextCreatedCallback cb) {
 		Assert.assertNotNull(cb);
@@ -158,6 +201,10 @@ public class Output extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when context is destroyed for this output.
+	 * @param cb
+	 */
 	public static void setContextDestroyedCallback(
 			final OutputContextDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
@@ -174,24 +221,39 @@ public class Output extends WLCHandle {
 	/* Methods */
 	/* Getters */
 
+	/**
+	 * @return name of this output.
+	 */
 	public String getName() {
 		return JWLC.nativeHandler().wlc_output_get_name(this.to());
 	}
 
+	/**
+	 * @return whether this output is asleep or not
+	 */
 	public boolean isAsleep() {
 		return JWLC.nativeHandler().wlc_output_get_sleep(this.to());
 	}
 
+	/**
+	 * @return gamma size 
+	 */
 	public int getGammaSize() {
 		return Utils.getUnsignedShort(
 				JWLC.nativeHandler().wlc_output_get_gamma_size(this.to()));
 	}
 
+	/**
+	 * @return virtual resolution of this output
+	 */
 	public Size getVirtualResolution() {
 		return Size.from(JWLC.nativeHandler()
 				.wlc_output_get_virtual_resolution(this.to()));
 	}
 
+	/**
+	 * @return list of views for this output
+	 */
 	public List<View> getViews() {
 		List<View> data = new ArrayList<View>();
 
@@ -204,11 +266,17 @@ public class Output extends WLCHandle {
 		return data;
 	}
 
+	/**
+	 * @return mask
+	 */
 	public long getMask() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_output_get_mask(this.to()));
 	}
 
+	/**
+	 * @return all outputs currently active
+	 */
 	public static List<Output> getOutputs() {
 		List<Output> data = new ArrayList<Output>();
 
@@ -221,20 +289,43 @@ public class Output extends WLCHandle {
 		return data;
 	}
 
+	/**
+	 * Get real resolution. 
+	 * Resolution applied by either {@link #setResolution(Size, long)} call or initially. 
+	 * Do not use this for coordinate boundary.
+	 * 
+	 * @return real resolution of this output.
+	 */
 	public Size getResolution() {
 		return Size.from(
 				JWLC.nativeHandler().wlc_output_get_resolution(this.to()));
 	}
 
+	/**
+	 * @return currently focused output.
+	 */
 	public static Output getFocused() {
 		return Output.from(JWLC.nativeHandler().wlc_get_focused_output());
 	}
 
+	/**
+	 * @return scale factor
+	 */
 	public long getScale() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_output_get_scale(this.to()));
 	}
 
+	/**
+	 * Returns mutable view list of all views of this output.
+	 * 
+	 * This is mainly useful for wm's who need another view stack for inplace sorting. 
+	 * For example tiling wms, may want to use this to keep their tiling order 
+	 * separated from floating order.
+	 * 
+	 * @return mutable view.
+	 * @see {@link MutableViewList} on how to correctly use this object
+	 */
 	public MutableViewList getMutableViews() {
 		IntByReference ref = new IntByReference();
 		Pointer p = JWLC.nativeHandler().wlc_output_get_mutable_views(this.to(),
@@ -242,6 +333,9 @@ public class Output extends WLCHandle {
 		return new MutableViewList(p, ref.getValue());
 	}
 
+	/**
+	 * @return renderer for this output
+	 */
 	public Renderer getRenderer() {
 		return Renderer
 				.from(JWLC.nativeHandler().wlc_output_get_renderer(this.to()));
@@ -249,10 +343,20 @@ public class Output extends WLCHandle {
 
 	/* Setters */
 
+	/**
+	 * Sets the sleep status of this output.
+	 */
 	public void setSleep(boolean sleep) {
 		JWLC.nativeHandler().wlc_output_set_sleep(this.to(), sleep);
 	}
 
+	/**
+	 * Sets gamma values.
+	 * @param len 
+	 * @param r arrays of uint8_t color ramp values as shorts, must be len length
+	 * @param g arrays of uint8_t color ramp values as shorts, must be len length
+	 * @param b arrays of uint8_t color ramp values as shorts, must be len length
+	 */
 	public void setGamma(int len, short[] r, short[] g, short[] b) {
 		Assert.assertNotNull(r);
 		Assert.assertNotNull(g);
@@ -267,6 +371,11 @@ public class Output extends WLCHandle {
 				Utils.getAsUnsignedShort(len), r, g, b);
 	}
 
+	/**
+	 * Sets the resolution of this output.
+	 * @param resolution
+	 * @param scale
+	 */
 	public void setResolution(Size resolution, long scale) {
 		Assert.assertNotNull(resolution);
 
@@ -274,11 +383,20 @@ public class Output extends WLCHandle {
 				resolution.to(), Utils.getAsUnsignedInt(scale));
 	}
 
+	/**
+	 * Sets mask.
+	 * @param mask
+	 */
 	public void setMask(long mask) {
 		JWLC.nativeHandler().wlc_output_set_mask(this.to(),
 				Utils.getAsUnsignedInt(mask));
 	}
 
+	/**
+	 * After this call, output will have only views provided in the list.
+	 * @param views
+	 * @return
+	 */
 	public boolean setViews(List<View> views) {
 		Pointer[] ptrArray = new Pointer[views.size()];
 		int it = 0;
@@ -290,14 +408,24 @@ public class Output extends WLCHandle {
 
 	/* Functionality */
 
+	/**
+	 * Focuses this output.
+	 */
 	public void focus() {
 		JWLC.nativeHandler().wlc_output_focus(this.to());
 	}
 
+	/**
+	 * Unfocuses all outputs (equivalent to {@link #INVALID_OUTPUT}.{@link #focus()}).
+	 */
 	public static void unfocus() {
 		INVALID_OUTPUT.focus();
 	}
 
+	/**
+	 * Schedules render for this output. 
+	 * No op, if render was already scheduled for this output.
+	 */
 	public void requestRepaint() {
 		JWLC.nativeHandler().wlc_output_schedule_render(this.to());
 	}

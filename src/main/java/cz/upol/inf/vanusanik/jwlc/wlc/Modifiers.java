@@ -28,6 +28,13 @@ import java.util.List;
 
 import com.sun.jna.Structure;
 
+/**
+ * Wraps wlc_modifiers struct.
+ * Contains leds and modifier keys currently pressed.
+ * 
+ * @author enerccio
+ *
+ */
 public class Modifiers {
 
 	private int leds, mods;

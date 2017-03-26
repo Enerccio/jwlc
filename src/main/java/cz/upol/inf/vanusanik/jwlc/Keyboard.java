@@ -42,7 +42,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.KeyboardCallback;
 public class Keyboard {
 
 	/**
-	 * Sets the keyboard key callback
+	 * Sets the keyboard key callback.
 	 * 
 	 * @param cb
 	 */
@@ -75,17 +75,32 @@ public class Keyboard {
 						modifiers == null ? null : modifiers.to()));
 	}
 
+	/**
+	 * Returns utf32 long value for provided key and applied modifiers.
+	 * @param key
+	 * @param modifiers
+	 * @return
+	 */
 	public static long getUtf32CharacterForKey(long key, Modifiers modifiers) {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_keyboard_get_utf32_for_key(
 						Utils.getAsUnsignedInt(key), modifiers.to()));
 	}
 
+	/**
+	 * Returns char array of unicode char for provided key and applied modifiers.
+	 * @param key
+	 * @param modifiers
+	 * @return
+	 */
 	public static char[] getUtf32CharsForKey(long key, Modifiers modifiers) {
 		return Character.toChars(
 				Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
 	}
 
+	/**
+	 * @return list of currently held keys.
+	 */
 	public static long[] getCurrentlyHeldKeys() {
 		IntByReference ref = new IntByReference();
 		Pointer buffer = JWLC.nativeHandler().wlc_keyboard_get_current_key(ref);

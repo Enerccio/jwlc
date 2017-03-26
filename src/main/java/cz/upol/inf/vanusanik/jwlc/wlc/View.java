@@ -57,10 +57,19 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestMoveCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewRequestResizeCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.ViewStateRequestCallback;
 
+/**
+ * wlc_view abstraction wrapper class.
+ * 
+ * @author enerccio
+ *
+ */
 public class View extends WLCHandle {
 
 	public static final View INVALID_VIEW = new View(null);
 
+	/**
+	 * Holds positioner information. Useful for gtk windows.
+	 */
 	public final ViewPositioner positioner;
 
 	protected View(Pointer handle) {
@@ -73,6 +82,13 @@ public class View extends WLCHandle {
 		return "View [getHandle()=" + getHandle() + "]";
 	}
 
+	/**
+	 * Creates view from provided pointer.
+	 * 
+	 * Internal use only, use with care.
+	 * @param handle
+	 * @return
+	 */
 	public static View from(Pointer handle) {
 		if (handle == null)
 			return null;
@@ -80,6 +96,11 @@ public class View extends WLCHandle {
 	}
 
 	/* Callbacks */
+	
+	/**
+	 * Sets callback to be called when view is created.
+	 * @param cb
+	 */
 	public static void setCreatedCallback(final ViewCreatedCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -91,6 +112,10 @@ public class View extends WLCHandle {
 		});
 	}
 
+	/**
+	 * Sets callback to be called when view is destroyed.
+	 * @param cb
+	 */
 	public static void setDestroyedCallback(final ViewDestroyedCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -103,6 +128,10 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when focus changes for view.
+	 * @param cb
+	 */
 	public static void setFocusCallback(final ViewFocusCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -114,6 +143,11 @@ public class View extends WLCHandle {
 		});
 	}
 
+	/**
+	 * Sets callback to be called when view requests to be moved.
+	 * Start an interactive move to agree.
+	 * @param cb
+	 */
 	public static void setRequestMoveCallback(
 			final ViewRequestMoveCallback cb) {
 		Assert.assertNotNull(cb);
@@ -127,6 +161,11 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when view requests to be resized.
+	 * Start interactive resize to agree.
+	 * @param cb
+	 */
 	public static void setRequestResizeCallback(
 			final ViewRequestResizeCallback cb) {
 		Assert.assertNotNull(cb);
@@ -142,6 +181,14 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when view wants to change it's geometry.
+	 * Use {@link #setGeometry(long, Geometry)} to agree.
+	 * 
+	 * WARNING: Use empty callback to prevent windows to automatically change without you 
+	 * agreeing to it!
+	 * @param cb
+	 */
 	public static void setRequestGeometry(
 			final ViewRequestGeometryCallback cb) {
 		Assert.assertNotNull(cb);
@@ -156,6 +203,10 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when view is moved to the output.
+	 * @param cb
+	 */
 	public static void setMoveToOutputCallback(
 			final ViewMoveToOutputCallback cb) {
 		Assert.assertNotNull(cb);
@@ -171,6 +222,11 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when view wants to change it's state.
+	 * Call {@link #setState(int, boolean)} to agree.
+	 * @param cb
+	 */
 	public static void setStateRequestCallback(
 			final ViewStateRequestCallback cb) {
 		Assert.assertNotNull(cb);
@@ -185,6 +241,10 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called before view is rendered.
+	 * @param cb
+	 */
 	public static void setPreRenderCallback(final ViewPreRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -197,6 +257,10 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when view was just rendered.
+	 * @param cb
+	 */
 	public static void setPostRenderCallback(final ViewPostRenderCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -209,6 +273,10 @@ public class View extends WLCHandle {
 				});
 	}
 
+	/**
+	 * Sets callback to be called when properties of this view were changed.
+	 * @param cb
+	 */
 	public static void setPropertiesUpdatedCallback(
 			final ViewPropertiesUpdatedCallback cb) {
 		Assert.assertNotNull(cb);
@@ -227,93 +295,158 @@ public class View extends WLCHandle {
 	/* Methods */
 	/* Getters */
 
+	/**
+	 * @return client geometry of this view.
+	 */
 	public Geometry getGeometry() {
 		return Geometry
 				.from(JWLC.nativeHandler().wlc_view_get_geometry(this.to()));
 	}
 
+	/**
+	 * @return null or parent view.
+	 */
 	public View getParent() {
 		return View.from(JWLC.nativeHandler().wlc_view_get_parent(this.to()));
 	}
 
+	/**
+	 * @return output of this view.
+	 */
 	public Output getOutput() {
 		return Output.from(JWLC.nativeHandler().wlc_view_get_output(this.to()));
 	}
 
+	/**
+	 * @return state of this view.
+	 */
 	public long getState() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_state(this.to()));
 	}
 
+	/**
+	 * @return title of this view.
+	 */
 	public String getTitle() {
 		return JWLC.nativeHandler().wlc_view_get_title(this.to());
 	}
 
+	/**
+	 * @return shell instance (shell-surface only).
+	 */
 	public String getShellInstance() {
 		return JWLC.nativeHandler().wlc_view_get_instance(this.to());
 	}
 
+	/**
+	 * @return shell class (shell-surface only).
+	 */
 	public String getShellClass() {
 		return JWLC.nativeHandler().wlc_view_get_class(this.to());
 	}
 
+	/**
+	 * @return app id (xdg-surface only).
+	 */
 	public String getAppId() {
 		return JWLC.nativeHandler().wlc_view_get_app_id(this.to());
 	}
 
+	/**
+	 * @return pid of process which created this view.
+	 */
 	public long getPid() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_pid(this.to()));
 	}
 
+	/**
+	 * @return type of this view. 
+	 * @see {@link ViewType}
+	 */
 	public long getType() {
 		return Utils.getAsUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_type(this.to()));
 	}
 
+	/**
+	 * @return visible geometry (what server renders).
+	 */
 	public Geometry getVisibleGeometry() {
 		wlc_geometry geo = new wlc_geometry();
 		JWLC.nativeHandler().wlc_view_get_visible_geometry(this.to(), geo);
 		return Geometry.from(geo);
 	}
 
+	/**
+	 * @return visiblity view mask.
+	 */
 	public long getMask() {
 		return Utils.getUnsignedInt(
 				JWLC.nativeHandler().wlc_view_get_mask(this.to()));
 	}
 
+	/**
+	 * @return resource of this view.
+	 */
 	public Resource getResource() {
 		return Resource
 				.from(JWLC.nativeHandler().wlc_view_get_surface(this.to()));
 	}
 
 	private static SimpleWaylandFactory waylandFactory = new SimpleWaylandFactory();
+	/**
+	 * @return wayland client for this view.
+	 */
 	public WaylandClient getClient() {
 		return getClient(waylandFactory);
 	}
 
+	/**
+	 * Gets the wayland client for this view.
+	 * @param factory to create wrapper class.
+	 * @return wrapped wl_client for this view.
+	 */
 	public WaylandClient getClient(WaylandClientFactory factory) {
 		return factory
 				.create(JWLC.nativeHandler().wlc_view_get_wl_client(this.to()));
 	}
 
+	/**
+	 * @return surface role of this view, can be null
+	 */
 	public Resource getRole() {
 		return Resource.from(JWLC.nativeHandler().wlc_view_get_role(this.to()));
 	}
 
 	/* Setters */
 
+	/**
+	 * Sets mask.
+	 * @param mask
+	 */
 	public void setMask(long mask) {
 		JWLC.nativeHandler().wlc_view_set_mask(this.to(),
 				Utils.getAsUnsignedInt(mask));
 	}
 
+	/**
+	 * Sets state.
+	 * @param state
+	 * @param toggle
+	 */
 	public void setState(int state, boolean toggle) {
 		Assert.assertNotNull(state);
 
 		JWLC.nativeHandler().wlc_view_set_state(this.to(), state, toggle);
 	}
 
+	/**
+	 * Sets geometry. Set edges if the geometry change is caused by interactive resize.
+	 * @param edges
+	 * @param geo
+	 */
 	public void setGeometry(long edges, Geometry geo) {
 		Assert.assertNotNull(geo);
 
@@ -323,6 +456,10 @@ public class View extends WLCHandle {
 		geo.reset(g);
 	}
 
+	/**
+	 * Parent this view to the parent view.
+	 * @param parent
+	 */
 	public void setParent(View parent) {
 		if (parent == null)
 			parent = INVALID_VIEW;
@@ -330,11 +467,20 @@ public class View extends WLCHandle {
 		JWLC.nativeHandler().wlc_view_set_parent(this.to(), parent.to());
 	}
 
+	/**
+	 * Set type of the view. Toggle indicates whether it is set or not.
+	 * @param type
+	 * @param toggle
+	 */
 	public void setType(long type, boolean toggle) {
 		JWLC.nativeHandler().wlc_view_set_type(this.to(),
 				Utils.getAsUnsignedInt(type), toggle);
 	}
 
+	/**
+	 * Assign output to this view.
+	 * @param output
+	 */
 	public void setOutput(Output output) {
 		Assert.assertNotNull(output);
 
@@ -343,30 +489,53 @@ public class View extends WLCHandle {
 
 	/* Functionality */
 
+	/**
+	 * Brings view to the front.
+	 */
 	public void bringToFront() {
 		JWLC.nativeHandler().wlc_view_bring_to_front(this.to());
 	}
 
+	/**
+	 * Focuses this view.
+	 */
 	public void focus() {
 		JWLC.nativeHandler().wlc_view_focus(this.to());
 	}
 
+	/**
+	 * Closes this view.
+	 */
 	public void close() {
 		JWLC.nativeHandler().wlc_view_close(this.to());
 	}
 
+	/**
+	 * Sends this view to back.
+	 */
 	public void sendToBack() {
 		JWLC.nativeHandler().wlc_view_send_to_back(this.to());
 	}
 
+	/**
+	 * Unfocus all views (equivalent to {@link #INVALID_VIEW}.{@link #focus()}).
+	 */
 	public static void unfocus() {
 		INVALID_VIEW.focus();
 	}
 
+	/**
+	 * Brings this view above other view.
+	 * @param other
+	 */
 	public void bringAbove(View other) {
 		JWLC.nativeHandler().wlc_view_bring_above(this.to(), other.to());
 	}
 
+	/**
+	 * Brings this view below other view.
+	 * @param other
+	 */
 	public void bringBelow(View other) {
 		JWLC.nativeHandler().wlc_view_send_below(this.to(), other.to());
 	}

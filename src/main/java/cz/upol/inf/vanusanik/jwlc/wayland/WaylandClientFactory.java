@@ -25,6 +25,11 @@ package cz.upol.inf.vanusanik.jwlc.wayland;
 
 import com.sun.jna.Pointer;
 
+/**
+ * Factory for creating wayland clients.
+ * @author enerccio
+ *
+ */
 public interface WaylandClientFactory {
 
 	WaylandClient create(Pointer p);

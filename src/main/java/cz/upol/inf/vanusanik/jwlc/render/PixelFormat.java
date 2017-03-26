@@ -23,6 +23,11 @@
  */
 package cz.upol.inf.vanusanik.jwlc.render;
 
+/**
+ * Available pixel format for raw operations
+ * @author enerccio
+ *
+ */
 public enum PixelFormat {
 
 	RGBA8888(0)

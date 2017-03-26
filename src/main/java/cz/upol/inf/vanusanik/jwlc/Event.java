@@ -34,6 +34,11 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.timer_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
 
+/**
+ * Timed events and FD events are represented by this class.
+ * 
+ * @author enerccio
+ */
 public class Event implements PointerContainer {
 
 	private final Pointer handle;
@@ -42,6 +47,13 @@ public class Event implements PointerContainer {
 		this.handle = handle;
 	}
 
+	/**
+	 * Constructs event from pointer.
+	 * 
+	 * Internal method, use with care.
+	 * @param handle
+	 * @return
+	 */
 	public static Event from(Pointer handle) {
 		if (handle == null)
 			return null;

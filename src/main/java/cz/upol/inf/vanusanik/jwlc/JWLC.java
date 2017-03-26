@@ -122,6 +122,9 @@ public class JWLC {
 		nativeHandler().wlc_exec(bin, args);
 	}
 
+	/**
+	 * @return backend 
+	 */
 	public static BackendType getBackend() {
 		return BackendType.from(nativeHandler().wlc_get_backend_type());
 	}

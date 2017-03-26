@@ -23,6 +23,11 @@
  */
 package cz.upol.inf.vanusanik.jwlc.render;
 
+/**
+ * Type of renderer used by wayland
+ * @author enerccio
+ *
+ */
 public enum Renderer {
 
 	RENDERER_GLES2(0), NO_RENDERER(1)

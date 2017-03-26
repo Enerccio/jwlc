@@ -95,6 +95,10 @@ public class Mouse {
 				});
 	}
 
+	/**
+	 * Sets the callback for scrolling.
+	 * @param cb
+	 */
 	public static void setScrollCallback(final PointerScrollCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -112,6 +116,10 @@ public class Mouse {
 				});
 	}
 
+	/**
+	 * Sets callback for touch.
+	 * @param cb
+	 */
 	public static void setTouchCallback(final PointerTouchCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -129,6 +137,10 @@ public class Mouse {
 	/* Methods */
 	/* Getters */
 
+	/**
+	 * Current pointer position.
+	 * @return
+	 */
 	public static Point getPosition() {
 		wlc_point p = new wlc_point();
 		JWLC.nativeHandler().wlc_pointer_get_position(p);

@@ -27,8 +27,19 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.void_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorReadyCallback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorTerminatedCallback;
 
+/**
+ * Compositor related events.
+ * 
+ * @author enerccio
+ */
 public class Compositor {
+	
+	private Compositor() { }
 
+	/**
+	 * Set callback will be called when server is ready to accept clients. 
+	 * @param cb
+	 */
 	public static void setReadyCallback(final CompositorReadyCallback cb) {
 		Assert.assertNotNull(cb);
 
@@ -40,6 +51,10 @@ public class Compositor {
 		});
 	}
 
+	/**
+	 * Set callback will be called when server is about to be terminated.
+	 * @param cb
+	 */
 	public static void setTerminatedCallback(
 			final CompositorTerminatedCallback cb) {
 		Assert.assertNotNull(cb);

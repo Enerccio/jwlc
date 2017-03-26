@@ -33,6 +33,13 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LibinputDeviceDestroyedCallback;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
+/**
+ * Referenced wrapper around libinput_device.
+ * 
+ * There is no implementation in JWLC, use on your own with JNA.
+ * @author enerccio
+ *
+ */
 public class LibinputDevice implements PointerContainer {
 
 	private final Pointer handle;
@@ -85,6 +92,10 @@ public class LibinputDevice implements PointerContainer {
 		return "LibinputDevice [handle=" + handle + "]";
 	}
 
+	/**
+	 * Sets the created callback.
+	 * @param cb
+	 */
 	public static void setCreatedCallback(
 			final LibinputDeviceCreatedCallback cb) {
 		Assert.assertNotNull(cb);
@@ -97,6 +108,10 @@ public class LibinputDevice implements PointerContainer {
 		});
 	}
 
+	/**
+	 * Sets the destroyed callback.
+	 * @param cb
+	 */
 	public static void setDestroyedCallback(
 			final LibinputDeviceDestroyedCallback cb) {
 		Assert.assertNotNull(cb);

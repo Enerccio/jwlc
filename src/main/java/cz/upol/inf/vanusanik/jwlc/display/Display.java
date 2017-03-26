@@ -28,6 +28,11 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
+/**
+ * WaylandDisplay abstraction wrapper.
+ * @author enerccio
+ *
+ */
 public class Display implements PointerContainer {
 
 	private final Pointer handle;
@@ -36,6 +41,13 @@ public class Display implements PointerContainer {
 		this.handle = handle;
 	}
 
+	/**
+	 * Creates display from provided pointer.
+	 * 
+	 * Internal use only.
+	 * @param handle
+	 * @return
+	 */
 	public static Display from(Pointer handle) {
 		if (handle == null)
 			return null;
@@ -83,6 +95,10 @@ public class Display implements PointerContainer {
 	/* Methods */
 	/* Getters */
 
+	/**
+	 * Returns wayland display.
+	 * @return
+	 */
 	public static Display getDisplay() {
 		return from(JWLC.nativeHandler().wlc_get_wl_display());
 	}

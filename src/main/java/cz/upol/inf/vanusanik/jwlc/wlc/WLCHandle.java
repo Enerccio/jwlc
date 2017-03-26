@@ -32,6 +32,11 @@ import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 import cz.upol.inf.vanusanik.jwlc.utils.NativeString;
 
+/**
+ * Base wlc_handle abstraction wrapper class. 
+ * @author enerccio
+ *
+ */
 public class WLCHandle implements PointerContainer {
 
 	private final Pointer handle;
@@ -84,6 +89,12 @@ public class WLCHandle implements PointerContainer {
 		return "WLCHandle [handle=" + handle + "]";
 	}
 
+	/**
+	 * Returns custom data from this handle.
+	 * XXX: Experimental
+	 * @param tclass
+	 * @return
+	 */
 	public <T> T getCustomData(Class<T> tclass) {
 		Pointer nativeData = getCustomDataPointer();
 		return convertNativeData(nativeData, tclass);
@@ -130,6 +141,11 @@ public class WLCHandle implements PointerContainer {
 		return JWLC.nativeHandler().wlc_handle_get_user_data(this.to());
 	}
 
+	/**
+	 * Sets custom data to this handle.
+	 * XXX: Experimental
+	 * @param value
+	 */
 	public <T> void setCustomData(T value) {
 		Assert.assertNotNull(value);
 

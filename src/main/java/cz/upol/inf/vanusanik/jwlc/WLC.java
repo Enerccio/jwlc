@@ -53,6 +53,13 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Point.wlc_point;
 import cz.upol.inf.vanusanik.jwlc.geometry.Size.wlc_size;
 import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
 
+/**
+ * Library handle to libwlc.
+ * 
+ * Internal use only, use on your own risk.
+ * @author enerccio
+ *
+ */
 public interface WLC extends Library {
 
 	// Wlc.h

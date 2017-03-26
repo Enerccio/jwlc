@@ -23,6 +23,11 @@
  */
 package cz.upol.inf.vanusanik.jwlc.layouts;
 
+/**
+ * Xkb symbols header constants converted to java.
+ * @author enerccio
+ *
+ */
 public class XKB {
 
 	public static final long XKB_KEY_NoSymbol = 0x0;

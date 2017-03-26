@@ -26,24 +26,19 @@ package cz.upol.inf.vanusanik.jwlc;
 import java.io.FileDescriptor;
 import java.lang.reflect.Field;
 
+/**
+ * Internal utilities.
+ * 
+ * Use on your own risk, this can be changed.
+ * @author enerccio
+ *
+ */
 public class Utils {
 
-	/**
-	 * Converts from int to unsigned int stored in long
-	 * 
-	 * @param x
-	 * @return
-	 */
 	public static long getUnsignedInt(int x) {
 		return Integer.toUnsignedLong(x);
 	}
 
-	/**
-	 * Converts from unsigned int stored in long to unsigned int stored in int
-	 * 
-	 * @param x
-	 * @return
-	 */
 	public static int getAsUnsignedInt(long x) {
 		return (int) (x & 0xffffffffL);
 	}

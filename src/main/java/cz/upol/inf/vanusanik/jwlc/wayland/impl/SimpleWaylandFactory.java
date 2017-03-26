@@ -28,6 +28,11 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClient;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClientFactory;
 
+/**
+ * Factory for {@link SimpleWaylandClient}
+ * @author enerccio
+ *
+ */
 public class SimpleWaylandFactory implements WaylandClientFactory {
 
 	public WaylandClient create(Pointer p) {
