@@ -1,0 +1,13 @@
+cz.upol.inf.vanusanik.jwlc
+cz.upol.inf.vanusanik.jwlc.display
+cz.upol.inf.vanusanik.jwlc.geometry
+cz.upol.inf.vanusanik.jwlc.input
+cz.upol.inf.vanusanik.jwlc.layouts
+cz.upol.inf.vanusanik.jwlc.layouts.xkb
+cz.upol.inf.vanusanik.jwlc.render
+cz.upol.inf.vanusanik.jwlc.utils
+cz.upol.inf.vanusanik.jwlc.wayland
+cz.upol.inf.vanusanik.jwlc.wayland.impl
+cz.upol.inf.vanusanik.jwlc.wlc
+cz.upol.inf.vanusanik.jwlc.wlc.callbacks
+jwlc
