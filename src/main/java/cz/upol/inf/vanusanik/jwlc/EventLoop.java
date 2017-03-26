@@ -14,59 +14,49 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
 public class EventLoop {
 
 	private static long usedData = 0;
-	private static Map<Long, Object> dataMap = new HashMap<Long, Object>();
 	private static Map<Long, EventSource> sourceMap = new HashMap<Long, EventSource>();
 
 	public static EventSource addFileDescriptorEvent(FileDescriptor fd,
-			long mask, final EventLoopFDEvent cb, Object customData) {
+			long mask, final EventLoopFDEvent cb) {
 		Assert.assertNotNull(fd);
 		Assert.assertNotNull(cb);
 
 		synchronized (EventLoop.class) {
 			long dataPointer = usedData++;
-			dataMap.put(dataPointer, customData);
 			EventSource event = EventSource.from(
 					JWLC.nativeHandler().wlc_event_loop_add_fd(Utils.getFD(fd),
 							Utils.getAsUnsignedInt(mask), new fd_callback() {
 
 								public int callback(int fd, int mask,
 										Pointer data) {
-									Object customData = dataMap
-											.get(Pointer.nativeValue(data));
 									EventSource event = sourceMap
 											.get(Pointer.nativeValue(data));
 									return cb.onFDAvailable(event,
 											Utils.createFD(fd),
-											Utils.getUnsignedInt(mask),
-											customData);
+											Utils.getUnsignedInt(mask));
 								}
 
-							}, new Pointer(dataPointer)),
-					dataPointer);
+							}, new Pointer(dataPointer)));
 			sourceMap.put(dataPointer, event);
 			return event;
 		}
 	}
 
-	public static EventSource addEvent(final EventLoopEvent cb,
-			Object customData) {
+	public static EventSource addEvent(final EventLoopEvent cb) {
 		Assert.assertNotNull(cb);
 
 		synchronized (EventLoop.class) {
 			long dataPointer = usedData++;
-			dataMap.put(dataPointer, customData);
 
 			EventSource event = EventSource.from(JWLC.nativeHandler()
 					.wlc_event_loop_add_timer(new timer_callback() {
 
 						public int callback(Pointer data) {
-							Object customData = dataMap
-									.get(Pointer.nativeValue(data));
 							EventSource event = sourceMap
 									.get(Pointer.nativeValue(data));
-							return cb.onEvent(event, customData);
+							return cb.onEvent(event);
 						}
-					}, new Pointer(dataPointer)), dataPointer);
+					}, new Pointer(dataPointer)));
 			sourceMap.put(dataPointer, event);
 			return event;
 		}

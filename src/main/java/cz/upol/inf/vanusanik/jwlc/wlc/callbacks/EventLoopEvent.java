@@ -4,6 +4,6 @@ import cz.upol.inf.vanusanik.jwlc.EventSource;
 
 public interface EventLoopEvent {
 
-	public int onEvent(EventSource event, Object data);
+	public int onEvent(EventSource event);
 
 }

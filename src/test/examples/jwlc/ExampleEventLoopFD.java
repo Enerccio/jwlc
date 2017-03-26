@@ -82,10 +82,9 @@ public class ExampleEventLoopFD {
 							new EventLoopFDEvent() {
 
 								public int onFDAvailable(EventSource event,
-										FileDescriptor fd, long mask,
-										Object data) {
-									System.out.println("Custom data from pipe "
-											+ data + ", mask " + mask);
+										FileDescriptor fd, long mask) {
+									System.out.println("Custom data from pipe " + f
+											+ "; mask " + mask);
 									FileInputStream fis = new FileInputStream(
 											fd);
 									byte[] in = new byte[1024];
@@ -100,7 +99,7 @@ public class ExampleEventLoopFD {
 									JWLC.terminate();
 									return 0;
 								}
-							}, pipePath);
+							});
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {

@@ -47,20 +47,20 @@ public class ExampleEventLoopTimer {
 			public void onReady() {
 				EventSource src = EventLoop.addEvent(new EventLoopEvent() {
 
-					public int onEvent(EventSource event, Object data) {
-						System.out.println(data);
+					public int onEvent(EventSource event) {
+						System.out.println("test1");
 						EventLoop.timerUpdate(event, 1000);
 						return 0;
 					}
-				}, "test1");
+				});
 				EventSource src2 = EventLoop.addEvent(new EventLoopEvent() {
 
-					public int onEvent(EventSource event, Object data) {
-						System.out.println(data);
+					public int onEvent(EventSource event) {
+						System.out.println("test2");
 						JWLC.terminate();
 						return 0;
 					}
-				}, "test2");
+				});
 
 				EventLoop.timerUpdate(src, 1000);
 				EventLoop.timerUpdate(src2, 2500);

@@ -5,17 +5,15 @@ import com.sun.jna.Pointer;
 public class EventSource {
 
 	private final Pointer handle;
-	private final long dataPointer;
 
-	protected EventSource(Pointer handle, long dataPointer) {
+	protected EventSource(Pointer handle) {
 		this.handle = handle;
-		this.dataPointer = dataPointer;
 	}
 
-	public static EventSource from(Pointer handle, long dataPointer) {
+	public static EventSource from(Pointer handle) {
 		if (handle == null)
 			return null;
-		return new EventSource(handle, dataPointer);
+		return new EventSource(handle);
 	}
 
 	public Pointer to() {
@@ -24,10 +22,6 @@ public class EventSource {
 
 	public Pointer getHandle() {
 		return handle;
-	}
-
-	public long getDataPointer() {
-		return dataPointer;
 	}
 
 }
