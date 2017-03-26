@@ -517,12 +517,12 @@ public interface WLC extends Library {
 	
 	// wlc-render.h
 	
-//	/**
-//	 * Write pixel data with the specific format to output's framebuffer.
-//	 * If the geometry is out of bounds, it will be automaticall clamped.
-//	 */
-//	WLC_NONULL void wlc_pixels_write(enum wlc_pixel_format format, const struct wlc_geometry *geometry, const void *data);
-//
+	/**
+	 * Write pixel data with the specific format to output's framebuffer.
+	 * If the geometry is out of bounds, it will be automaticall clamped.
+	 */
+	void wlc_pixels_write(int format, wlc_geometry geo, Pointer data);
+	
 //	/**
 //	 * Read pixel data from output's framebuffer.
 //	 * If the geometry is out of bounds, it will be automatically clamped.
