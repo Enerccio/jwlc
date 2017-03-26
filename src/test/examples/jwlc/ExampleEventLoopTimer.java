@@ -24,8 +24,7 @@
 package jwlc;
 
 import cz.upol.inf.vanusanik.jwlc.Compositor;
-import cz.upol.inf.vanusanik.jwlc.EventLoop;
-import cz.upol.inf.vanusanik.jwlc.EventSource;
+import cz.upol.inf.vanusanik.jwlc.Event;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.wlc.LogType;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorReadyCallback;
@@ -45,25 +44,26 @@ public class ExampleEventLoopTimer {
 		Compositor.setReadyCallback(new CompositorReadyCallback() {
 
 			public void onReady() {
-				EventSource src = EventLoop.addEvent(new EventLoopEvent() {
+				Event src = Event.addEvent(new EventLoopEvent() {
 
-					public int onEvent(EventSource event) {
+					public int onEvent(Event event) {
 						System.out.println("test1");
-						EventLoop.timerUpdate(event, 1000);
+						event.timerUpdate(1000);
 						return 0;
 					}
 				});
-				EventSource src2 = EventLoop.addEvent(new EventLoopEvent() {
+				Event src2 = Event.addEvent(new EventLoopEvent() {
 
-					public int onEvent(EventSource event) {
+					public int onEvent(Event event) {
 						System.out.println("test2");
+						event.remove();
 						JWLC.terminate();
 						return 0;
 					}
 				});
 
-				EventLoop.timerUpdate(src, 1000);
-				EventLoop.timerUpdate(src2, 2500);
+				src.timerUpdate(1000);
+				src2.timerUpdate(2500);
 			}
 		});
 

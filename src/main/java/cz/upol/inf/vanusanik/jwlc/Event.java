@@ -11,25 +11,45 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.timer_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
 
-public class EventLoop {
+public class Event {
+
+	private final Pointer handle;
+
+	protected Event(Pointer handle) {
+		this.handle = handle;
+	}
+
+	public static Event from(Pointer handle) {
+		if (handle == null)
+			return null;
+		return new Event(handle);
+	}
+
+	public Pointer to() {
+		return handle;
+	}
+
+	public Pointer getHandle() {
+		return handle;
+	}
 
 	private static long usedData = 0;
-	private static Map<Long, EventSource> sourceMap = new HashMap<Long, EventSource>();
+	private static Map<Long, Event> sourceMap = new HashMap<Long, Event>();
 
-	public static EventSource addFileDescriptorEvent(FileDescriptor fd,
+	public static Event addFileDescriptorEvent(FileDescriptor fd,
 			long mask, final EventLoopFDEvent cb) {
 		Assert.assertNotNull(fd);
 		Assert.assertNotNull(cb);
 
-		synchronized (EventLoop.class) {
+		synchronized (Event.class) {
 			long dataPointer = usedData++;
-			EventSource event = EventSource.from(
+			Event event = Event.from(
 					JWLC.nativeHandler().wlc_event_loop_add_fd(Utils.getFD(fd),
 							Utils.getAsUnsignedInt(mask), new fd_callback() {
 
 								public int callback(int fd, int mask,
 										Pointer data) {
-									EventSource event = sourceMap
+									Event event = sourceMap
 											.get(Pointer.nativeValue(data));
 									return cb.onFDAvailable(event,
 											Utils.createFD(fd),
@@ -42,17 +62,17 @@ public class EventLoop {
 		}
 	}
 
-	public static EventSource addEvent(final EventLoopEvent cb) {
+	public static Event addEvent(final EventLoopEvent cb) {
 		Assert.assertNotNull(cb);
 
-		synchronized (EventLoop.class) {
+		synchronized (Event.class) {
 			long dataPointer = usedData++;
 
-			EventSource event = EventSource.from(JWLC.nativeHandler()
+			Event event = Event.from(JWLC.nativeHandler()
 					.wlc_event_loop_add_timer(new timer_callback() {
 
 						public int callback(Pointer data) {
-							EventSource event = sourceMap
+							Event event = sourceMap
 									.get(Pointer.nativeValue(data));
 							return cb.onEvent(event);
 						}
@@ -62,22 +82,20 @@ public class EventLoop {
 		}
 	}
 
-	public static boolean timerUpdate(EventSource source, int msdelay) {
-		Assert.assertNotNull(source);
-		Assert.assertNotNull(source.to());
-		if (Pointer.nativeValue(source.to()) == 0)
+	public boolean timerUpdate(int msdelay) {
+		Assert.assertNotNull(to());
+		if (Pointer.nativeValue(to()) == 0)
 			throw new NullPointerException();
 
-		return JWLC.nativeHandler().wlc_event_source_timer_update(source.to(),
+		return JWLC.nativeHandler().wlc_event_source_timer_update(to(),
 				msdelay);
 	}
 
-	public static void remove(EventSource source) {
-		Assert.assertNotNull(source);
-		Assert.assertNotNull(source.to());
-		if (Pointer.nativeValue(source.to()) == 0)
+	public void remove() {
+		Assert.assertNotNull(to());
+		if (Pointer.nativeValue(to()) == 0)
 			throw new NullPointerException();
 
-		JWLC.nativeHandler().wlc_event_source_remove(source.to());
+		JWLC.nativeHandler().wlc_event_source_remove(to());
 	}
 }

@@ -31,8 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import cz.upol.inf.vanusanik.jwlc.Compositor;
-import cz.upol.inf.vanusanik.jwlc.EventLoop;
-import cz.upol.inf.vanusanik.jwlc.EventSource;
+import cz.upol.inf.vanusanik.jwlc.Event;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
 import cz.upol.inf.vanusanik.jwlc.wlc.FileDescriptorEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.LogType;
@@ -76,12 +75,12 @@ public class ExampleEventLoopFD {
 
 			public void onReady() {
 				try {
-					EventLoop.addFileDescriptorEvent(
+					Event.addFileDescriptorEvent(
 							new FileInputStream(f).getFD(),
 							FileDescriptorEvent.READABLE,
 							new EventLoopFDEvent() {
 
-								public int onFDAvailable(EventSource event,
+								public int onFDAvailable(Event event,
 										FileDescriptor fd, long mask) {
 									System.out.println("Custom data from pipe " + f
 											+ "; mask " + mask);
