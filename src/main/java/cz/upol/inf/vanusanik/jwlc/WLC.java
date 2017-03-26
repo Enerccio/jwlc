@@ -35,6 +35,8 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_callback_void;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_mask_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.handle_move_view_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.libinput_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.libinput_callback_void;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.logger_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.output_resolution_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_button_callback;
@@ -168,17 +170,16 @@ public interface WLC extends Library {
 	/** Compositor is about to terminate */
 	void wlc_set_compositor_terminate_cb(void_callback cb);
 
-	// /** Input device was created. Return value does nothing. (Experimental)
-	// */
-	// void wlc_set_input_created_cb(bool (*cb)(struct libinput_device
-	// *device));
-	//
-	// /** Input device was destroyed. (Experimental) */
-	// void wlc_set_input_destroyed_cb(void (*cb)(struct libinput_device
-	// *device));
-	//
-	// /** -- Core API */
-	//
+	/**
+	 * Input device was created. Return value does nothing. (Experimental)
+	 */
+	void wlc_set_input_created_cb(libinput_callback cb);
+
+	/** Input device was destroyed. (Experimental) */
+	void wlc_set_input_destroyed_cb(libinput_callback_void cb);
+
+	/** -- Core API */
+
 	/** Set log handler. Can be set before wlc_init. */
 	void wlc_log_set_handler(logger_callback cb);
 
@@ -432,26 +433,28 @@ public interface WLC extends Library {
 	/** Get pid. */
 	int wlc_view_get_pid(Pointer view);
 
-	// /** -- Input API
-	// * Very recent stuff, things may change.
-	// * XXX: This api is dumb and assumes there is only single xkb state and
-	// keymap.
-	// * In case of multiple keyboards, we want to each keyboard have own state
-	// and layout.
-	// * Thus we need wlc_handle for keyboards eventually. */
-	//
-	// /** Internal xkb_state exposed. You can use it to do more advanced key
-	// handling.
-	// * However you should avoid messing up with its state. */
-	// struct xkb_state* wlc_keyboard_get_xkb_state(void);
-	//
-	// /** Internal xkb_keymap exposed. You can use it to do more advanced key
-	// handling. */
-	// struct xkb_keymap* wlc_keyboard_get_xkb_keymap(void);
-	//
-	// /** Get currently held keys. */
-	// const uint32_t* wlc_keyboard_get_current_keys(size_t *out_memb);
-	//
+	/**
+	 * -- Input API Very recent stuff, things may change. XXX: This api is dumb
+	 * and assumes there is only single xkb state and keymap. In case of
+	 * multiple keyboards, we want to each keyboard have own state and layout.
+	 * Thus we need wlc_handle for keyboards eventually.
+	 */
+
+	/**
+	 * Internal xkb_state exposed. You can use it to do more advanced key
+	 * handling. However you should avoid messing up with its state.
+	 */
+	Pointer wlc_keyboard_get_xkb_state();
+
+	/**
+	 * Internal xkb_keymap exposed. You can use it to do more advanced key
+	 * handling.
+	 */
+	Pointer wlc_keyboard_get_xkb_keymap();
+
+	/** Get currently held keys. */
+	Pointer wlc_keyboard_get_current_key(IntByReference ref);
+
 	/**
 	 * Utility function to convert raw keycode to keysym. Passed modifiers may
 	 * transform the key.

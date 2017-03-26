@@ -119,4 +119,12 @@ public class Callbacks {
 	public interface timer_callback extends Callback {
 		int callback(Pointer data);
 	}
+	
+	public interface libinput_callback extends Callback {
+		boolean callback(Pointer device);
+	}
+	
+	public interface libinput_callback_void extends Callback {
+		void callback(Pointer device);
+	}
 }

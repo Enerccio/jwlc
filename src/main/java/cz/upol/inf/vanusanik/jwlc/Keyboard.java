@@ -24,6 +24,7 @@
 package cz.upol.inf.vanusanik.jwlc;
 
 import com.sun.jna.Pointer;
+import com.sun.jna.ptr.IntByReference;
 
 import cz.upol.inf.vanusanik.jwlc.Callbacks.keyboard_callback;
 import cz.upol.inf.vanusanik.jwlc.wlc.KeyState;
@@ -83,5 +84,14 @@ public class Keyboard {
 	public static char[] getUtf32CharsForKey(long key, Modifiers modifiers) {
 		return Character.toChars(
 				Utils.getAsUnsignedInt(getSymkeyForKey(key, modifiers)));
+	}
+	
+	public static long[] getCurrentlyHeldKeys() {
+		IntByReference ref = new IntByReference();
+		Pointer buffer = JWLC.nativeHandler().wlc_keyboard_get_current_key(ref);
+		long[] keys = new long[ref.getValue()];
+		for (int i=0; i<keys.length; i++)
+			keys[i] = Utils.getUnsignedInt(buffer.getInt(i * 4));
+		return keys;
 	}
 }
