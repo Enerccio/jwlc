@@ -25,6 +25,7 @@ package cz.upol.inf.vanusanik.jwlc.layouts;
 
 /**
  * Xkb symbols header constants converted to java.
+ * 
  * @author enerccio
  *
  */

@@ -38,6 +38,10 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
  */
 public class JWLC {
 
+	private JWLC() {
+
+	}
+
 	/**
 	 * Singleton native handler instance
 	 */
@@ -123,7 +127,7 @@ public class JWLC {
 	}
 
 	/**
-	 * @return backend 
+	 * @return backend
 	 */
 	public static BackendType getBackend() {
 		return BackendType.from(nativeHandler().wlc_get_backend_type());

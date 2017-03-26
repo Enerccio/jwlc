@@ -33,7 +33,8 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 import cz.upol.inf.vanusanik.jwlc.utils.NativeString;
 
 /**
- * Base wlc_handle abstraction wrapper class. 
+ * Base wlc_handle abstraction wrapper class.
+ * 
  * @author enerccio
  *
  */
@@ -90,8 +91,8 @@ public class WLCHandle implements PointerContainer {
 	}
 
 	/**
-	 * Returns custom data from this handle.
-	 * XXX: Experimental
+	 * Returns custom data from this handle. XXX: Experimental
+	 * 
 	 * @param tclass
 	 * @return
 	 */
@@ -142,8 +143,8 @@ public class WLCHandle implements PointerContainer {
 	}
 
 	/**
-	 * Sets custom data to this handle.
-	 * XXX: Experimental
+	 * Sets custom data to this handle. XXX: Experimental
+	 * 
 	 * @param value
 	 */
 	public <T> void setCustomData(T value) {

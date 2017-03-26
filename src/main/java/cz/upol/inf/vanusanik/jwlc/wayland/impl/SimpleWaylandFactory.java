@@ -30,6 +30,7 @@ import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClientFactory;
 
 /**
  * Factory for {@link SimpleWaylandClient}
+ * 
  * @author enerccio
  *
  */

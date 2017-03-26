@@ -32,22 +32,26 @@ import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
 
 /**
  * Direct framebuffer access class.
+ * 
  * @author enerccio
  *
  */
 public class Framebuffer {
-	
+
 	private Framebuffer() {
-		
+
 	}
 
 	/**
-	 * Writes pixels directly into framebuffer.
-	 * Geometry can be clamped automatically.
-	 *  
-	 * @param fmt pixel format, currently only RGBA8888 (4 bytes)
-	 * @param geo where to write on screen
-	 * @param data array with geo.size.w * geo.size.h * len(fmt) bytes
+	 * Writes pixels directly into framebuffer. Geometry can be clamped
+	 * automatically.
+	 * 
+	 * @param fmt
+	 *            pixel format, currently only RGBA8888 (4 bytes)
+	 * @param geo
+	 *            where to write on screen
+	 * @param data
+	 *            array with geo.size.w * geo.size.h * len(fmt) bytes
 	 */
 	public static void writePixels(PixelFormat fmt, Geometry geo, byte[] data) {
 		Memory m = new Memory(data.length);
@@ -59,10 +63,12 @@ public class Framebuffer {
 	/**
 	 * Reads pixels from framebuffer.
 	 * 
-	 * @param fmt pixel format, currently only RGBA8888
-	 * @param requestGeometry what part of screen you want to be fetched, after the call
-	 * it will contain actually returned geometry, so use it's width and height as to
-	 * how to read returned array
+	 * @param fmt
+	 *            pixel format, currently only RGBA8888
+	 * @param requestGeometry
+	 *            what part of screen you want to be fetched, after the call it
+	 *            will contain actually returned geometry, so use it's width and
+	 *            height as to how to read returned array
 	 * @return pixels
 	 */
 	public static byte[] readPixels(PixelFormat fmt, Geometry requestGeometry) {
@@ -82,8 +88,11 @@ public class Framebuffer {
 
 	/**
 	 * Draws specified resource surface
-	 * @param resource what to be drawn
-	 * @param geometry where to draw the surface
+	 * 
+	 * @param resource
+	 *            what to be drawn
+	 * @param geometry
+	 *            where to draw the surface
 	 */
 	public static void drawSurface(Resource resource, Geometry geometry) {
 		JWLC.nativeHandler().wlc_surface_render(resource.to(), geometry.to());

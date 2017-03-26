@@ -25,6 +25,7 @@ package cz.upol.inf.vanusanik.jwlc.render;
 
 /**
  * Available pixel format for raw operations
+ * 
  * @author enerccio
  *
  */

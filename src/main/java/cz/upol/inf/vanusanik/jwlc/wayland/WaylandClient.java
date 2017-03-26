@@ -27,6 +27,7 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
 /**
  * Use this interface for wl_client, should you decided to wrap wayland.
+ * 
  * @author enerccio
  *
  */

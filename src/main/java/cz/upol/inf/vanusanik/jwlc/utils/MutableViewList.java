@@ -31,9 +31,10 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.wlc.View;
 
 /**
- * Provides mutable view list. The actual get() values can change across the calls as 
- * provider's pointer memory changes. As it does not handle resizes, you need to replace
- * this view instance with new instance each time number of views change for the output.
+ * Provides mutable view list. The actual get() values can change across the
+ * calls as provider's pointer memory changes. As it does not handle resizes,
+ * you need to replace this view instance with new instance each time number of
+ * views change for the output.
  * 
  * This class is very unsafe! Handle with care, can crash your jvm.
  */

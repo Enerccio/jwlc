@@ -37,6 +37,7 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
  * Referenced wrapper around libinput_device.
  * 
  * There is no implementation in JWLC, use on your own with JNA.
+ * 
  * @author enerccio
  *
  */
@@ -94,6 +95,7 @@ public class LibinputDevice implements PointerContainer {
 
 	/**
 	 * Sets the created callback.
+	 * 
 	 * @param cb
 	 */
 	public static void setCreatedCallback(
@@ -110,6 +112,7 @@ public class LibinputDevice implements PointerContainer {
 
 	/**
 	 * Sets the destroyed callback.
+	 * 
 	 * @param cb
 	 */
 	public static void setDestroyedCallback(

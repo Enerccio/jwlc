@@ -51,6 +51,7 @@ public class Event implements PointerContainer {
 	 * Constructs event from pointer.
 	 * 
 	 * Internal method, use with care.
+	 * 
 	 * @param handle
 	 * @return
 	 */

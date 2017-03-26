@@ -28,8 +28,8 @@ import com.sun.jna.Pointer;
 import cz.upol.inf.vanusanik.jwlc.wayland.WaylandClient;
 
 /**
- * Simples implementation of wl_client, does nothing but wrap pointer.
- * Used with wlc methods.
+ * Simples implementation of wl_client, does nothing but wrap pointer. Used with
+ * wlc methods.
  * 
  * @author enerccio
  *

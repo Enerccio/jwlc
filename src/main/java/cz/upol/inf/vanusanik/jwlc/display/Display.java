@@ -30,6 +30,7 @@ import cz.upol.inf.vanusanik.jwlc.PointerContainer;
 
 /**
  * WaylandDisplay abstraction wrapper.
+ * 
  * @author enerccio
  *
  */
@@ -45,6 +46,7 @@ public class Display implements PointerContainer {
 	 * Creates display from provided pointer.
 	 * 
 	 * Internal use only.
+	 * 
 	 * @param handle
 	 * @return
 	 */
@@ -97,6 +99,7 @@ public class Display implements PointerContainer {
 
 	/**
 	 * Returns wayland display.
+	 * 
 	 * @return
 	 */
 	public static Display getDisplay() {

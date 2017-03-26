@@ -28,8 +28,8 @@ import com.sun.jna.Pointer;
 /**
  * All JNA Pointer containers have to implement this interface.
  * 
- * Use this interface in case you want to extend native interface or 
- * use another library that can be used with wlc (wayland, xkb etc).
+ * Use this interface in case you want to extend native interface or use another
+ * library that can be used with wlc (wayland, xkb etc).
  * 
  * @author enerccio
  */
@@ -37,12 +37,14 @@ public interface PointerContainer {
 
 	/**
 	 * Returns original pointer value.
+	 * 
 	 * @return
 	 */
 	public Pointer to();
-	
+
 	/**
-	 * Alias to to() method. 
+	 * Alias to to() method.
+	 * 
 	 * @return
 	 */
 	public Pointer getHandle();

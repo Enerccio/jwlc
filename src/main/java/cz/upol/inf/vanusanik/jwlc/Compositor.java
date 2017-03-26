@@ -33,11 +33,13 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorTerminatedCallback;
  * @author enerccio
  */
 public class Compositor {
-	
-	private Compositor() { }
+
+	private Compositor() {
+	}
 
 	/**
-	 * Set callback will be called when server is ready to accept clients. 
+	 * Set callback will be called when server is ready to accept clients.
+	 * 
 	 * @param cb
 	 */
 	public static void setReadyCallback(final CompositorReadyCallback cb) {
@@ -53,6 +55,7 @@ public class Compositor {
 
 	/**
 	 * Set callback will be called when server is about to be terminated.
+	 * 
 	 * @param cb
 	 */
 	public static void setTerminatedCallback(

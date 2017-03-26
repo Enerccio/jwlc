@@ -57,6 +57,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.Modifiers.wlc_modifiers;
  * Library handle to libwlc.
  * 
  * Internal use only, use on your own risk.
+ * 
  * @author enerccio
  *
  */

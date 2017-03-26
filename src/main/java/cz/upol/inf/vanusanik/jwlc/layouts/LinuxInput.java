@@ -24,7 +24,9 @@
 package cz.upol.inf.vanusanik.jwlc.layouts;
 
 /**
- * Converted class from linux input.h, constants used with keyboard / mouse events.
+ * Converted class from linux input.h, constants used with keyboard / mouse
+ * events.
+ * 
  * @author enerccio
  *
  */

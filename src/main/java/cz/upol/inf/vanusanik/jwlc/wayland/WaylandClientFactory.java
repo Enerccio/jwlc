@@ -27,6 +27,7 @@ import com.sun.jna.Pointer;
 
 /**
  * Factory for creating wayland clients.
+ * 
  * @author enerccio
  *
  */

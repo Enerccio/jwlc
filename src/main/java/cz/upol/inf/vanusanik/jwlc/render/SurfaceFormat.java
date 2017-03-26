@@ -25,6 +25,7 @@ package cz.upol.inf.vanusanik.jwlc.render;
 
 /**
  * Type of texture surface format.
+ * 
  * @author enerccio
  *
  */

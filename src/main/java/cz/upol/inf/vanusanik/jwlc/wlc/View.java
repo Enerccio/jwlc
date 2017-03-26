@@ -86,6 +86,7 @@ public class View extends WLCHandle {
 	 * Creates view from provided pointer.
 	 * 
 	 * Internal use only, use with care.
+	 * 
 	 * @param handle
 	 * @return
 	 */
@@ -96,9 +97,10 @@ public class View extends WLCHandle {
 	}
 
 	/* Callbacks */
-	
+
 	/**
 	 * Sets callback to be called when view is created.
+	 * 
 	 * @param cb
 	 */
 	public static void setCreatedCallback(final ViewCreatedCallback cb) {
@@ -114,6 +116,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when view is destroyed.
+	 * 
 	 * @param cb
 	 */
 	public static void setDestroyedCallback(final ViewDestroyedCallback cb) {
@@ -130,6 +133,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when focus changes for view.
+	 * 
 	 * @param cb
 	 */
 	public static void setFocusCallback(final ViewFocusCallback cb) {
@@ -144,8 +148,9 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * Sets callback to be called when view requests to be moved.
-	 * Start an interactive move to agree.
+	 * Sets callback to be called when view requests to be moved. Start an
+	 * interactive move to agree.
+	 * 
 	 * @param cb
 	 */
 	public static void setRequestMoveCallback(
@@ -162,8 +167,9 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * Sets callback to be called when view requests to be resized.
-	 * Start interactive resize to agree.
+	 * Sets callback to be called when view requests to be resized. Start
+	 * interactive resize to agree.
+	 * 
 	 * @param cb
 	 */
 	public static void setRequestResizeCallback(
@@ -182,11 +188,12 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * Sets callback to be called when view wants to change it's geometry.
-	 * Use {@link #setGeometry(long, Geometry)} to agree.
+	 * Sets callback to be called when view wants to change it's geometry. Use
+	 * {@link #setGeometry(long, Geometry)} to agree.
 	 * 
-	 * WARNING: Use empty callback to prevent windows to automatically change without you 
-	 * agreeing to it!
+	 * WARNING: Use empty callback to prevent windows to automatically change
+	 * without you agreeing to it!
+	 * 
 	 * @param cb
 	 */
 	public static void setRequestGeometry(
@@ -205,6 +212,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when view is moved to the output.
+	 * 
 	 * @param cb
 	 */
 	public static void setMoveToOutputCallback(
@@ -223,8 +231,9 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * Sets callback to be called when view wants to change it's state.
-	 * Call {@link #setState(int, boolean)} to agree.
+	 * Sets callback to be called when view wants to change it's state. Call
+	 * {@link #setState(int, boolean)} to agree.
+	 * 
 	 * @param cb
 	 */
 	public static void setStateRequestCallback(
@@ -243,6 +252,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called before view is rendered.
+	 * 
 	 * @param cb
 	 */
 	public static void setPreRenderCallback(final ViewPreRenderCallback cb) {
@@ -259,6 +269,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when view was just rendered.
+	 * 
 	 * @param cb
 	 */
 	public static void setPostRenderCallback(final ViewPostRenderCallback cb) {
@@ -275,6 +286,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when properties of this view were changed.
+	 * 
 	 * @param cb
 	 */
 	public static void setPropertiesUpdatedCallback(
@@ -362,7 +374,7 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * @return type of this view. 
+	 * @return type of this view.
 	 * @see {@link ViewType}
 	 */
 	public long getType() {
@@ -405,7 +417,9 @@ public class View extends WLCHandle {
 
 	/**
 	 * Gets the wayland client for this view.
-	 * @param factory to create wrapper class.
+	 * 
+	 * @param factory
+	 *            to create wrapper class.
 	 * @return wrapped wl_client for this view.
 	 */
 	public WaylandClient getClient(WaylandClientFactory factory) {
@@ -424,6 +438,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets mask.
+	 * 
 	 * @param mask
 	 */
 	public void setMask(long mask) {
@@ -433,6 +448,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Sets state.
+	 * 
 	 * @param state
 	 * @param toggle
 	 */
@@ -443,7 +459,9 @@ public class View extends WLCHandle {
 	}
 
 	/**
-	 * Sets geometry. Set edges if the geometry change is caused by interactive resize.
+	 * Sets geometry. Set edges if the geometry change is caused by interactive
+	 * resize.
+	 * 
 	 * @param edges
 	 * @param geo
 	 */
@@ -458,6 +476,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Parent this view to the parent view.
+	 * 
 	 * @param parent
 	 */
 	public void setParent(View parent) {
@@ -469,6 +488,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Set type of the view. Toggle indicates whether it is set or not.
+	 * 
 	 * @param type
 	 * @param toggle
 	 */
@@ -479,6 +499,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Assign output to this view.
+	 * 
 	 * @param output
 	 */
 	public void setOutput(Output output) {
@@ -526,6 +547,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Brings this view above other view.
+	 * 
 	 * @param other
 	 */
 	public void bringAbove(View other) {
@@ -534,6 +556,7 @@ public class View extends WLCHandle {
 
 	/**
 	 * Brings this view below other view.
+	 * 
 	 * @param other
 	 */
 	public void bringBelow(View other) {

@@ -52,6 +52,7 @@ import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.OutputResolutionCallback;
 
 /**
  * wlc_output abstraction wrapper class.
+ * 
  * @author enerccio
  *
  */
@@ -75,6 +76,7 @@ public class Output extends WLCHandle {
 	 * Creates output from provided pointer.
 	 * 
 	 * Internal method, use with care.
+	 * 
 	 * @param handle
 	 * @return
 	 */
@@ -88,6 +90,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when output is created.
+	 * 
 	 * @param cb
 	 */
 	public static void setCreatedCallback(final OutputCreatedCallback cb) {
@@ -103,6 +106,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when output is destroyed.
+	 * 
 	 * @param cb
 	 */
 	public static void setDestroyedCallback(final OutputDestroyedCallback cb) {
@@ -119,6 +123,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when output focus is changed.
+	 * 
 	 * @param cb
 	 */
 	public static void setFocusCallback(final OutputFocusCallback cb) {
@@ -134,6 +139,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback when resolution of this output is changed.
+	 * 
 	 * @param cb
 	 */
 	public static void setResolutionCallback(
@@ -153,6 +159,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback which is called when output is about to be rendered.
+	 * 
 	 * @param cb
 	 */
 	public static void setPreRenderCallback(final OutputPreRenderCallback cb) {
@@ -169,6 +176,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback which is called when output was rendered.
+	 * 
 	 * @param cb
 	 */
 	public static void setPostRenderCallback(
@@ -186,6 +194,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when context is created for this output.
+	 * 
 	 * @param cb
 	 */
 	public static void setContextCreatedCallback(
@@ -203,6 +212,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets callback to be called when context is destroyed for this output.
+	 * 
 	 * @param cb
 	 */
 	public static void setContextDestroyedCallback(
@@ -236,7 +246,7 @@ public class Output extends WLCHandle {
 	}
 
 	/**
-	 * @return gamma size 
+	 * @return gamma size
 	 */
 	public int getGammaSize() {
 		return Utils.getUnsignedShort(
@@ -290,9 +300,9 @@ public class Output extends WLCHandle {
 	}
 
 	/**
-	 * Get real resolution. 
-	 * Resolution applied by either {@link #setResolution(Size, long)} call or initially. 
-	 * Do not use this for coordinate boundary.
+	 * Get real resolution. Resolution applied by either
+	 * {@link #setResolution(Size, long)} call or initially. Do not use this for
+	 * coordinate boundary.
 	 * 
 	 * @return real resolution of this output.
 	 */
@@ -319,9 +329,9 @@ public class Output extends WLCHandle {
 	/**
 	 * Returns mutable view list of all views of this output.
 	 * 
-	 * This is mainly useful for wm's who need another view stack for inplace sorting. 
-	 * For example tiling wms, may want to use this to keep their tiling order 
-	 * separated from floating order.
+	 * This is mainly useful for wm's who need another view stack for inplace
+	 * sorting. For example tiling wms, may want to use this to keep their
+	 * tiling order separated from floating order.
 	 * 
 	 * @return mutable view.
 	 * @see {@link MutableViewList} on how to correctly use this object
@@ -352,10 +362,17 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets gamma values.
-	 * @param len 
-	 * @param r arrays of uint8_t color ramp values as shorts, must be len length
-	 * @param g arrays of uint8_t color ramp values as shorts, must be len length
-	 * @param b arrays of uint8_t color ramp values as shorts, must be len length
+	 * 
+	 * @param len
+	 * @param r
+	 *            arrays of uint8_t color ramp values as shorts, must be len
+	 *            length
+	 * @param g
+	 *            arrays of uint8_t color ramp values as shorts, must be len
+	 *            length
+	 * @param b
+	 *            arrays of uint8_t color ramp values as shorts, must be len
+	 *            length
 	 */
 	public void setGamma(int len, short[] r, short[] g, short[] b) {
 		Assert.assertNotNull(r);
@@ -373,6 +390,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets the resolution of this output.
+	 * 
 	 * @param resolution
 	 * @param scale
 	 */
@@ -385,6 +403,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * Sets mask.
+	 * 
 	 * @param mask
 	 */
 	public void setMask(long mask) {
@@ -394,6 +413,7 @@ public class Output extends WLCHandle {
 
 	/**
 	 * After this call, output will have only views provided in the list.
+	 * 
 	 * @param views
 	 * @return
 	 */
@@ -416,15 +436,16 @@ public class Output extends WLCHandle {
 	}
 
 	/**
-	 * Unfocuses all outputs (equivalent to {@link #INVALID_OUTPUT}.{@link #focus()}).
+	 * Unfocuses all outputs (equivalent to
+	 * {@link #INVALID_OUTPUT}.{@link #focus()}).
 	 */
 	public static void unfocus() {
 		INVALID_OUTPUT.focus();
 	}
 
 	/**
-	 * Schedules render for this output. 
-	 * No op, if render was already scheduled for this output.
+	 * Schedules render for this output. No op, if render was already scheduled
+	 * for this output.
 	 */
 	public void requestRepaint() {
 		JWLC.nativeHandler().wlc_output_schedule_render(this.to());

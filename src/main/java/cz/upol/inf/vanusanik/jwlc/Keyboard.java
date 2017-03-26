@@ -77,6 +77,7 @@ public class Keyboard {
 
 	/**
 	 * Returns utf32 long value for provided key and applied modifiers.
+	 * 
 	 * @param key
 	 * @param modifiers
 	 * @return
@@ -88,7 +89,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * Returns char array of unicode char for provided key and applied modifiers.
+	 * Returns char array of unicode char for provided key and applied
+	 * modifiers.
+	 * 
 	 * @param key
 	 * @param modifiers
 	 * @return

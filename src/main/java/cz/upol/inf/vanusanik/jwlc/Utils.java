@@ -30,6 +30,7 @@ import java.lang.reflect.Field;
  * Internal utilities.
  * 
  * Use on your own risk, this can be changed.
+ * 
  * @author enerccio
  *
  */

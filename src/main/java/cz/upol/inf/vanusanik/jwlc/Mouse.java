@@ -97,6 +97,7 @@ public class Mouse {
 
 	/**
 	 * Sets the callback for scrolling.
+	 * 
 	 * @param cb
 	 */
 	public static void setScrollCallback(final PointerScrollCallback cb) {
@@ -118,6 +119,7 @@ public class Mouse {
 
 	/**
 	 * Sets callback for touch.
+	 * 
 	 * @param cb
 	 */
 	public static void setTouchCallback(final PointerTouchCallback cb) {
@@ -139,6 +141,7 @@ public class Mouse {
 
 	/**
 	 * Current pointer position.
+	 * 
 	 * @return
 	 */
 	public static Point getPosition() {
