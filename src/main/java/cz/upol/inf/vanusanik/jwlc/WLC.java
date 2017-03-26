@@ -43,6 +43,7 @@ import cz.upol.inf.vanusanik.jwlc.Callbacks.pointer_scroll_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_move_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.request_resize_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.state_request_callback;
+import cz.upol.inf.vanusanik.jwlc.Callbacks.timer_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.touch_callback;
 import cz.upol.inf.vanusanik.jwlc.Callbacks.void_callback;
 import cz.upol.inf.vanusanik.jwlc.geometry.Geometry.wlc_geometry;
@@ -221,20 +222,18 @@ public interface WLC extends Library {
 	 */
 	Pointer wlc_event_loop_add_fd(int fd, int mask, fd_callback cb, Pointer data);
 
-	// /** Add timer to event loop. Return value of callback is unused, you
-	// should return 0. */
-	// WLC_NONULLV(1) struct wlc_event_source* wlc_event_loop_add_timer(int
-	// (*cb)(void *userdata), void *userdata);
-	//
-	// /** Update timer to trigger after delay. Returns true on success. */
-	// WLC_NONULL bool wlc_event_source_timer_update(struct wlc_event_source
-	// *source, int32_t ms_delay);
-	//
-	// /** Remove event source from event loop. */
-	// WLC_NONULL void wlc_event_source_remove(struct wlc_event_source *source);
-	//
-	// /** -- Output API */
-	//
+	/** Add timer to event loop. Return value of callback is unused, you
+	should return 0. */
+	Pointer wlc_event_loop_add_timer(timer_callback cb, Pointer data);
+
+	/** Update timer to trigger after delay. Returns true on success. */
+	boolean wlc_event_source_timer_update(Pointer source, int msdelay);
+
+	/** Remove event source from event loop. */
+	void wlc_event_source_remove(Pointer source);
+	
+	 /** -- Output API */
+	
 	/**
 	 * Get outputs. Returned array is a direct reference, careful when moving
 	 * and destroying handles.

@@ -23,26 +23,17 @@
  */
 package jwlc;
 
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import cz.upol.inf.vanusanik.jwlc.Compositor;
 import cz.upol.inf.vanusanik.jwlc.EventLoop;
 import cz.upol.inf.vanusanik.jwlc.EventSource;
 import cz.upol.inf.vanusanik.jwlc.JWLC;
-import cz.upol.inf.vanusanik.jwlc.wlc.FileDescriptorEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.LogType;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.CompositorReadyCallback;
-import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopFDEvent;
+import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.EventLoopEvent;
 import cz.upol.inf.vanusanik.jwlc.wlc.callbacks.LoggerCallback;
 
-public class ExampleEventLoopFD {
+public class ExampleEventLoopTimer {
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception {
 		JWLC.setLoggerCallback(new LoggerCallback() {
 
@@ -50,57 +41,29 @@ public class ExampleEventLoopFD {
 				System.out.println(type + ": " + message);
 			}
 		});
-
-		final String pipePath = "/tmp/mypipe";
-		Process p = Runtime.getRuntime().exec("mkfifo " + pipePath);
-		p.waitFor();
-		
-		final File f = new File(pipePath);
-		
-		new Thread() {
-			
-			public void run() {
-				try {
-					FileOutputStream fos = new FileOutputStream(f);
-					Thread.sleep(3000);
-					fos.write("Hello, world".getBytes());
-					fos.flush();
-				} catch (Exception e) {
-					
-				}
-			}
-			
-		}.start();
 		
 		Compositor.setReadyCallback(new CompositorReadyCallback() {
 			
 			public void onReady() {
-				try {
-					EventLoop.addFileDescriptorEvent(new FileInputStream(f).getFD(), 
-							FileDescriptorEvent.READABLE, 
-							new EventLoopFDEvent() {
-						
-						public int onFDAvailable(EventSource event, FileDescriptor fd, long mask, Object data) {
-							System.out.println("Custom data from pipe " + data + ", mask " + mask);
-							FileInputStream fis = new FileInputStream(fd);
-							byte[] in = new byte[1024];
-							try {
-								fis.read(in);
-								System.out.print(new String(in));
-							} catch (IOException e) {
-								return 0;
-							} finally {
-								f.delete();
-							}
-							JWLC.terminate();
-							return 0;
-						}
-					}, pipePath);
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				EventSource src = EventLoop.addEvent(new EventLoopEvent() {
+					
+					public int onEvent(EventSource event, Object data) {
+						System.out.println(data);
+						EventLoop.timerUpdate(event, 1000);
+						return 0;
+					}
+				}, "test1");
+				EventSource src2 = EventLoop.addEvent(new EventLoopEvent() {
+					
+					public int onEvent(EventSource event, Object data) {
+						System.out.println(data);
+						JWLC.terminate();
+						return 0;
+					}
+				}, "test2");
+				
+				EventLoop.timerUpdate(src, 1000);
+				EventLoop.timerUpdate(src2, 2500);
 			}
 		});
 		

@@ -111,4 +111,8 @@ public class Callbacks {
 	public interface fd_callback extends Callback {
 		int callback(int fd, int mask, Pointer data);
 	}
+	
+	public interface timer_callback extends Callback {
+		int callback(Pointer data);
+	}
 }
