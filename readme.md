@@ -2,6 +2,11 @@
 
 **Currently wrapped version** - 6a05b372d89fcaa884b7bb9694b55a7935506db6
 
+## Compiling and running examples
+
+Compile example: `javac -cp "./jna-4.4.0.jar:./jwlc-0.0.8.jar" jwlc/Example.java`
+Run example: `java -cp "./jna-4.4.0.jar:./jwlc-0.0.8.jar:./" jwlc/Example`
+
 ## Example
 
 This is the example from libwlc's readme.md but in Java.
