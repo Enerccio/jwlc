@@ -5,6 +5,7 @@
 ## Compiling and running examples
 
 Compile example: `javac -cp "./jna-4.4.0.jar:./jwlc-0.0.8.jar" jwlc/Example.java`
+
 Run example: `java -cp "./jna-4.4.0.jar:./jwlc-0.0.8.jar:./" jwlc/Example`
 
 ## Example
