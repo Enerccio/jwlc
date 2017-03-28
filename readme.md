@@ -1,4 +1,4 @@
-# JWLC - Java bindings for libwlc
+# JWLC - Java bindings for [libwlc](https://github.com/Cloudef/wlc) 
 
 **Currently wrapped version** - 6a05b372d89fcaa884b7bb9694b55a7935506db6
 
